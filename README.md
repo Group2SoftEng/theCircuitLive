@@ -9,11 +9,11 @@ At the end of this iteration, the app will retrieve event information from the d
 
 >>>Guest Views Event Title : :
 
->>>Guest Views Date
+>>>Guest Views Date : :
 
->>>Guest Views Event Speaker
+>>>Guest Views Event Speaker : :
 
->>>Guest Views Event Description
+>>>Guest Views Event Description : :
 
 Total Estimated Velocity
 22 HR
