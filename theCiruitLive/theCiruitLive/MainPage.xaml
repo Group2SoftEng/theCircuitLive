@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:theCiruitLive"
              x:Class="theCiruitLive.MainPage">
 
-  <StackLayout Padding="10,0">
+  
     
     <Label Text="The Circuit Live : The"
              VerticalOptions="Center"
@@ -12,5 +12,5 @@
       
     <WebView Source="http://thecircuitlive.com/" />
     
-  </StackLayout>
+ 
 </ContentPage>
