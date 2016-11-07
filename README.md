@@ -19,8 +19,15 @@ At the end of this iteration, the app will retrieve event information from the d
  
 >>>etc
 
-Total Estimated Velocity
+>Total Estimated Velocity
 22 HR
 
+
+
+>>>Resources
+
+>>>https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/ 
+
+>http://www.looah.com/source/view/2284
 
 
