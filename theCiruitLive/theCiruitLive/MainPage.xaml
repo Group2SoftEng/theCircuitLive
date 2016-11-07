@@ -4,13 +4,12 @@
              xmlns:local="clr-namespace:theCiruitLive"
              x:Class="theCiruitLive.MainPage">
 
-  
+
+   
     
-    <Label Text="The Circuit Live : The"
-             VerticalOptions="Center"
-             HorizontalOptions="Center" />
-      
+
     <WebView Source="http://thecircuitlive.com/" />
-    
+  
+  
  
 </ContentPage>
