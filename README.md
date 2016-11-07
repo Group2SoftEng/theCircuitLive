@@ -23,7 +23,9 @@ Total Estimated Velocity
 22 HR
 
 
+
 >Resources
+
 >http://www.looah.com/source/view/2284
 >https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/ : GO TO REFERENCE FOR FORMS AND XAMARIN
 >
