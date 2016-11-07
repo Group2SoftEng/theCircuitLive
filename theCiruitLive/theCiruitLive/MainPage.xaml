@@ -8,6 +8,6 @@
            VerticalOptions="Center"
            HorizontalOptions="Center" />
 
-  <WebView Source="https://php.radford.edu/~hszymanski/home.php" />
+  <WebView Source="http://thecircuitlive.com/" />
 
 </ContentPage>
