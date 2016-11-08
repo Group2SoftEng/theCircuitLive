@@ -1,15 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:theCiruitLive"
              x:Class="theCiruitLive.MainPage">
 
+  <WebView Source="http://thecircuitlive.com/" />
 
-   
-    
-
-    <WebView Source="http://thecircuitlive.com/" />
-  
-  
- 
-</ContentPage>
+</NavigationPage>
