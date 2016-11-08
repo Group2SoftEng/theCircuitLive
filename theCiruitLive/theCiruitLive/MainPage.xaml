@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:theCiruitLive"
              x:Class="theCiruitLive.MainPage">
 
-  <WebView Source="http://thecircuitlive.com/" />
+  
+ 
 
 </NavigationPage>
