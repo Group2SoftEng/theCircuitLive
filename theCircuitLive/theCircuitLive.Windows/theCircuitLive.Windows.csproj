@@ -7,8 +7,8 @@
     <ProjectGuid>{2E5554EC-8897-4830-A01D-296008FE157B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>theCiruitLive.Windows</RootNamespace>
-    <AssemblyName>theCiruitLive.Windows</AssemblyName>
+    <RootNamespace>theCircuitLive.Windows</RootNamespace>
+    <AssemblyName>theCircuitLive.Windows</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -136,7 +136,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\theCiruitLive\theCircuitLive.csproj">
+    <ProjectReference Include="..\theCircuitLive\theCircuitLive.csproj">
       <Project>{502BB35B-E91D-4C23-8C3B-77AC5CCD10FC}</Project>
       <Name>theCircuitLive</Name>
     </ProjectReference>

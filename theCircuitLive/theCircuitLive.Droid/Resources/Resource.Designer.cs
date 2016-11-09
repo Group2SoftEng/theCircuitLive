@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("theCiruitLive.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("theCircuitLive.Droid.Resource", IsApplication=true)]
 
-namespace theCiruitLive.Droid
+namespace theCircuitLive.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace theCiruitLive.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::theCiruitLive.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::theCircuitLive.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
