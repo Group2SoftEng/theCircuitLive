@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace theCiruitLive
+namespace theCircuitLive
 {
     public partial class App : Application
     {
@@ -13,7 +13,9 @@ namespace theCiruitLive
         {
             InitializeComponent();
 
-            MainPage = new theCiruitLive.MainPage();
+            MainPage = new theCircuitLive.MainPage();
+            
+            
         }
 
         protected override void OnStart()
@@ -31,4 +33,5 @@ namespace theCiruitLive
             // Handle when your app resumes
         }
     }
+    
 }

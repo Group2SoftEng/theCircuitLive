@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace theCiruitLive.Windows
+namespace theCircuitLive.Windows
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace theCiruitLive.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new theCiruitLive.App());
+            LoadApplication(new theCircuitLive.App());
         }
     }
 }

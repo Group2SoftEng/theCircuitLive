@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCiruitLive", "theCiruitLive\theCiruitLive\theCiruitLive.csproj", "{502BB35B-E91D-4C23-8C3B-77AC5CCD10FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCircuitLive", "theCiruitLive\theCiruitLive\theCircuitLive.csproj", "{502BB35B-E91D-4C23-8C3B-77AC5CCD10FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCiruitLive.Droid", "theCiruitLive\theCiruitLive.Droid\theCiruitLive.Droid.csproj", "{84D99BC3-2B43-4FE4-BDD4-A9F1462348A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCircuitLive.Droid", "theCiruitLive\theCiruitLive.Droid\theCircuitLive.Droid.csproj", "{84D99BC3-2B43-4FE4-BDD4-A9F1462348A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCiruitLive.iOS", "theCiruitLive\theCiruitLive.iOS\theCiruitLive.iOS.csproj", "{12F0F03C-D4FD-40AF-AC31-08A39AB0C763}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCircuitLive.iOS", "theCiruitLive\theCiruitLive.iOS\theCircuitLive.iOS.csproj", "{12F0F03C-D4FD-40AF-AC31-08A39AB0C763}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCiruitLive.WinPhone", "theCiruitLive\theCiruitLive.WinPhone\theCiruitLive.WinPhone.csproj", "{5F5EC115-1B23-4D9D-BB68-BAF7465E18E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCircuitLive.WinPhone", "theCiruitLive\theCiruitLive.WinPhone\theCircuitLive.WinPhone.csproj", "{5F5EC115-1B23-4D9D-BB68-BAF7465E18E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCiruitLive.Windows", "theCiruitLive\theCiruitLive.Windows\theCiruitLive.Windows.csproj", "{2E5554EC-8897-4830-A01D-296008FE157B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theCircuitLive.Windows", "theCiruitLive\theCiruitLive.Windows\theCircuitLive.Windows.csproj", "{2E5554EC-8897-4830-A01D-296008FE157B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

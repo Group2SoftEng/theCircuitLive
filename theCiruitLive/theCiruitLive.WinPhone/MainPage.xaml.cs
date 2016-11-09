@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace theCiruitLive.WinPhone
+namespace theCircuitLive.WinPhone
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -28,7 +28,7 @@ namespace theCiruitLive.WinPhone
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            LoadApplication(new theCiruitLive.App());
+            LoadApplication(new theCircuitLive.App());
         }
 
         /// <summary>

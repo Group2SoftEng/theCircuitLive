@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace theCiruitLive.iOS
+namespace theCircuitLive.iOS
 {
     public class Application
     {

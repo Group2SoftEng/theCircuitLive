@@ -1,7 +1,7 @@
 ﻿<Application
-    x:Class="theCiruitLive.WinPhone.App"
+    x:Class="theCircuitLive.WinPhone.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:theCiruitLive.WinPhone">
+    xmlns:local="using:theCircuitLive.WinPhone">
 
 </Application>
