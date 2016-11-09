@@ -12,19 +12,35 @@ namespace theCircuitLive
         public MainPage()
         {
             InitializeComponent();
-            this.PushAsync(new WebViewer());
+            this.PushAsync(new StartingPage());
            
         }
+
+        
     }
 
-    public class WebViewer : ContentPage
+    public class StartingPage : ContentPage
     {
-        public WebViewer()
+        public StartingPage()
         {
-            this.Content = new WebView
+            var layouts = new Grid();
+            
+            
+            Content = layouts;
+            
+           
+            
+            
+        }
+
+        public ContentView WebPage ()
+        {
+            var web = new WebView
             {
                 Source = "https://msdn.microsoft.com/en-us/library/6kxxabwd.aspx"
+
             };
+            return new ContentView { Content = web };
         }
     }
 

@@ -16,11 +16,13 @@ namespace theCircuitLive
             MainPage = new theCircuitLive.MainPage();
             
             
+            
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            
         }
 
         protected override void OnSleep()
