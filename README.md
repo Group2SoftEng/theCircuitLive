@@ -30,4 +30,6 @@ Total Estimated Velocity
 
 >http://www.looah.com/source/view/2284
 
+>https://www.atlassian.com/git/tutorials/using-branches
+
 
