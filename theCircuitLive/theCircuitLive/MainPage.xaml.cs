@@ -39,6 +39,15 @@ namespace theCircuitLive
             return new ContentView { Content = web };
         }
 
+        public ContentView WebPage(String url)
+        {
+            var web = new WebView
+            {
+                Source = url
+            };
+            return new ContentView { Content = web };
+        }
+
         public Grid GridLay()
         {
             Grid grid = new Grid();
@@ -66,6 +75,7 @@ namespace theCircuitLive
 
             Grid.SetColumnSpan(page5, 3);
             Grid.SetRowSpan(page6, 3);
+            
             
             return grid;
         }
