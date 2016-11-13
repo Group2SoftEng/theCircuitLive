@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Net;
 using Xamarin.Forms;
 
 namespace theCircuitLive
@@ -13,25 +14,53 @@ namespace theCircuitLive
         public MainPage()
         {
             InitializeComponent();
+            this.BarBackgroundColor = Color.Green;
+            
             this.PushAsync(new StartingPage());
               
         }
-
+        
         
     }
 
     public class StartingPage : ContentPage
     {
+        Button link = new Button {Text = "Link to Event Pay" };
+        Button request = new Button {Text = "ask Webpage", TextColor = Color.White };
+        Label res = new Label { };
+        
         public StartingPage()
         {
-            this.BackgroundColor = Color.Black;
-            Button b = new Button();
-            b.Clicked += (sender, args) => {
-                Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
+            Layout layout = new StackLayout
+            {
+                Children =
+                {
+                    link,
+                    request,
+                    res
+                }
 
-
+                
             };
-            Content = b;
+            
+
+            //Button link = new Button();
+            link.Clicked += (sender, args) => {
+                Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
+            };
+            link.BackgroundColor = Color.Red;
+            request.BackgroundColor = Color.Black;
+            Content = layout;
+
+            request.Clicked += (sender, args) =>
+            {
+                res.Text = "sheet";
+            };
+        }
+
+        public void webConn()
+        {
+            
         }
 
         
