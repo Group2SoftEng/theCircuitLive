@@ -25,15 +25,31 @@ namespace theCircuitLive
     {
         public StartingPage()
         {
-            this.BackgroundColor = Color.Black;
             Button link = new Button();
+            Button req = new Button();
+            Label res = new Label { Text = "gimmie" };
+
+            Layout layout = new StackLayout
+            {
+                Children =
+                {
+                    link,
+                    req,
+                    res
+                }
+            };
+
+            this.BackgroundColor = Color.Black;
+            
             link.Clicked += (sender, args) => {
                 Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
-
-
+            };
+            req.Clicked += (sender, args) =>
+            {
+                res.Text = "no bch";
             };
             link.BackgroundColor = Color.Red;
-            Content = link;
+            Content = layout;
         }
 
         
