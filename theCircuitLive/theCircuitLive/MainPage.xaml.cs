@@ -13,6 +13,7 @@ namespace theCircuitLive
         public MainPage()
         {
             InitializeComponent();
+            this.BackgroundColor = Color.Green;
             this.PushAsync(new StartingPage());
               
         }
@@ -25,13 +26,14 @@ namespace theCircuitLive
         public StartingPage()
         {
             this.BackgroundColor = Color.Black;
-            Button b = new Button();
-            b.Clicked += (sender, args) => {
+            Button link = new Button();
+            link.Clicked += (sender, args) => {
                 Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
 
 
             };
-            Content = b;
+            link.BackgroundColor = Color.Red;
+            Content = link;
         }
 
         
