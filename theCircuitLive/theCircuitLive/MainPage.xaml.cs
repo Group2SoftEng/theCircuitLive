@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+
 using Xamarin.Forms;
 
 namespace theCircuitLive
@@ -23,32 +24,50 @@ namespace theCircuitLive
 
     public class StartingPage : ContentPage
     {
+        
         public StartingPage()
         {
-            Button link = new Button();
-            Button req = new Button();
-            Label res = new Label { Text = "gimmie" };
+            
+            Button link = new Button {WidthRequest = 400};
+            Button req = new Button {WidthRequest = 400};
+            var label = new Label { TextColor = Color.White };
+            link.TextColor = Color.White;
+            link.Text = "Link to event page";
+            label.FontSize = 15;
+            req.Text = "get employers";
+           
 
-            Layout layout = new StackLayout
-            {
-                Children =
-                {
-                    link,
-                    req,
-                    res
-                }
-            };
+
+            label.HorizontalTextAlignment = TextAlignment.Center;
+
+
+            var layout = new StackLayout();
+            link.VerticalOptions = LayoutOptions.Start;
+            link.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            req.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            label.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            layout.Children.Add(link);
+            layout.Children.Add(req);
+            layout.Children.Add(label);
+            layout.Spacing = 0;
+           
+            
+            
 
             this.BackgroundColor = Color.Black;
             
             link.Clicked += (sender, args) => {
                 Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
             };
-            req.Clicked += (sender, args) =>
+            
+            req.Clicked += async (sender, args) =>
             {
-                res.Text = "no bch";
+                
+                label.Text = "blah";
+                blah l = new blah();
+
+                label.Text =await l.Download();
             };
-            link.BackgroundColor = Color.Red;
             Content = layout;
         }
 
