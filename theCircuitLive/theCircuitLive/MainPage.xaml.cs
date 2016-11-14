@@ -32,7 +32,7 @@ namespace theCircuitLive
 
             ListView list = new ListView
             {
-                ItemsSource = k,
+                ItemsSource = nums,
                 
                 
             };
