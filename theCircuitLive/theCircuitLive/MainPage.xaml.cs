@@ -15,41 +15,27 @@ namespace theCircuitLive
         {
             InitializeComponent();
             
-            int[] nums =
+            string[] menuStrings =
             {
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
             };
-            TextCell[] k =
-            {
-                new TextCell {TextColor = Color.Blue, DetailColor = Color.Green
-                , Text = "hi", Detail ="by"}
-            };
+            
 
             ListView list = new ListView
             {
-                ItemsSource = nums,
+                ItemsSource = menuStrings,
                 /**
-                 * 
-                 * 
-                 * 
-                 * 
-                 * 
-                 * 
                  * 
                  * 
                  **/
                 
             };
-            
-            ListView list2 = new ListView
-            {
-                ItemsSource = nums
-            };
+                
             list.BackgroundColor = Color.Black;
             list.SeparatorColor = Color.Blue;
             
@@ -81,6 +67,7 @@ namespace theCircuitLive
 
     public class StartingPage : ContentPage
     {
+        public delegate String bob(int x);
         
         public StartingPage()
         {
@@ -92,8 +79,8 @@ namespace theCircuitLive
             label.FontSize = 15;
             req.Text = "get employers";
 
-
-
+            
+            
             label.HorizontalTextAlignment = TextAlignment.Center;
              
 
@@ -118,8 +105,8 @@ namespace theCircuitLive
 
             req.Clicked += async (sender, args) =>
             { 
-                blah l = new blah();
-                label.Text =await l.Download();
+                ConnectionManager con = new ConnectionManager();
+                label.Text =await con.urlToHtml("https://php.radford.edu/~softeng05/sample.php");
             };
             Content = layout;
         }
@@ -129,37 +116,7 @@ namespace theCircuitLive
         
     }
 
-    public class CustomCell : ViewCell
-    {
-        public CustomCell()
-        {
-            //instantiate each of our views
-            var image = new Image();
-            StackLayout cellWrapper = new StackLayout();
-            StackLayout horizontalLayout = new StackLayout();
-            Label left = new Label();
-            Label right = new Label();
-
-            //set bindings
-            left.SetBinding(Label.TextProperty, "title");
-            right.SetBinding(Label.TextProperty, "subtitle");
-            image.SetBinding(Image.SourceProperty, "image");
-
-            //Set properties for desired design
-            cellWrapper.BackgroundColor = Color.FromHex("#eee");
-            horizontalLayout.Orientation = StackOrientation.Horizontal;
-            right.HorizontalOptions = LayoutOptions.EndAndExpand;
-            left.TextColor = Color.FromHex("#f35e20");
-            right.TextColor = Color.FromHex("503026");
-
-            //add views to the view hierarchy
-            horizontalLayout.Children.Add(image);
-            horizontalLayout.Children.Add(left);
-            horizontalLayout.Children.Add(right);
-            cellWrapper.Children.Add(horizontalLayout);
-            View = cellWrapper;
-        }
-    }
+    
 
 
 

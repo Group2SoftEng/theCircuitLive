@@ -12,25 +12,28 @@ using Xamarin.Forms;
 
 namespace theCircuitLive
 {
-    public class blah
+    /**
+     * Methods that work with httpclient class
+     * Anything that manages network connections on all platforms
+     * for platform specific things create an interface in this file
+     * and implement on other projects seperately. 
+     * 
+     **/
+    public class ConnectionManager
     {
-        HttpClient k = new HttpClient();
-        public blah()
-        {
-            
-        }
-        public async Task<string> Download()
+        /**
+         * Given a string that can be parsed to a compatible url, returns
+         * a string representing the html on that page
+         * */
+        public async Task<string> urlToHtml(string url)
         {
             using (var client = new HttpClient())
             {
-                using (var r = await client.GetAsync(new Uri("https://php.radford.edu/~softeng05/sample.php")))
+                using (var page = await client.GetAsync(new Uri(url)))
                 {
-                    string result = await r.Content.ReadAsStringAsync();
-                    return result;
-                }
+                    return await page.Content.ReadAsStringAsync();
+                }   
             }
-            
-
         }
 
     }
