@@ -35,10 +35,5 @@ namespace theCircuitLive
 
     }
 
-    public interface ConnectionManager
-    {
-
-        String get();
-        Boolean pageCon();
-    }
+    
 }
