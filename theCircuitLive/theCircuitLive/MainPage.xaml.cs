@@ -33,7 +33,16 @@ namespace theCircuitLive
             ListView list = new ListView
             {
                 ItemsSource = nums,
-                
+                /**
+                 * 
+                 * 
+                 * 
+                 * 
+                 * 
+                 * 
+                 * 
+                 * 
+                 **/
                 
             };
             

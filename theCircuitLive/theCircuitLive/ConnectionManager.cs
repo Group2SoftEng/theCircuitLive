@@ -29,7 +29,7 @@ namespace theCircuitLive
                     return result;
                 }
             }
-            // return await k.GetStringAsync("https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/");
+            
 
         }
 
