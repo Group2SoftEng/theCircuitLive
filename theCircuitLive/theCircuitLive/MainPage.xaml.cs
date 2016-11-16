@@ -14,47 +14,40 @@ namespace theCircuitLive
         public MainPage()
         {
             InitializeComponent();
-            
+
             string[] menuStrings =
             {
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6"
-            };
-            
-
-            ListView list = new ListView
-            {
-                ItemsSource = menuStrings,
-                /**
-                 * 
-                 * 
-                 **/
+                "-leave blank-",
+                "a page",
+                "another page",
+                "and another",
+                "",
+                "",
+                "",
+                ""
                 
             };
-                
-            list.BackgroundColor = Color.Black;
-            list.SeparatorColor = Color.Blue;
-            
+            ListView nav = new ListView { ItemsSource = menuStrings, SeparatorColor = Color.White };
             this.Master = new ContentPage
             {
                 Title = "help",
                 Content = new StackLayout
                 {
                     Children =
-                        {
-                        
-                        list
+                       {
+                            nav 
                        }
 
                 }
-
-
             };
-            this.Detail = new NavigationPage(new StartingPage());
+            this.Detail = new NavigationPage(new StartingPage()); //might not be efficient when changing pages
+
+            nav.ItemTapped += (sender, args) =>
+            {
+                // call controller classes here
+            };
+            
+            
         }
     }
 
@@ -64,10 +57,12 @@ namespace theCircuitLive
 
         
     
-
+    /**
+     * The page you will see when you start the app. Feel free to edit this and make it look better.
+     * 
+     * */
     public class StartingPage : ContentPage
     {
-        public delegate String bob(int x);
         
         public StartingPage()
         {
@@ -78,12 +73,7 @@ namespace theCircuitLive
             link.Text = "Link to event page";
             label.FontSize = 15;
             req.Text = "get employers";
-
-            
-            
             label.HorizontalTextAlignment = TextAlignment.Center;
-             
-
             var layout = new StackLayout();
             link.VerticalOptions = LayoutOptions.Start;
             link.HorizontalOptions = LayoutOptions.CenterAndExpand;
@@ -105,8 +95,7 @@ namespace theCircuitLive
 
             req.Clicked += async (sender, args) =>
             { 
-                ConnectionManager con = new ConnectionManager();
-                label.Text =await con.urlToHtml("https://php.radford.edu/~softeng05/sample.php");
+                label.Text =await ConnectionManager.urlToHtml("https://php.radford.edu/~softeng05/sample.php");
             };
             Content = layout;
         }

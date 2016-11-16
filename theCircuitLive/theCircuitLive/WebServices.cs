@@ -13,19 +13,26 @@ using Xamarin.Forms;
 namespace theCircuitLive
 {
     /**
-     * Methods that work with httpclient class
-     * Anything that manages network connections on all platforms
-     * for platform specific things create an interface in this file
-     * and implement on other projects seperately. 
+     * Use this class for whatever, if you can't get away with connection Manager, this should
+     * handle everything else.
      * 
+     * */
+    public class WebServices
+    {
+
+    }
+
+    /**
+     * Anything that can be used statically. If using httpclient in this class make sure to do it
+     * through something like using, else you'll have to manually dispose it.
      **/
-    public class ConnectionManager
+    public static class ConnectionManager
     {
         /**
-         * Given a string that can be parsed to a compatible url, returns
-         * a string representing the html on that page
+         * @param : String
+         * @return : Task<string>
          * */
-        public async Task<string> urlToHtml(string url)
+        public static async Task<string> urlToHtml(string url)
         {
             using (var client = new HttpClient())
             {
