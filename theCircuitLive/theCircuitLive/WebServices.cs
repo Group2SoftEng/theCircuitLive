@@ -9,7 +9,11 @@ using System.Net.Http;
 using Xamarin.Forms;
 
 
-
+/**
+ * TO DO
+ * SET UP WITH PHP
+ * 
+ * */ 
 namespace theCircuitLive
 {
     /**
