@@ -23,6 +23,10 @@ namespace theCircuitLive
      * */
     public class WebServices
     {
+        public WebServices()
+        {
+            
+        }
 
     }
 

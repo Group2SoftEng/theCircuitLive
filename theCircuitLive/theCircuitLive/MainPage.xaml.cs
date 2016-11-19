@@ -27,20 +27,22 @@ namespace theCircuitLive
                 ""
                 
             };
-            ListView nav = new ListView { ItemsSource = menuStrings, SeparatorColor = Color.White };
+            ListView nav = new ListView { ItemsSource = menuStrings, SeparatorColor = Color.FromHex("#FF69B4") };
             this.Master = new ContentPage
             {
+                BackgroundColor = Color.White,
                 Title = "help",
                 Content = new StackLayout
                 {
                     Children =
                        {
+                            new BoxView {BackgroundColor = Color.FromHex ("#FF69B4") },
                             nav 
                        }
 
                 }
             };
-            this.Detail = new NavigationPage(new StartingPage()); //might not be efficient when changing pages
+            this.Detail = new NavigationPage(new StartingPage()) {BarBackgroundColor = Color.FromHex("#FF69B4") }; //might not be efficient when changing pages
 
             nav.ItemTapped += (sender, args) =>
             {
@@ -87,7 +89,7 @@ namespace theCircuitLive
 
 
 
-            this.BackgroundColor = Color.Black;
+            this.BackgroundColor = Color.White;
 
             link.Clicked += (sender, args) => {
                 Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));

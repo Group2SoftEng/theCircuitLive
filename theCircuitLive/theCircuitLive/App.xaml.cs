@@ -14,9 +14,6 @@ namespace theCircuitLive
             InitializeComponent();
 
             MainPage = new theCircuitLive.MainPage();
-            
-            
-            
         }
 
         protected override void OnStart()
