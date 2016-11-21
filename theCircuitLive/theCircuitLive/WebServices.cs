@@ -9,18 +9,13 @@ using System.Net.Http;
 using Xamarin.Forms;
 
 
-/**
- * TO DO
- * SET UP WITH PHP
- * 
- * */ 
+
 namespace theCircuitLive
 {
-    /**
-     * Use this class for whatever, if you can't get away with connection Manager, this should
-     * handle everything else.
-     * 
-     * */
+    /// <summary>
+    /// Non static Webservices class 
+    /// TODO: Implement non-static details as needed
+    /// </summary>
     public class WebServices
     {
         public WebServices()
@@ -30,16 +25,18 @@ namespace theCircuitLive
 
     }
 
-    /**
-     * Anything that can be used statically. If using httpclient in this class make sure to do it
-     * through something like using, else you'll have to manually dispose it.
-     **/
+    /// <summary>
+    /// Anything that can be used statically goes in here
+    /// TODO: Add methods to handle post and get on webpages
+    /// </summary>
     public static class ConnectionManager
     {
-        /**
-         * @param : String
-         * @return : Task<string>
-         * */
+        /// <summary>
+        /// Async: Returns a string of html from a given url
+        /// TODO: 
+        /// </summary>
+        /// <param name="url">url address</param>
+        /// <returns>string of html contents</returns>
         public static async Task<string> urlToHtml(string url)
         {
             using (var client = new HttpClient())
