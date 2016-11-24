@@ -9,8 +9,14 @@ using Xamarin.Forms;
 
 namespace theCircuitLive
 {
+    /// <summary>
+    /// Main Page for the app, which is currentl a masterdetail page
+    /// </summary>
     public partial class MainPage : MasterDetailPage
     {
+        /// <summary>
+        /// Constructor for mainpage
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
@@ -30,7 +36,7 @@ namespace theCircuitLive
             ListView nav = new ListView { ItemsSource = menuStrings, SeparatorColor = Color.FromHex("#FF69B4") };
             this.Master = new ContentPage
             {
-                BackgroundColor = Color.White,
+                //BackgroundColor = Color.White,
                 Title = "help",
                 Content = new StackLayout
                 {
@@ -42,11 +48,13 @@ namespace theCircuitLive
 
                 }
             };
-            this.Detail = new NavigationPage(new StartingPage()) {BarBackgroundColor = Color.FromHex("#FF69B4") }; //might not be efficient when changing pages
+            //this.Detail = new NavigationPage(new StartingPage()) {BarBackgroundColor = Color.FromHex("#FF69B4") }; //might not be efficient when changing pages
+            this.Detail = new NavigationPage(new EventPage());
 
-            nav.ItemTapped += (sender, args) =>
+            nav.ItemTapped +=  (sender, args) =>
             {
                 // call controller classes here
+               
             };
             
             
@@ -59,19 +67,20 @@ namespace theCircuitLive
 
         
     
-    /**
-     * The page you will see when you start the app. Feel free to edit this and make it look better.
-     * 
-     * */
+   /// <summary>
+   /// Page you will see when you open the app
+   /// </summary>
     public class StartingPage : ContentPage
     {
-        
+        /// <summary>
+        /// Constructor for starting page
+        /// </summary>
         public StartingPage()
         {
 
             Button link = new Button { WidthRequest = 400 };
             Button req = new Button { WidthRequest = 400 };
-            var label = new Label { TextColor = Color.White };
+            var label = new Label { TextColor = Color.Black };
             link.Text = "Link to event page";
             label.FontSize = 15;
             req.Text = "get employers";
@@ -89,15 +98,17 @@ namespace theCircuitLive
 
 
 
-            this.BackgroundColor = Color.White;
+            //this.BackgroundColor = Color.White;
 
             link.Clicked += (sender, args) => {
                 Device.OpenUri(new Uri("http://thecircuitlive.com/index.php/events/"));
             };
 
-            req.Clicked += async (sender, args) =>
-            { 
-                label.Text =await ConnectionManager.urlToHtml("https://php.radford.edu/~softeng05/sample.php");
+            req.Clicked +=  async (sender, args) =>
+            {
+                
+                Events n = await ConnectionManager.GetEventData();
+                label.Text = n.EventSet[1].EventSpeakers[0].SpeakerName;
             };
             Content = layout;
         }

@@ -9,8 +9,14 @@ using Xamarin.Forms;
 
 namespace theCircuitLive
 {
+    /// <summary>
+    /// stub
+    /// </summary>
     public partial class Start : ContentPage
     {
+        /// <summary>
+        /// stub
+        /// </summary>
         public Start()
         {
             InitializeComponent();
