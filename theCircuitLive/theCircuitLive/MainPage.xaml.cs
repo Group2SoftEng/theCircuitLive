@@ -49,7 +49,12 @@ namespace theCircuitLive
                 }
             };
             //this.Detail = new NavigationPage(new StartingPage()) {BarBackgroundColor = Color.FromHex("#FF69B4") }; //might not be efficient when changing pages
-            this.Detail = new NavigationPage(new EventPage());
+            NavigationPage navpage =  new NavigationPage(new EventPage() {BackgroundColor = Color.FromHex("#ffffff")}) {BarTextColor = Color.White, BarBackgroundColor = Color.FromHex("#ff80bf")};
+            navpage.Title = "WOOOOOOORK";
+            navpage.BarTextColor = Color.Black;
+            
+            this.Detail = navpage;
+            
 
             nav.ItemTapped +=  (sender, args) =>
             {

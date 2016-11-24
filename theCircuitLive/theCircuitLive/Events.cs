@@ -13,6 +13,11 @@ namespace theCircuitLive
     /// </summary>
     public static class EventInfo
     {
+        /// <summary>
+        /// get Event data ( unwrap events, and get the event array )
+        /// Call as a task
+        /// </summary>
+        /// <returns></returns>
         public static async Task<Event[]> LoadEvents()
         {
             Events events = await ConnectionManager.GetEventData();
@@ -24,7 +29,7 @@ namespace theCircuitLive
             List<EventView> viewList =new List<EventView>();
             foreach (Event ev in events)
             {
-                viewList.Add(new EventView(ev.EventTitle, ev.EventDescription));
+                viewList.Add(new EventView(ev.EventTitle, ev.EventDescription, ev.EventDate));
             }
             return viewList;
         }
@@ -65,49 +70,42 @@ namespace theCircuitLive
     /// <summary>
     /// Class representing a single event
     /// </summary>
-    public class Event 
+    public class Event
     {
-        public int EventId { get; set; }
-
-        public Event(int id)
-        {
-            EventId = id;
-        }
-
         /// <summary>
         /// EventId, referencing the event_id column
         /// </summary>
-        
+        public int EventId { get; set; }
 
         /// <summary>
         /// EventTitle, referencing the event_title column
         /// </summary>
-        public string EventTitle;
+        public string EventTitle { get; set; }
 
         /// <summary>
         /// EventImg, referencing the event_img column
         /// </summary>
-        public string EventImg;
+        public string EventImg { get; set; }
 
         /// <summary>
         /// EventTopic, referencing the event_topic column
         /// </summary>
-        public string EventTopic;
+        public string EventTopic { get; set; }
 
         /// <summary>
         /// EventDate, referencing the event_date column
         /// </summary>
-        public string EventDate;
+        public string EventDate { get; set; }
 
         /// <summary>
         /// EventDescription, referencing the event_desc column
         /// </summary>
-        public string EventDescription;
+        public string EventDescription { get; set; }
 
         /// <summary>
         /// EventSpeakers : This will be an array of all the speakers attending or performing at the event.
         /// </summary>
-        public Speaker[] EventSpeakers;
+        public Speaker[] EventSpeakers { get; set; }
 
         
     }
