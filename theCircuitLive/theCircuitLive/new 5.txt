@@ -1,0 +1,6 @@
+<Label Text="" x:Name="Topic" HorizontalTextAlignment="Center"/>
+  <Label Text="" x:Name="Date"  HorizontalTextAlignment="Center"/>
+  
+  <Label Text="" x:Name="Description" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center"/>
+  
+  #b71a66
