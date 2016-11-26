@@ -26,6 +26,7 @@ namespace Kuromori
             eventTopic.Text += anEvent.EventTopic;
             eventDesc.Text = anEvent.EventDescription;
             eventDate.Text = anEvent.EventDate;
+           
             try
             {
                 eventImage.Source = new Uri(anEvent.EventImg);

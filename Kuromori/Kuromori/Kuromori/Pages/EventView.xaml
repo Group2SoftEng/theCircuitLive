@@ -34,7 +34,7 @@
     </Grid>
 
     
-    <Image x:Name="Image" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"></Image>
+    <Image x:Name="Image" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" HorizontalOptions="CenterAndExpand"></Image>
     
     <Label Text="" x:Name="Speaker" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
            Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>

@@ -19,12 +19,18 @@ namespace Kuromori.Pages
             speakerName.Text = speaker.SpeakerName;
             speakerDesc.Text = speaker.SpeakerDescription;
 
+            Device.OnPlatform(null, null, () =>
+           {
+               speakerName.TextColor = Color.Black;
+               speakerDesc.TextColor = Color.Black;
+           }, null);
+
             try
             {
                 speakerImage.Source = new Uri(speaker.SpeakerImg);
 
             }
-            catch (FormatException test)
+            catch (FormatException Excep)
             {
                 speakerImage.Source = ImageSource.FromFile(("noimage.png"));
             }
