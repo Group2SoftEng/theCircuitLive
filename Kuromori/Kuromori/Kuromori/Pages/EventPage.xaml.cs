@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Kuromori.InfoIO;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Kuromori
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventPage : ContentPage
     {
         public EventPage()

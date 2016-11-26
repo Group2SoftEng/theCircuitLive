@@ -7,25 +7,22 @@ using Kuromori.InfoIO;
 using Xamarin.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Xamarin.Forms.Xaml;
 
 namespace Kuromori
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-
-            MainPage = new Kuromori.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override async void OnStart()
         {
             // Handle when your app starts
-            
-
-
-
         }
 
     
