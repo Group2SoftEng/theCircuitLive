@@ -24,6 +24,11 @@ namespace Kuromori.DataStructure
         public string SpeakerImg { get; set; }
 
         /// <summary>
+        /// link to speaker website
+        /// </summary>
+        public string SpeakerUrl { get; set; }
+
+        /// <summary>
         /// SpeakerDescription, referencing the speaker_desc column 
         /// </summary>
         public string SpeakerDescription { get; set; }

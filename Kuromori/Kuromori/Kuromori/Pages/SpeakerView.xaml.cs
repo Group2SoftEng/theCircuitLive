@@ -24,7 +24,14 @@ namespace Kuromori.Pages
             {
                 Command = new Command(() =>
                 {
-                    Debug.WriteLine("Test"); /// fill in what happens when image is clicked here
+                    try
+                    {
+                        Device.OpenUri(new Uri(speaker.SpeakerUrl));
+                    }
+                    catch (FormatException res)
+                    {
+                        
+                    }
                 })
             });
 

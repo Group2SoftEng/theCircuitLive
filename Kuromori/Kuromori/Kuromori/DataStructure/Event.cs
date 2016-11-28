@@ -42,6 +42,16 @@ namespace Kuromori.DataStructure
         public string EventDescription { get; set; }
 
         /// <summary>
+        /// EventSignUpURL
+        /// </summary>
+        public string EventSignUpUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string EventLocation { get; set; }
+
+        /// <summary>
         /// EventSpeakers : This will be an array of all the speakers attending or performing at the event.
         /// </summary>
         public Speaker[] EventSpeakers { get; set; }

@@ -27,12 +27,28 @@ namespace Kuromori
             eventDesc.Text = anEvent.EventDescription;
             eventDate.Text = anEvent.EventDate;
            
+            eventImage.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+
+                    try
+                    {
+                        Device.OpenUri(new Uri(anEvent.EventSignUpUrl));
+                    }
+                    catch (FormatException res)
+                    {
+                        
+                    }
+                })
+            });
+
             try
             {
                 eventImage.Source = new Uri(anEvent.EventImg);
 
             }
-            catch (FormatException test)
+            catch (FormatException res)
             {
                 eventImage.Source = ImageSource.FromFile(("noimage.png"));
             }
