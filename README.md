@@ -1,5 +1,16 @@
 # theCircuitLive
 
+### Quick reference for useful things
+
+## Add tap recognition to any element that inherits gestures
+```csharp
+elem.GestureRecognizers.Add(new TapGestureRecognizer
+{
+ Command = new Command(() => {
+  // Whatever operation you want to do  ( this isn't async )
+ })
+ });
+```
 
 OVERVIEW: Display Events and link to EventBrite
 
