@@ -1,8 +1,8 @@
 # theCircuitLive
 
-### Quick reference for useful things
+## Quick reference for useful things
 
-## Add tap recognition to any element that inherits gestures
+### Add tap recognition to any element that inherits gestures
 ```csharp
 elem.GestureRecognizers.Add(new TapGestureRecognizer
 {
@@ -11,7 +11,7 @@ elem.GestureRecognizers.Add(new TapGestureRecognizer
  })
 });
 ```
-## Easy way to do an operation in ui thread only after async
+### Easy way to do an operation in ui thread only after async
 ```csharp
 Task.Run(async() =>
 {
