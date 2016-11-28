@@ -31,15 +31,15 @@ At the end of this iteration, the app will retrieve event information from the d
 >>To Do : 
 >>>Event Registration (US): Link to Event Brite :
 
->>>Guest Views Event Title (US): :
+>>>Guest Views Event Title (US): : *DONE*
 
->>>Guest Views Date (US): :
+>>>Guest Views Date (US): : *DONE*
 
->>>Guest Views Event Speaker (US): :
+>>>Guest Views Event Speaker (US): : *DONE*
 
->>>Guest Views Event Description (US): :
+>>>Guest Views Event Description (US): : *DONE*
 
->>>Establish Web Serv with rest or similar framework for db connection (CONST)
+>>>Establish Web Serv with rest or similar framework for db connection (CONST) : *DONE*
  
 >>>etc
 
