@@ -9,8 +9,17 @@ using Xamarin.Forms;
 
 namespace Kuromori.Pages
 {
+    /// <summary>
+    /// A Frame that consists of
+    /// 2 Labels : speakerName, speakerDesc
+    /// 1 Image - clickable : speakerImage
+    /// </summary>
     public partial class SpeakerView : Frame
     {
+        /// <summary>
+        /// Create a speakerview
+        /// </summary>
+        /// <param name="speaker">Speaker to be rendered inside the eventView</param>
         public SpeakerView(Speaker speaker)
         {
             InitializeComponent();
