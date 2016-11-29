@@ -7,7 +7,7 @@
              BackgroundColor="Silver">
   
   
-  <ScrollView>
+  <ScrollView x:Name="scroll">
   <StackLayout x:Name="Layout"/>
   </ScrollView>
   

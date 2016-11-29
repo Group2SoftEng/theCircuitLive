@@ -44,6 +44,7 @@
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Commands.cs" />
     <Compile Include="Pages\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
     </Compile>

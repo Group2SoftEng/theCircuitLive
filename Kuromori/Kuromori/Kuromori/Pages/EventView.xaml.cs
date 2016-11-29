@@ -101,6 +101,7 @@ namespace Kuromori
                 })
             });
 
+
             //Set image to the event image, if there is an error (no image, or malformed uri)
             //Set a default image. 
             try
