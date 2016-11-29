@@ -42,12 +42,11 @@ namespace Kuromori
             CultureInfo provider = CultureInfo.InvariantCulture;
 
            
-
+            // This is the action that is executed when the event image is clicked.
             eventImage.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
                 {
-
                     try
                     {
                         Device.OpenUri(new Uri(anEvent.EventSignUpUrl));
