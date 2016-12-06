@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kuromori.EventPage"
-             Padding="2"
+             Padding="4"
              Title="Events"
              BackgroundColor="Silver">
   
   
   <ScrollView x:Name="scroll">
-  <StackLayout x:Name="Layout"/>
+  <StackLayout x:Name="Layout" Spacing="28"/>
   </ScrollView>
   
 </ContentPage>
