@@ -15,7 +15,7 @@ using Android.App;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Application(Icon = "@drawable/theCircuit-IG-March_web.jpg")]
+[assembly: Application(Icon = "@drawable/thecircuit-app-icon")]
 
 // Version information for an assembly consists of the following four values:
 //
