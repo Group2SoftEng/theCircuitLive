@@ -6,15 +6,16 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Kuromori.Droid")]
+[assembly: AssemblyTitle("thecircuitlive.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Kuromori.Droid")]
+[assembly: AssemblyProduct("thecircuitlive.Droid")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+//[assembly: Application(Icon = "@drawable/thecircuitappicon")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,3 +33,10 @@ using Android.App;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+
+
+#if DEBUG
+[assembly: Application(Debuggable = true, Icon = "@drawable/thecircuitappicon")]
+#else
+[assembly: Application(Debuggable = false, Icon = "@drawable/thecircuitappicon")]
+#endif
