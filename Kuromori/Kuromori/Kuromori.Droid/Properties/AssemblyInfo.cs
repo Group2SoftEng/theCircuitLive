@@ -36,7 +36,7 @@ using Android.App;
 
 
 #if DEBUG
-[assembly: Application(Debuggable = true, Icon = "@drawable/thecircuitappicon")]
+[assembly: Application(Debuggable = false, Icon = "@drawable/thecircuitappicon")]
 #else
 [assembly: Application(Debuggable = false, Icon = "@drawable/thecircuitappicon")]
 #endif
