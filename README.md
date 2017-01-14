@@ -50,7 +50,7 @@ Total Estimated Velocity
 
 >>>Resources
 
->>>https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/ 
+>>>[create mobile apps with xamarin](https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/)
 
 >http://www.looah.com/source/view/2284
 
