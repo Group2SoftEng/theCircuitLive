@@ -2,6 +2,11 @@
 
 All of the using directives that you'll need are there. If you want to create a project around this in Visual Studio I used the Console Application template. If you need to import anything ( your probably will) the things that youll need is System.Net and Html agility pack. Everything else should be part of .net and all you will then need to do is copy and paste this code.
 
+### Challenges.
+
+  * Currently on the TheCircuitLive event page the speaker info and event dates have the same surrounding tags, so it's likely going to require us to keep track of the order in which the two of those come int
+  * Multiple speakers will be needed eventually, which is likely going to be hard to implement.
+
 ```csharp
 using System;
 using System.Threading.Tasks;
