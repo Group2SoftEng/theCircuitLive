@@ -13,6 +13,7 @@ namespace HtmlParser
 
 	class MainClass
 	{
+		/// Temporary struct to contain Speaker information
 		struct Speaker
 		{
 			public string Name { get; set; }
