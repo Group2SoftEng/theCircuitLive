@@ -6,6 +6,7 @@ All of the using directives that you'll need are there. If you want to create a 
 
   * Currently on the TheCircuitLive event page the speaker info and event dates have the same surrounding tags, so it's likely going to require us to keep track of the order in which the two of those come int
   * Multiple speakers will be needed eventually, which is likely going to be hard to implement.
+  * Xpath is not properly supported for pcl yet, so we will need to convert the xpath string at selectNodes into linq statements to get the proper information.
 
 ```csharp
 using System;
