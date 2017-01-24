@@ -1,3 +1,7 @@
+## Html Parsing Sandbox
+
+All of the using directives that you'll need are there. If you want to create a project around this in Visual Studio I used the Console Application template. If you need to import anything ( your probably will) the things that youll need is System.Net and Html agility pack. Everything else should be part of .net and all you will then need to do is copy and paste this code.
+
 ```csharp
 using System;
 using System.Threading.Tasks;
