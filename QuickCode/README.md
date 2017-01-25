@@ -1,4 +1,4 @@
-## Html Parsing Sandbox
+## Html Parsing Sandbox // Updated, using Linq now.
 
 All of the using directives that you'll need are there. If you want to create a project around this in Visual Studio I used the Console Application template. If you need to import anything ( your probably will) the things that youll need is System.Net and Html agility pack. Everything else should be part of .net and all you will then need to do is copy and paste this code.
 
@@ -6,7 +6,7 @@ All of the using directives that you'll need are there. If you want to create a 
 
   * Currently on the TheCircuitLive event page the speaker info and event dates have the same surrounding tags, so it's likely going to require us to keep track of the order in which the two of those come int
   * Multiple speakers will be needed eventually, which is likely going to be hard to implement.
-  * Xpath is not properly supported for pcl yet, so we will need to convert the xpath string at selectNodes into linq statements to get the proper information.
+  
 
 ```csharp
 using System;
@@ -23,7 +23,6 @@ namespace HtmlParser
 
 	class MainClass
 	{
-		/// Temporary struct to contain Speaker information
 		struct Speaker
 		{
 			public string Name { get; set; }
@@ -40,54 +39,48 @@ namespace HtmlParser
 
 		public static void Main(string[] args)
 		{
-			Regex patter = new Regex(@"(?<=<img src="")(.*)(?="" alt="""")");
 
 			///// asynchronously retrieve html from the event page, clean up excess white space tabs and newlines 
 			///// and then return an html object
 			HtmlDocument doc = (Task.Run(async () =>
 			{
 				string body = await UrlToHtml(new Uri("http://thecircuitlive.com/index.php/events/"));
-				body = Regex.Replace(body, @"( |\t|\r?\n)\1+", "$1"); // help from stackoverflow
 				HtmlDocument tdoc = new HtmlDocument();
 				tdoc.LoadHtml(body);
 				return tdoc;
 			}).Result);
 			doc.OptionFixNestedTags = true;
-			HtmlNodeCollection SpeakerInfo = doc.DocumentNode.SelectNodes("//h3[@class='caption-title']|//div[@class='caption']|//div//div[@class='circle-inner']");
-			////////////////////////////////////////////////
-			////////////////////////////////////////////////
 
+			var Name =
+				(from name in doc.DocumentNode.Descendants("h3")
+				 where name.GetAttributeValue("class", "").Equals("caption-title")
+				 select name.InnerText).DefaultIfEmpty();
 
+			var Desc =
+				(from desc in doc.DocumentNode.Descendants("div")
+				 where desc.GetAttributeValue("class", "").Equals("caption")
+				 select desc.InnerText).DefaultIfEmpty();
 
-			////////////////////////////////////////////////
-			////////////////////////////////////////////////
-			var name = from title in SpeakerInfo
-					   where (title.OuterHtml.Substring(0, 3).Equals("<h3"))
-					   select title;
+			var PicString =
+				(from imgStr in doc.DocumentNode.Descendants("img")
+				 where imgStr.GetAttributeValue("class", "").Equals("img-responsive")
+				 select imgStr.GetAttributeValue("src", "")).DefaultIfEmpty();
 
-
-			var desc = from content in SpeakerInfo
-					where (content.OuterHtml.Contains(@"<div class=""caption"">"))
-					 	  select content;
-
-
-			var pic = from img in SpeakerInfo
-					  where (img.OuterHtml.Contains("circle-inner"))
-					  select img;
-			///////////////////////////////////////////////////
-			//////////////////////////////////////////////////
-			 
 
 			// This packages the three variables from above into one list of Speakers.
-			var Speakers = name.Zip(desc.Zip(pic,(b, c) => new { b, c }),
-			  (a, b) => new Speaker(a.InnerText
-			                        , b.b.InnerText
-			                        , patter.Match(b.c.ChildNodes.First().InnerHtml).Value));
-			
+			var Speakers = Name.Zip(Desc.Zip(PicString, (b, c) => new { b, c }),
+			  (a, b) => new Speaker(a
+									, b.b
+			                        , b.c));
 
+
+			foreach (Speaker n in Speakers)
+			{
+				Console.WriteLine(n.Name);
+				Console.WriteLine(n.Desc);
+				Console.WriteLine(n.Pict);
+			}
 		}
-
-		 
 		public static async Task<string> UrlToHtml(Uri url)
 		{
 			using (var client = new HttpClient())
@@ -98,17 +91,8 @@ namespace HtmlParser
 				}
 			}
 		}
-
-
-		/// <summary>
-		/// Adds the event value.
-		/// </summary>
-
-
-
-
 	}
-
-
 }
+
+
 ```
