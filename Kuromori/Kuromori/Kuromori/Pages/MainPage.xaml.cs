@@ -7,11 +7,15 @@ using Xamarin.Forms;
 
 namespace Kuromori
 {
-    public partial class MainPage : TabbedPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {
             InitializeComponent();
+
+			this.Detail = new EventPage() {Title = "alwkjdalkwjd"};
+			this.Master = new SideNav() { Title = "Cmon" };
+			this.
         }
     }
 }

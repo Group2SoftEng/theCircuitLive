@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
 namespace Kuromori.Pages
 {
     public static class Commands
@@ -17,7 +16,7 @@ namespace Kuromori.Pages
         {
             return new Command(new Action(() =>
             {
-                
+               
             }));
         }
 

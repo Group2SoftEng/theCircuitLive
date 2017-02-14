@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Kuromori.Pages
+namespace Kuromori
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignInPage : ContentPage
@@ -15,6 +14,7 @@ namespace Kuromori.Pages
         public SignInPage()
         {
             InitializeComponent();
+            
         }
     }
 }
