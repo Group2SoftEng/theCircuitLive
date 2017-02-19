@@ -11,11 +11,11 @@ namespace Kuromori
     {
         public MainPage()
         {
-            InitializeComponent();
+           // InitializeComponent();
 
 			this.Detail = new EventPage() {Title = "alwkjdalkwjd"};
 			this.Master = new SideNav() { Title = "Cmon" };
-			this.
+			//this.
         }
     }
 }
