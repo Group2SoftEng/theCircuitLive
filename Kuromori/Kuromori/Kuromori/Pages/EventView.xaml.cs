@@ -53,11 +53,10 @@ namespace Kuromori
                     }
                     catch (FormatException res)
                     {
-                        
+						
                     }
                 })
             });
-
 
             //Set image to the event image, if there is an error (no image, or malformed uri)
             //Set a default image. 
@@ -77,16 +76,11 @@ namespace Kuromori
                 this.FindByName<Label>("Speaker").Text = "Speakers";
             }
 
-            //For every speaker create a speaker form them under this event
-            foreach (Speaker speaker in anEvent.EventSpeakers)
-            {
-                this.FindByName<StackLayout>("Layout").Children.Add(new SpeakerView(speaker));
-            }
-            
-           
-
-            
-
+			//For every speaker create a speaker form them under this event
+			foreach (Speaker speaker in anEvent.EventSpeakers)
+			{
+				this.FindByName<StackLayout>("Layout").Children.Add(new SpeakerView(speaker));
+			}
         }
     }
 }
