@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Frame 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Kuromori.Pages.SpeakerView"
+		Padding="2"
+		BackgroundColor="White"
+		HasShadow="false"
+		>
+  
+  <Grid BackgroundColor="White" Padding="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+     <Image x:Name="Image" HorizontalOptions="CenterAndExpand" Grid.Row="0" HeightRequest="100" WidthRequest="100"></Image>
+     <Label x:Name="Name" FontSize="18" FontAttributes="Bold" Text="" Grid.Row="1" HorizontalTextAlignment="Center"></Label>
+     <Label x:Name="Description" Text="" Grid.Row="2" HorizontalTextAlignment="Center"></Label>
+  </Grid>
+ 
+</Frame>
