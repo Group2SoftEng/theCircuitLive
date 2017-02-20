@@ -23,7 +23,7 @@ namespace Kuromori.InfoIO
 			string responseContent;
 			using (HttpClient client = new HttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("http://haydenszymanski.me/softeng05/Example2.php");
+				HttpResponseMessage response = await client.GetAsync("http://haydenszymanski.me/softeng05/get_events.php");
 				response.EnsureSuccessStatusCode();
 				responseContent = await response.Content.ReadAsStringAsync();
 			}
