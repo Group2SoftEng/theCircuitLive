@@ -13,7 +13,12 @@ namespace Kuromori
         {
             InitializeComponent();
 
-			this.Detail = new NavigationPage(new EventPage()) { BarBackgroundColor = Color.FromHex("#b71a66")}; 
+			this.Detail = new NavigationPage(
+				new SignInPage()
+			) { 
+				BarBackgroundColor = Color.FromHex("#b71a66")
+			}; 
+
 			this.Master = new SideNav() { Title = "Cmon" };
         }
     }

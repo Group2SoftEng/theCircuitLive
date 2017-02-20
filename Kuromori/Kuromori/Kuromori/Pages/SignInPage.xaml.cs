@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Kuromori.InfoIO;
 
 namespace Kuromori
 {
@@ -16,5 +17,11 @@ namespace Kuromori
             InitializeComponent();
             
         }
+
+		void OnRegisterClick(object sender, EventArgs args)
+		{
+			PostRequest post = new PostRequest();
+			post.Send_Post(Username.Text, Password.Text);
+		}
     }
 }

@@ -17,9 +17,47 @@
           <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Text="Username" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand"></Entry>
-        
+        <Label 
+			Text="Username" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+		</Label>
+
+        <Entry
+			x:Name="Username"
+			Grid.Row="1" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center" 
+			BackgroundColor="Aqua" 
+			HorizontalOptions="FillAndExpand">
+		</Entry>
+
+		<Label 
+			Text="Password" 
+			Grid.Row="2" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+		</Label>        
+
+		<Entry 
+			x:Name="Password"
+			Grid.Row="3" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center" 
+			BackgroundColor="Aqua" 
+			HorizontalOptions="FillAndExpand">
+		</Entry> 
+
+		<Button
+			Text="Register"
+			HorizontalOptions="Center"
+			VerticalOptions="CenterAndExpand"
+			Grid.Row="4"
+			Grid.Column="1"
+			Clicked="OnRegisterClick"
+		/>
+
       </Grid>
     </Frame>
   </StackLayout>
