@@ -17,8 +17,6 @@ namespace Kuromori
         public App()
         {
             InitializeComponent();
-			PostRequest post= new PostRequest();
-			post.Send_Post("yippyyy", "dakdjhawd");
             MainPage = new MainPage();
         }
 

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kuromori.SignInPage"
              Title="Sign In">
   
   <StackLayout Margin="20">
-    <Frame Padding="2" BackgroundColor="Red">
+    <Frame Padding="2">
       <Grid BackgroundColor="White" Padding="0" Margin="0">
         <Grid.RowDefinitions>
-          <RowDefinition Height="Auto"></RowDefinition>
-          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
           <ColumnDefinition></ColumnDefinition>
@@ -29,7 +30,6 @@
 			Grid.Row="1" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
-			BackgroundColor="Aqua" 
 			HorizontalOptions="FillAndExpand">
 		</Entry>
 
@@ -45,12 +45,11 @@
 			Grid.Row="3" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
-			BackgroundColor="Aqua" 
-			HorizontalOptions="FillAndExpand">
+		>
 		</Entry> 
 
 		<Button
-			Text="Register"
+			Text="Login"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
 			Grid.Row="4"

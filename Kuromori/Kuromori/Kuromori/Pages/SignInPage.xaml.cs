@@ -21,7 +21,7 @@ namespace Kuromori
 		void OnRegisterClick(object sender, EventArgs args)
 		{
 			PostRequest post = new PostRequest();
-			post.Send_Post(Username.Text, Password.Text);
+			post.User_Login(Username.Text, Password.Text);
 		}
     }
 }

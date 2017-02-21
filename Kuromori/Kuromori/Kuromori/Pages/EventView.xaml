@@ -33,25 +33,63 @@
     <RowDefinition Height="Auto"></RowDefinition>
   </Grid.RowDefinitions>
 
+
   <Grid.ColumnDefinitions>
     <ColumnDefinition Width="*"></ColumnDefinition>
   </Grid.ColumnDefinitions> 
 
-  <Label Text="" TextColor="Black" x:Name="Date"  HorizontalTextAlignment="Center" Grid.Row="0" FontSize="18" FontAttributes="Bold"/>
-  <Label Text="Topic: " TextColor="Black" x:Name="Topic" HorizontalTextAlignment="Center" Grid.Row="1"/>
-  <Label Text="" TextColor="Black" x:Name="Description" HorizontalTextAlignment="Center" Grid.Row="2"/>
+	<Label 
+		Text="" 
+		TextColor="Black" 
+		x:Name="Date"  
+		HorizontalTextAlignment="Center" 
+		Grid.Row="0" 
+		FontSize="18" 
+		FontAttributes="Bold"
+	/>
 
-</Grid>
+	<Label 
+		Text="Topic: " 
+		TextColor="Black" 
+		x:Name="Topic" 
+		HorizontalTextAlignment="Center" 
+		Grid.Row="1"
+	/>
 
-<Image x:Name="Image" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" HorizontalOptions="CenterAndExpand"></Image>
+	<Label Text="" 
+		TextColor="Black" 
+		x:Name="Description" 
+		HorizontalTextAlignment="Center" 
+		Grid.Row="2"
+	/>
 
-<Label Text="" x:Name="Speaker" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
-       Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-<StackLayout x:Name="Layout" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></StackLayout>
+	</Grid>
 
+	<Image 
+		x:Name="Image" 
+		Grid.Row="1" 
+		Grid.ColumnSpan="3" 
+		Grid.Column="0" 
+		HorizontalOptions="CenterAndExpand">
+	</Image>
 
+	<Label 
+		Text="" 
+		x:Name="Speaker" 
+		FontSize="20" 
+		FontAttributes="Bold" 
+		HorizontalTextAlignment="Center"
+		Grid.Row="2" 
+		Grid.Column="0" 
+		Grid.ColumnSpan="3">
+	</Label>
 
-
+	<StackLayout 
+		x:Name="Layout" 
+		Grid.Row="3" 
+		Grid.Column="0" 
+		Grid.ColumnSpan="3">
+	</StackLayout>
 
 </Grid>
 
