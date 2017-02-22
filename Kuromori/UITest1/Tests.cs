@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
+using System.Diagnostics;
 
 namespace UITest1
 {
@@ -36,24 +37,20 @@ namespace UITest1
             Assert.AreEqual(1, 1);
         }
 
-        [Test]
-        public void Speaker()
-        {
-            app.WaitForElement("Speakers");
-        }
+        //Speaker Element Loads
+        //[Test]
+     //   public void Speaker()
+     //   {
+            
+      //      app.WaitForElement(c => c.Marked("Speaker"), "Timed out waiting for Logged In popup");
+          
+       // }
 
         [Test]
-        public void TapImage()
+        public void SignIn()
         {
-            app.Tap(c => c.Marked("Image"));
-            //app.Tap("noImage");
-        }
-
-        [Test]
-        public void FindDate()
-        {
-            app.Query("Topic:"); 
-            //app.Tap("noImage");
+            //app.Tap("Sign In");
+            app.Tap(c => c.Marked("Sign In"));
         }
     }
 }
