@@ -6,6 +6,20 @@
              x:Class="Kuromori.MainPage"
              Title ="Main"
 	MasterBehavior="Popover">
-    
-         <local:EventPage></local:EventPage>
+
+	<MasterDetailPage.Master>
+		<local:SideNav 
+			x:Name="SideNav" 
+			Title="Nav"
+		/>
+	</MasterDetailPage.Master>
+	<MasterDetailPage.Detail>
+		<NavigationPage BarBackgroundColor="#b71a66">
+			<x:Arguments>
+				<local:SplashPage
+			/>
+			</x:Arguments>
+		</NavigationPage>
+	</MasterDetailPage.Detail>
+
 </MasterDetailPage>

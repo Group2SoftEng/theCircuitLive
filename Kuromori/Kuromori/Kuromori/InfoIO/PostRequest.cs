@@ -40,6 +40,37 @@ namespace Kuromori.InfoIO
 			return webResponse;
 		}
 
+		public Boolean UserExists(string user, string pass)
+		{
+
+			Boolean res = false;
+
+			var client = new HttpClient();
+			var pairs = new List<KeyValuePair<string, string>>
+			{
+				new KeyValuePair<string, string>("username", user),
+				new KeyValuePair<string, string>("password", pass)
+			};
+
+			var content = new FormUrlEncodedContent(pairs);
+
+			var response = client.PostAsync(
+				"http://haydenszymanski.me/softeng05/validate_user.php"
+				, content).Result;
+
+			if (response.IsSuccessStatusCode)
+			{
+				var contents = response.Content.ReadAsStringAsync();
+				Debug.WriteLine(contents.Result);
+				if (contents.Result.Equals("success"))
+				{
+					res = true;
+				}
+			}
+			client.Dispose();
+			return res;
+		}
+
 	}
 
 }

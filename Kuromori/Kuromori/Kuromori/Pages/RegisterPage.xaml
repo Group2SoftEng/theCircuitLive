@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.RegisterPage">
+	<ContentPage.Content>
+	<StackLayout Margin="20">
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kuromori.SignInPage"
-             Title="Sign In">
-  
-  <StackLayout Margin="20">
-    <Frame Padding="2">
+	<Frame Padding="2">
+
       <Grid BackgroundColor="White" Padding="0" Margin="0">
         <Grid.RowDefinitions>
+          <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -26,7 +26,8 @@
 		</Label>
 
         <Entry
-			x:Name="Username"
+			x:Name="TryUsername"
+			Text=""
 			Grid.Row="1" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
@@ -41,26 +42,48 @@
 		</Label>        
 
 		<Entry 
-			x:Name="Password"
+			x:Name="TryPassword"
+			Text=""
 			Grid.Row="3" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
 		>
 		</Entry> 
 
+		<Label 
+			Text="Reenter password" 
+			Grid.Row="4" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+		</Label>        
+
+		<Entry 
+			x:Name="ReTryPassword"
+			Text=""
+			Grid.Row="5" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center" 
+		>
+		</Entry> 
+
 		<Button
-			Text="Login"
+			Text="Next"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
-			Grid.Row="4"
+			Grid.Row="6"
 			Grid.Column="1"
 			BackgroundColor="#b71a66"
 			TextColor="White"
-			Clicked="OnRegisterClick"
+			Clicked = "OnNextClick"
 
 		/>
 
       </Grid>
     </Frame>
-  </StackLayout>
+
+
+
+
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
