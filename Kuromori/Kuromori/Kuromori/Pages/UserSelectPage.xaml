@@ -1,5 +1,87 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.UserSelectPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<ContentPage 
+
+		Padding = "0" 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Kuromori.UserSelectPage"
+		Title="The Circuit"
+	>
+
+<ContentPage.Content>
+
+<Grid BackgroundColor="White" Padding="0" Margin="0">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1*"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+      <RowDefinition Height="4*"></RowDefinition>
+
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="111*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <Image
+    	Grid.Row = "0"
+    	Grid.RowSpan = "2"
+		Grid.Column = "0"
+		x:Name="SelectLogo"
+		HorizontalOptions = "FillAndExpand"
+
+	/>
+
+	<Button 
+
+		x:Name="SignIn"
+		TextColor="White"
+		Text="Sign In"
+		BackgroundColor="#b71a66"
+		Grid.Row="2"
+		Grid.Column="0"
+		HorizontalOptions="Center"
+		WidthRequest = "200"
+		HeightRequest = "50"
+		Clicked = "OnSignInClick"
+
+	/>
+
+	<Button 
+
+		x:Name="Register"
+		Text="Register"
+		TextColor="White"
+		BackgroundColor="#b71a66"
+		Grid.Row="3"
+		Grid.Column="0"
+		HorizontalOptions="Center"
+		WidthRequest = "200"
+		HeightRequest = "50"
+		Clicked = "OnRegisterClick"
+
+	/>
+
+	<Button 
+
+		x:Name="Guest"
+		Text="Guest Access"
+		TextColor="White"
+		BackgroundColor="#b71a66"
+		Grid.Row="4"
+		Grid.Column="0"
+		HorizontalOptions="Center"
+		WidthRequest = "200"
+		HeightRequest = "50"
+		Clicked = "OnGuestClick"
+
+	/>
+
+</Grid>
+
+</ContentPage.Content>
+
 </ContentPage>

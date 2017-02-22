@@ -15,7 +15,6 @@ namespace Kuromori
         public SignInPage()
         {
             InitializeComponent();
-            
         }
 
 		void OnRegisterClick(object sender, EventArgs args)
