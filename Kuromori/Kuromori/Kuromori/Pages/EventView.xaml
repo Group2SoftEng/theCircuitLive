@@ -1,48 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Frame xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.EventView"
-       Padding="4"
-       BackgroundColor="#b71a66"
-       HasShadow="True">
-  
-  <Grid Padding="4" BackgroundColor="White" Margin="1">
+
+<Frame 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.EventView"
+	Padding="0"
+	BackgroundColor="White"
+	VerticalOptions = "Start"
+	HorizontalOptions = "Center"
+	HasShadow = "true"
+	OutlineColor = "White"
+	>
+
+<Grid Padding="4" BackgroundColor="White" Margin="1" >
+<Grid.RowDefinitions>
+<RowDefinition Height="Auto" />
+<RowDefinition Height="3*" />
+<RowDefinition Height="Auto" />
+<RowDefinition Height="Auto"></RowDefinition>
+
+</Grid.RowDefinitions>
+<Grid.ColumnDefinitions>
+<ColumnDefinition Width="Auto" />
+<ColumnDefinition Width="*" />
+<ColumnDefinition Width="*"/>
+</Grid.ColumnDefinitions>
+
+
+<Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
   <Grid.RowDefinitions>
-    <RowDefinition Height="Auto" />
-    <RowDefinition Height="3*" />
-    <RowDefinition Height="Auto" />
     <RowDefinition Height="Auto"></RowDefinition>
-
+    <RowDefinition Height="Auto"></RowDefinition>
+    <RowDefinition Height="Auto"></RowDefinition>
   </Grid.RowDefinitions>
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="Auto" />
-    <ColumnDefinition Width="*" />
-    <ColumnDefinition Width="*"/>
-  </Grid.ColumnDefinitions>
-    
-    
-    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#b71a66">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"></RowDefinition>
-        <RowDefinition Height="Auto"></RowDefinition>
-        <RowDefinition Height="Auto"></RowDefinition>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-      </Grid.ColumnDefinitions> 
-      <Label Text="" TextColor="White" x:Name="Date"  HorizontalTextAlignment="Center" Grid.Row="0" FontSize="18" FontAttributes="Bold"/>
-      <Label Text="Topic: " TextColor="White" x:Name="Topic" HorizontalTextAlignment="Center" Grid.Row="1"/>
-      <Label Text="" TextColor="White" x:Name="Description" HorizontalTextAlignment="Center" Grid.Row="2"/>
-    </Grid>
 
-    
-    <Image x:Name="Image" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" HorizontalOptions="CenterAndExpand"></Image>
-    
-    <Label Text="" x:Name="Speaker" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
-           Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-    <StackLayout x:Name="Layout" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></StackLayout>
-  
-  
-  
- 
- 
-  </Grid>
+
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*"></ColumnDefinition>
+  </Grid.ColumnDefinitions> 
+
+	<Label 
+		Text="" 
+		TextColor="Black" 
+		x:Name="Date"  
+		HorizontalTextAlignment="Center" 
+		Grid.Row="0" 
+		FontSize="18" 
+		FontAttributes="Bold"
+	/>
+
+	<Label 
+		Text="Topic: " 
+		TextColor="Black" 
+		x:Name="Topic" 
+		HorizontalTextAlignment="Center" 
+		Grid.Row="1"
+	/>
+
+	<Label Text="" 
+		TextColor="Black" 
+		x:Name="Description" 
+		HorizontalTextAlignment="Center" 
+		Grid.Row="2"
+	/>
+
+	</Grid>
+
+	<Image 
+		x:Name="Image" 
+		Grid.Row="1" 
+		Grid.ColumnSpan="3" 
+		Grid.Column="0" 
+		HorizontalOptions="CenterAndExpand">
+	</Image>
+
+	<Label 
+		Text="" 
+		x:Name="Speaker" 
+		FontSize="20" 
+		FontAttributes="Bold" 
+		HorizontalTextAlignment="Center"
+		Grid.Row="2" 
+		Grid.Column="0" 
+		Grid.ColumnSpan="3">
+	</Label>
+
+	<StackLayout 
+		x:Name="Layout" 
+		Grid.Row="3" 
+		Grid.Column="0" 
+		Grid.ColumnSpan="3">
+	</StackLayout>
+
+</Grid>
+
 </Frame>

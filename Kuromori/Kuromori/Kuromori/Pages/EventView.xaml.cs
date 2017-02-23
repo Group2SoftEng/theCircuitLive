@@ -28,11 +28,13 @@ namespace Kuromori
         /// <param name="anEvent">Event object to be rendered on event page</param>
         public EventView(Event anEvent)
         {
+
             InitializeComponent();
             Label eventTopic = this.FindByName<Label>("Topic");
             Label eventDesc = this.FindByName<Label>("Description");
             Label eventDate = this.FindByName<Label>("Date");
             Image eventImage = this.FindByName<Image>("Image");
+
             eventTopic.FontSize = 16;
             eventTopic.FontAttributes = FontAttributes.Bold;
             eventDate.Text = EventAdapter.ConvertDate(anEvent.EventDate); // Jacksons code <<<< 
@@ -40,7 +42,6 @@ namespace Kuromori
             eventDesc.Text = anEvent.EventDescription;
 
             CultureInfo provider = CultureInfo.InvariantCulture;
-
            
             // This is the action that is executed when the event image is clicked.
             eventImage.GestureRecognizers.Add(new TapGestureRecognizer
@@ -53,11 +54,10 @@ namespace Kuromori
                     }
                     catch (FormatException res)
                     {
-                        
+						
                     }
                 })
             });
-
 
             //Set image to the event image, if there is an error (no image, or malformed uri)
             //Set a default image. 
@@ -77,16 +77,11 @@ namespace Kuromori
                 this.FindByName<Label>("Speaker").Text = "Speakers";
             }
 
-            //For every speaker create a speaker form them under this event
-            foreach (Speaker speaker in anEvent.EventSpeakers)
-            {
-                this.FindByName<StackLayout>("Layout").Children.Add(new SpeakerView(speaker));
-            }
-            
-           
-
-            
-
+			//For every speaker create a speaker form them under this event
+			foreach (Speaker speaker in anEvent.EventSpeakers)
+			{
+				this.FindByName<StackLayout>("Layout").Children.Add(new SpeakerView(speaker));
+			}
         }
     }
 }

@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.SideNav">
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Kuromori.SideNav"
+		BackgroundColor="Gray"
+>
+
 	<ContentPage.Content>
-		<StackLayout Margin="20">
-		<ListView x:Name="layout">
-			
-		</ListView>
+
+		<StackLayout 
+			Margin="20"
+			VerticalOptions="FillAndExpand"
+		>
+
+			<ListView 
+				x:Name="listView"
+				VerticalOptions="FillAndExpand"
+				SeparatorVisibility="Default"
+			>
+
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ImageCell 
+							Text="{Binding Title}" 
+						    TextColor="Aqua"
+						/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+					
+			</ListView>			
+
 
 		</StackLayout>
+
 	</ContentPage.Content>
 </ContentPage>

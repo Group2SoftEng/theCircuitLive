@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kuromori.EventPage"
-             Padding="0"
-             Title="Events"
-             BackgroundColor="Silver">
-  
+<ContentPage 
+			xmlns="http://xamarin.com/schemas/2014/forms"
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			x:Class="Kuromori.EventPage"
+			Padding="8"
+			Title="Events"
+			BackgroundColor="White"
+			>
   
   <ScrollView x:Name="scroll">
+<Frame>
   <StackLayout x:Name="Layout" Spacing="28"/>
+</Frame>
   </ScrollView>
-  
+
 </ContentPage>
