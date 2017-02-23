@@ -26,11 +26,14 @@ namespace UITest1
             app = AppInitializer.StartApp(platform);
         }
 
+        //App launches
         [Test]
         public void AppLaunches()
         {
             app.Screenshot("Main");
         }
+
+        //Test cases work
         [Test]
         public void TestThing()
         {
