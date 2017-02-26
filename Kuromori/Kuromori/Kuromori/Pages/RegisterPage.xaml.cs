@@ -51,12 +51,14 @@ namespace Kuromori
 					TryPassword.Text = "";
 					ReTryPassword.Text = "";
 				}
-				//Compare password fields
-				//Check password validaty
+                //Compare password fields
+                //Check password validaty
 
-				//See if username exists
+                //See if username exists
 
-			}
+                //Push ProfileUpdatePage on stack. 
+                Navigation.PushAsync(new ProfileUpdatePage());
+            }
 
 			else 
 			{
