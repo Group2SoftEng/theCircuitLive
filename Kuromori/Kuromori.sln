@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kuromori.iOS", "Kuromori\Kuromori.iOS\Kuromori.iOS.csproj", "{810EA5A2-580C-4AE3-B575-31930545C3FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITest1", "UITest1\UITest1.csproj", "{D259C090-8658-4CBD-94BA-7CAEA9478C72}"
+	ProjectSection(ProjectDependencies) = postProject
+		{810EA5A2-580C-4AE3-B575-31930545C3FA} = {810EA5A2-580C-4AE3-B575-31930545C3FA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

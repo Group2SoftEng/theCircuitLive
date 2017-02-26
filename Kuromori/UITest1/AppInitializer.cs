@@ -4,7 +4,7 @@ using System.Linq;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace UITest1
+namespace Kuromori.DataStructure
 {
     public class AppInitializer
     {
@@ -15,7 +15,7 @@ namespace UITest1
                 return ConfigureApp
                    
                     .Android
-                    .ApkFile("C:/Users/Daniel/Source/Repos/theCircuitLive/Kuromori.Droid.apk")
+                    .ApkFile(@"C:/Users/Daniel/Source/Repos/theCircuitLive/Kuromori/Kuromori/Kuromori.Droid/bin/Debug/Kuromori.Droid.apk")
                     .StartApp();
 
             }

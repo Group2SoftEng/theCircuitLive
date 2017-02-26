@@ -27,6 +27,9 @@
 
         <Entry
 			x:Name="Username"
+      StyleId="Username1"
+      AutomationId = "Username1"
+      ClassId ="Username1"
 			Grid.Row="1" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
