@@ -34,7 +34,11 @@ namespace Kuromori
 
 						else
 						{
-
+							/// <summary>
+							/// 
+							/// </summary>
+							/// <returns><c>true</c>, if proper password was ised, <c>false</c> otherwise.</returns>
+							// Success
 						}
 					}
 					else {
@@ -57,7 +61,7 @@ namespace Kuromori
                 //See if username exists
 
                 //Push ProfileUpdatePage on stack. 
-                Navigation.PushAsync(new ProfileUpdatePage());
+                //Navigation.PushAsync(new ProfileUpdatePage());
             }
 
 			else 
