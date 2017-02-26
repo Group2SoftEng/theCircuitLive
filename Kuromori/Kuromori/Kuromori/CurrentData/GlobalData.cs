@@ -12,6 +12,5 @@ namespace Kuromori
     {
         public static Event[] CurrentEvents;
 
-       
     }
 }

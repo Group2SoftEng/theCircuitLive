@@ -22,8 +22,6 @@ namespace Kuromori
 			});
 
 			listView.ItemsSource = SideNavItems;
-
-
 		}
 	}
 }

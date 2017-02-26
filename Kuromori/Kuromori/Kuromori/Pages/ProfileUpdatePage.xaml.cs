@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Kuromori.InfoIO;
 
-namespace Kuromori.Pages
+namespace Kuromori
 {
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -18,9 +18,9 @@ namespace Kuromori.Pages
             InitializeComponent();
         }
 
-        /*void OnProfileEditClick(object sender, EventArgs args)
+        void OnProfileEditClick(object sender, EventArgs args)
         {
 
-        }*/
+        }
     }
 }
