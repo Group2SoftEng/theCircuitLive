@@ -5,60 +5,62 @@
             <Frame Padding="2">
                 <Grid BackgroundColor="White" Padding="0" Margin="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="4*"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
 
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                    <Image 
-		x:Name="ProfileImage"
-		Grid.Row="0" 
-		Grid.ColumnSpan="1" 
-		Grid.Column="0" 
-		HorizontalOptions="CenterAndExpand">
-                    </Image>
+                        <Image 
+		                     x:Name="ProfileImage"
+		                     Grid.Column="0"
+                            HeightRequest="70"
+                            WidthRequest="70">
+                        </Image>
 
-                    <Label 
-			Text="Name" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-                    </Label>
+                        <StackLayout Spacing="5" x:Name="Layout" Grid.Column="1">
+                            <Label 
+			                    Text="First Last" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
 
-                    <Label 
-			Text="Email" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-                    </Label>
+                            <Label 
+			                    Text="UserName_21" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
 
-                    <Label 
-			Text="Phone" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-                    </Label>
+                            <Label 
+			                    Text="email@email.com" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
 
-                    <Label 
-			Text="Address" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-                    </Label>
+                            <Label 
+			                    Text="1(800)-123-4567" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
+                        </StackLayout>
+                    </Grid>
 
                     <Label 
-			Text="All Events" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
+			            Text="About Me:" 
+			            HorizontalTextAlignment="Start"
+                        FontAttributes="Bold"
+                        Grid.Row="1">
                     </Label>
+                    
+                    <Label 
+			            Text="UserName_21 PME FPSO M GPOM PD M osidnvos ins podin ds oinsd osd nldsk n" 
+			            HorizontalTextAlignment="Start"
+                        Grid.Row="2">
+                    </Label>
+
+
+
 
                 </Grid>
             </Frame>
