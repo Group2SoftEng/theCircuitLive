@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Frame Padding="2">
+                <Grid BackgroundColor="White" Padding="0" Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Image 
+		x:Name="ProfileImage"
+		Grid.Row="0" 
+		Grid.ColumnSpan="1" 
+		Grid.Column="0" 
+		HorizontalOptions="CenterAndExpand">
+                    </Image>
+
+                    <Label 
+			Text="Name" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+                    </Label>
+
+                    <Label 
+			Text="Email" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+                    </Label>
+
+                    <Label 
+			Text="Phone" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+                    </Label>
+
+                    <Label 
+			Text="Address" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+                    </Label>
+
+                    <Label 
+			Text="All Events" 
+			Grid.Row="0" 
+			Grid.Column="1" 
+			HorizontalTextAlignment="Center">
+                    </Label>
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -34,12 +34,13 @@ namespace Kuromori
 
 						else
 						{
-							/// <summary>
-							/// 
-							/// </summary>
-							/// <returns><c>true</c>, if proper password was ised, <c>false</c> otherwise.</returns>
-							// Success
-						}
+                            /// <summary>
+                            /// 
+                            /// </summary>
+                            /// <returns><c>true</c>, if proper password was ised, <c>false</c> otherwise.</returns>
+                            // Success
+                            Navigation.PushAsync(new ProfilePage());
+                        }
 					}
 					else {
 						DisplayAlert("Improper Password", "Passwords must contain at least 8 characters with" +
