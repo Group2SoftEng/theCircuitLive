@@ -71,6 +71,25 @@ namespace Kuromori.InfoIO
 			return res;
 		}
 
+		public PostResponseItem PostInfo(List<KeyValuePair<string,string>> pairs, string url)
+		{
+			PostResponseItem result = new PostResponseItem();
+			var client = new HttpClient();
+			var content = new FormUrlEncodedContent(pairs);
+
+			var response = client.PostAsync(url, content).Result;
+			if (response.IsSuccessStatusCode)
+			{
+				var contents = response.Content.ReadAsStringAsync();
+				Debug.WriteLine(contents.Result);
+				result.ResponseSuccess = response.IsSuccessStatusCode;
+				result.ResponseInfo = contents.Result;
+			}
+			client.Dispose();
+
+			return result;
+		}
+
 	}
 
 }

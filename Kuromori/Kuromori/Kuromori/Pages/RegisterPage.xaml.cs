@@ -34,11 +34,6 @@ namespace Kuromori
 
 						else
 						{
-							/// <summary>
-							/// 
-							/// </summary>
-							/// <returns><c>true</c>, if proper password was ised, <c>false</c> otherwise.</returns>
-							// Success
 						}
 					}
 					else {
@@ -53,7 +48,6 @@ namespace Kuromori
 								 "Please make sure passwords match",
 								 "Continue");
 					TryPassword.Text = "";
-					ReTryPassword.Text = "";
 				}
                 //Compare password fields
                 //Check password validaty
@@ -90,7 +84,11 @@ namespace Kuromori
 		{
 			PostRequest post = new PostRequest();
 			Debug.WriteLine(post.UserExists(TryUsername.Text, TryPassword.Text));
-			return post.UserExists(TryUsername.Text, TryPassword.Text);
+			//return post.UserExists(TryUsername.Text, TryPassword.Text);
+			return post.PostInfo(new List<KeyValuePair<string, string>>{
+				new KeyValuePair<string, string>("username", TryUsername.Text),
+				new KeyValuePair<string, string>("password", TryPassword.Text)
+			}, "http://haydenszymanski.me/softeng05/validate_user.php").ResponseSuccess;
 		}
 
 		Boolean PasswordsMatch()

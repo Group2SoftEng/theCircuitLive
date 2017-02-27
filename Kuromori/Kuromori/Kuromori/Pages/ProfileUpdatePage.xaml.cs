@@ -20,7 +20,7 @@ namespace Kuromori
 
         void OnProfileEditClick(object sender, EventArgs args)
         {
-
+			
         }
     }
 }
