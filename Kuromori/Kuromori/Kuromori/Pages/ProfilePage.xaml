@@ -3,7 +3,7 @@
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Frame Padding="2">
-                <Grid BackgroundColor="White" Padding="0" Margin="0">
+                <Grid BackgroundColor="White" Padding="10" Margin="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
@@ -23,7 +23,7 @@
                             WidthRequest="70">
                         </Image>
 
-                        <StackLayout Spacing="5" x:Name="Layout" Grid.Column="1">
+                        <StackLayout Spacing="5" x:Name="ProfileLayout" Grid.Column="1">
                             <Label 
 			                    Text="First Last" 
 			                    HorizontalTextAlignment="Center">

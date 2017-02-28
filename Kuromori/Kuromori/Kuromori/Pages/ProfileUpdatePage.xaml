@@ -69,25 +69,10 @@
 		>
                         </Entry>
 
-                        <Label
-            Text="Email"
-            Grid.Row="6"
-            Grid.Column="1"
-            HorizontalTextAlignment="Center">
-                        </Label>
-
-                        <Entry
-            x:Name="EmailAddr"
-            Text=""
-            Grid.Row="7"
-            Grid.Column="1"
-            HorizontalTextAlignment="Center"
-		>
-                        </Entry>
 
                         <Label
             Text="Confirm Email"
-            Grid.Row="8"
+            Grid.Row="6"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
                         </Label>
@@ -95,20 +80,36 @@
                         <Entry
             x:Name="ConfirmEmailAddr"
             Text=""
-            Grid.Row="9"
+            Grid.Row="7"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
                         </Entry>
                         <Label
             Text="Phone Number"
-            Grid.Row="10"
+            Grid.Row="8"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
                         </Label>
 
                         <Entry
             x:Name="PhoneNum"
+            Text=""
+            Grid.Row="9"
+            Grid.Column="1"
+            HorizontalTextAlignment="Center"
+		>
+                        </Entry>
+
+                        <Label
+            Text="Address"
+            Grid.Row="10"
+            Grid.Column="1"
+            HorizontalTextAlignment="Center">
+                        </Label>
+
+                        <Entry
+            x:Name="Address"
             Text=""
             Grid.Row="11"
             Grid.Column="1"
@@ -117,14 +118,14 @@
                         </Entry>
 
                         <Label
-            Text="Address"
+            Text="Profile Image"
             Grid.Row="12"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
                         </Label>
 
                         <Entry
-            x:Name="Address"
+            x:Name="ProfileImage"
             Text=""
             Grid.Row="13"
             Grid.Column="1"
@@ -133,20 +134,19 @@
                         </Entry>
 
                         <Label
-            Text="Profile Image"
+            Text="About Me"
             Grid.Row="14"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
                         </Label>
 
-                        <Entry
-            x:Name="ProfileImage"
+                        <Editor
+            x:Name="AboutMe"
             Text=""
             Grid.Row="15"
             Grid.Column="1"
-            HorizontalTextAlignment="Center"
 		>
-                        </Entry>
+                        </Editor>
 
                         <Button
             Text="Submit"
