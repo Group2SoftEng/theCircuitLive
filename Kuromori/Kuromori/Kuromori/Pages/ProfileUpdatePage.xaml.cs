@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Kuromori.InfoIO;
-
+using System.Diagnostics;
 namespace Kuromori
 {
 
@@ -16,6 +16,7 @@ namespace Kuromori
         public ProfileUpdatePage()
         {
             InitializeComponent();
+			Debug.WriteLine(ActiveUser.CurrentUser.Id);
         }
 
         void OnProfileEditClick(object sender, EventArgs args)
@@ -24,3 +25,4 @@ namespace Kuromori
         }
     }
 }
+

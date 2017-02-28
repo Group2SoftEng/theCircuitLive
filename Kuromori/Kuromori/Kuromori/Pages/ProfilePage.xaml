@@ -25,16 +25,19 @@
 
                         <StackLayout Spacing="5" x:Name="ProfileLayout" Grid.Column="1">
                             <Label 
+                            	x:Name="Name"
 			                    Text="First Last" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
+								x:Name="Username"
 			                    Text="UserName_21" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
+                            	x:Name="Email"
 			                    Text="email@email.com" 
 			                    HorizontalTextAlignment="Center">
                             </Label>

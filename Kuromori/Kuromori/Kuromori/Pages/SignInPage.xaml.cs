@@ -42,7 +42,6 @@ namespace Kuromori
 					}, "http://haydenszymanski.me/softeng05/get_user.php");
 					Device.BeginInvokeOnMainThread(() =>
 					{
-						Debug.WriteLine(ActiveUser.CurrentUser.Id);
 						Navigation.InsertPageBefore(new ProfilePage(), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
 					});
