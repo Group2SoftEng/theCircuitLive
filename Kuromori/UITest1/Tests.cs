@@ -7,6 +7,10 @@ using Xamarin.UITest.Queries;
 using System.Diagnostics;
 using Kuromori.DataStructure;
 using System.Threading;
+using Kuromori;
+using Kuromori.InfoIO;
+using Kuromori.DataAdapters;
+
 
 namespace Kuromori.DataStructure
 {
@@ -49,7 +53,10 @@ namespace Kuromori.DataStructure
             app.Repl();
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
+            app.Invoke("RegisterPage");
             app.Tap(c => c.Marked("Next"));
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.True("Usernames must be 6 to 15 characters long, with no special characters".Equals(Result[0]));
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -277,6 +284,14 @@ namespace Kuromori.DataStructure
             app.Tap(c => c.Marked("Continue"));
 
         }
+
+
+        [Test]
+        public void SimpleMethodTest()
+        {
+            
+        }
     }
+
 }
 

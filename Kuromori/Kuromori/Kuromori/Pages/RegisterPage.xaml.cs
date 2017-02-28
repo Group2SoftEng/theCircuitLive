@@ -4,12 +4,12 @@ using Kuromori.InfoIO;
 using System.Diagnostics;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
-
+using Java.Interop;
 namespace Kuromori
 {
-	public partial class RegisterPage : ContentPage
+    
+    public partial class RegisterPage : ContentPage
 	{
-
 		public RegisterPage()
 		{
 			InitializeComponent();

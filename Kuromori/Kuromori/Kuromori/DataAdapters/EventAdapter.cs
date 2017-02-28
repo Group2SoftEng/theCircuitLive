@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Threading.Tasks;
 using Kuromori.DataStructure;
 using Kuromori.InfoIO;
+using Java.Interop;
 
 namespace Kuromori.DataAdapters
 {
@@ -16,12 +17,14 @@ namespace Kuromori.DataAdapters
         /// 
         /// </summary>
         /// <returns></returns>
+        [Export("Task")]
         public static async Task<Event[]> LoadEvents()
         {
             Events events = await EventConnection.GetEventData();
             return events.EventSet;
         }
 
+        [Export("ConvertDate")]
         public static string ConvertDate(string date)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
