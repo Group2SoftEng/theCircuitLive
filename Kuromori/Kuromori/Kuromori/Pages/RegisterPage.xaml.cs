@@ -28,12 +28,19 @@ namespace Kuromori
 						if (UserExists())
 						{
 							DisplayAlert("Username already exists",
-							            "",""
+							            "jj","i"
 							            );
 						}
 
 						else
 						{
+							Debug.WriteLine("succ");
+							PostRequest post = new PostRequest();
+							post.PostInfo(new List<KeyValuePair<string, string>> {
+								new KeyValuePair<string, string>("username", TryUsername.Text),
+								new KeyValuePair<string, string>("password", TryPassword.Text)}, 
+							              "http://haydenszymanski.me/softeng05/register_user.php");
+
 						}
 					}
 					else 
@@ -78,12 +85,11 @@ namespace Kuromori
 		Boolean UserExists()
 		{
 			PostRequest post = new PostRequest();
-			Debug.WriteLine(post.UserExists(TryUsername.Text, TryPassword.Text));
+			Debug.WriteLine("UserExist");
 			//return post.UserExists(TryUsername.Text, TryPassword.Text);
 			return post.PostInfo(new List<KeyValuePair<string, string>>{
-				new KeyValuePair<string, string>("username", TryUsername.Text),
-				new KeyValuePair<string, string>("password", TryPassword.Text)
-			}, "http://haydenszymanski.me/softeng05/login_user.php").ResponseSuccess;
+				new KeyValuePair<string, string>("username", TryUsername.Text)
+			}, "http://haydenszymanski.me/softeng05/user_exists.php").ResponseInfo.Equals("true");
 		}
 
 		Boolean PasswordsMatch()
