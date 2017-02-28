@@ -1,153 +1,154 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.ProfileUpdatePage">
   <ContentPage.Content>
-    <StackLayout Margin="20">
+        <ScrollView x:Name="scroll">
+            <StackLayout Margin="20">
 
-      <Frame Padding="2">
+                <Frame Padding="2">
 
-        <Grid BackgroundColor="White" Padding="0" Margin="0">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-          </Grid.ColumnDefinitions>
+                    <Grid BackgroundColor="White" Padding="0" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-          <Label
+                        <Label
         Text="First Name"
         Grid.Row="0"
         Grid.Column="1"
         HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
+                        <Entry
         x:Name="FirstName"
         Text=""
         Grid.Row="1"
         Grid.Column="1"
         HorizontalTextAlignment="Center"
         HorizontalOptions="FillAndExpand">
-          </Entry>
+                        </Entry>
 
-          <Label
+                        <Label
             Text="Last Name"
             Grid.Row="2"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
+                        <Entry
             x:Name="LastName"
             Text=""
             Grid.Row="3"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
+                        </Entry>
 
-          <Label
+                        <Label
             Text="Email"
             Grid.Row="4"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="EmailAddr"
+                        <Entry
+            x:Name="EmailAddress"
             Text=""
             Grid.Row="5"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
+                        </Entry>
 
-          <Label
-            Text="Email"
+
+                        <Label
+            Text="Confirm Email"
             Grid.Row="6"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="EmailAddr"
+                        <Entry
+            x:Name="ConfirmEmailAddr"
             Text=""
             Grid.Row="7"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
-
-          <Label
-            Text="Confirm Email"
+                        </Entry>
+                        <Label
+            Text="Phone Number"
             Grid.Row="8"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="ConfirmEmailAddr"
+                        <Entry
+            x:Name="PhoneNum"
             Text=""
             Grid.Row="9"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
-          <Label
-            Text="Phone Number"
+                        </Entry>
+
+                        <Label
+            Text="Address"
             Grid.Row="10"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="PhoneNum"
+                        <Entry
+            x:Name="Address"
             Text=""
             Grid.Row="11"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
+                        </Entry>
 
-          <Label
-            Text="Address"
+                        <Label
+            Text="Profile Image"
             Grid.Row="12"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="Address"
+                        <Entry
+            x:Name="ProfileImage"
             Text=""
             Grid.Row="13"
             Grid.Column="1"
             HorizontalTextAlignment="Center"
 		>
-          </Entry>
+                        </Entry>
 
-          <Label
-            Text="Profile Image"
+                        <Label
+            Text="About Me"
             Grid.Row="14"
             Grid.Column="1"
             HorizontalTextAlignment="Center">
-          </Label>
+                        </Label>
 
-          <Entry
-            x:Name="ProfileImage"
+                        <Editor
+            x:Name="AboutMe"
             Text=""
             Grid.Row="15"
             Grid.Column="1"
-            HorizontalTextAlignment="Center"
 		>
-          </Entry>
-          
-          <Button
+                        </Editor>
+
+                        <Button
             Text="Submit"
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand"
@@ -157,8 +158,9 @@
             TextColor="White"
             Clicked = "OnProfileEditClick"
 		/>
-        </Grid>
-      </Frame>
-    </StackLayout>
-  </ContentPage.Content>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
