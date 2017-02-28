@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Frame Padding="2">
+                <Grid BackgroundColor="White" Padding="10" Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image 
+		                     x:Name="ProfileImage"
+		                     Grid.Column="0"
+                            HeightRequest="70"
+                            WidthRequest="70">
+                        </Image>
+
+                        <StackLayout Spacing="5" x:Name="ProfileLayout" Grid.Column="1">
+                            <Label 
+			                    Text="First Last" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
+
+                            <Label 
+			                    Text="UserName_21" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
+
+                            <Label 
+			                    Text="email@email.com" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
+
+                            <Label 
+			                    Text="1(800)-123-4567" 
+			                    HorizontalTextAlignment="Center">
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <Label 
+			            Text="About Me:" 
+			            HorizontalTextAlignment="Start"
+                        FontAttributes="Bold"
+                        Grid.Row="1">
+                    </Label>
+                    
+                    <Label 
+			            Text="UserName_21 PME FPSO M GPOM PD M osidnvos ins podin ds oinsd osd nldsk n" 
+			            HorizontalTextAlignment="Start"
+                        Grid.Row="2">
+                    </Label>
+
+
+
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
