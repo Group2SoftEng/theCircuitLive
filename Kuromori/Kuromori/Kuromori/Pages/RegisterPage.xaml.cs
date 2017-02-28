@@ -36,7 +36,8 @@ namespace Kuromori
 						{
 						}
 					}
-					else {
+					else 
+					{
 						DisplayAlert("Improper Password", "Passwords must contain at least 8 characters with" +
 						             "at least 1 special character and 1 capital letter", "Continue");
 					}
@@ -49,13 +50,7 @@ namespace Kuromori
 								 "Continue");
 					TryPassword.Text = "";
 				}
-                //Compare password fields
-                //Check password validaty
 
-                //See if username exists
-
-                //Push ProfileUpdatePage on stack. 
-                //Navigation.PushAsync(new ProfileUpdatePage());
             }
 
 			else 
@@ -88,7 +83,7 @@ namespace Kuromori
 			return post.PostInfo(new List<KeyValuePair<string, string>>{
 				new KeyValuePair<string, string>("username", TryUsername.Text),
 				new KeyValuePair<string, string>("password", TryPassword.Text)
-			}, "http://haydenszymanski.me/softeng05/validate_user.php").ResponseSuccess;
+			}, "http://haydenszymanski.me/softeng05/login_user.php").ResponseSuccess;
 		}
 
 		Boolean PasswordsMatch()

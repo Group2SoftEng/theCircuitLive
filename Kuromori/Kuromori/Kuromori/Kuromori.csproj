@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Delegates.cs" />
     <Compile Include="DataStructure\PostResponseItem.cs" />
+    <Compile Include="CurrentData\ActiveUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">

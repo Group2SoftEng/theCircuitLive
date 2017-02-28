@@ -1,4 +1,6 @@
 ﻿using System;
+using Kuromori.DataStructure;
+
 namespace Kuromori
 {
 	public class ActiveUser
@@ -6,5 +8,8 @@ namespace Kuromori
 		public ActiveUser()
 		{
 		}
+
+		public static User CurrentUser { get; set; }
+
 	}
 }
