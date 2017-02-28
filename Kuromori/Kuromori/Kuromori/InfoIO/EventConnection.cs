@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -29,6 +30,21 @@ namespace Kuromori.InfoIO
 			}
 			Events tempEvent = JsonConvert.DeserializeObject<Events>(responseContent);
 			return tempEvent;
+		}
+
+		public static async Task<User> GetUserData(List<KeyValuePair<string,string>> pairs, string url)
+		{
+			string responseContent;
+			using (HttpClient client = new HttpClient())
+			{
+				var content = new FormUrlEncodedContent(pairs);
+				HttpResponseMessage response = await client.PostAsync(url, content);
+				response.EnsureSuccessStatusCode();
+				responseContent = await response.Content.ReadAsStringAsync();
+			}
+			User tempUser = JsonConvert.DeserializeObject<User>(responseContent);
+			return tempUser;
+
 		}
 
 		struct Speaker
