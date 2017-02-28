@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Kuromori.InfoIO;
 using System.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Kuromori
 {
@@ -28,7 +31,7 @@ namespace Kuromori
 						if (UserExists())
 						{
 							DisplayAlert("Username already exists",
-							            "jj","i"
+							            "Please retype username","Continue"
 							            );
 						}
 
@@ -40,6 +43,19 @@ namespace Kuromori
 								new KeyValuePair<string, string>("username", TryUsername.Text),
 								new KeyValuePair<string, string>("password", TryPassword.Text)}, 
 							              "http://haydenszymanski.me/softeng05/register_user.php");
+							Task.Run(async () =>
+							{
+								ActiveUser.CurrentUser = await EventConnection.GetUserData(new List<KeyValuePair<string, string>> {
+									new KeyValuePair<string, string>("username", TryUsername.Text),
+									new KeyValuePair<string, string>("password", TryPassword.Text)
+								}, "http://haydenszymanski.me/softeng05/get_user.php");
+								Device.BeginInvokeOnMainThread(() =>
+								{
+									Navigation.InsertPageBefore(new ProfileUpdatePage(), Navigation.NavigationStack.First());
+									Navigation.PopToRootAsync();
+								});
+							});
+
 
 						}
 					}
