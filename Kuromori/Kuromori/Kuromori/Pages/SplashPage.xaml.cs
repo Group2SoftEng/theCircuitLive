@@ -20,7 +20,7 @@ namespace Kuromori
 
 		void OnButtonClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new UserRegisteredEvents());
+			Navigation.PushAsync(new UserSelectPage());
 		}
 	}
 }
