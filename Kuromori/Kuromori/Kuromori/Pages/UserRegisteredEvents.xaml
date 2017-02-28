@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kuromori.Pages.UserRegisteredEvents">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Frame Padding="2">
+                <Grid BackgroundColor="White" Padding="10" Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Spacing="5" x:Name="UserRegEvent">
+                        <Label
+                            Text="Event A Name Here"
+                            HorizontalTextAlignment="Start"
+                            FontAttributes="Bold"
+                            Grid.Row="0"
+                            Grid.Column="0">
+                        </Label>
+                        <Label
+                            Text="ovidmsaoivmd oivmd moifdm  ifdmsoifm mfoidsm
+                             fdsoimbdoifmbodi mbdoifm bimoifd fd iomdfoi mb smf
+                             sdofmboidf mboidmbf oidmb diobfm di mfoidmfb idmbim"
+                            HorizontalTextAlignment="Start"
+                            Grid.Row="0"
+                            Grid.Column="0">
+                        </Label>
+                        <Button
+                            Text="Details"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="#b71a66"
+                            TextColor="White"
+                            />
+                    </StackLayout>
+                    <Image
+                        x:Name="RegEventSpkr"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HeightRequest="70"
+                        WidthRequest="70">
+                    </Image>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
