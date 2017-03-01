@@ -40,7 +40,11 @@
 			Text="Password" 
 			Grid.Row="2" 
 			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
+			HorizontalTextAlignment="Center"
+			>
+
+
+
 		</Label>        
 
 		<Entry 
@@ -48,6 +52,7 @@
 			Grid.Row="3" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
+			IsPassword="true"
 		>
 		</Entry> 
 

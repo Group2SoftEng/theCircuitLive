@@ -36,6 +36,14 @@ namespace Kuromori
 			{
 				ProfileImage.Source = new Uri("https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg");
 			}
+		}
+		void FindClick(object sender, EventArgs args)
+		{
+			Navigation.PushAsync(new EventPage());
+
+		}
+		void MyEventsClick(object sender, EventArgs args)
+		{
 
 		}
     }

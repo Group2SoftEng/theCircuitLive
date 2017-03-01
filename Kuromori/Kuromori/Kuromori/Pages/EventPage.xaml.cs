@@ -19,7 +19,7 @@ namespace Kuromori
             InitializeComponent();
             ScrollView scroll = this.FindByName<ScrollView>("scroll");
             Debug.WriteLine(scroll.ScrollY);
-            
+
             StackLayout layout = this.FindByName<StackLayout>("Layout");
             Task.Run(async() =>
             {

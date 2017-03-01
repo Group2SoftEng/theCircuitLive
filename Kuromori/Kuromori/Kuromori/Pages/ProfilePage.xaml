@@ -87,6 +87,7 @@
 				            VerticalOptions="FillAndExpand"
 				            BackgroundColor="#b71a66"
 				            TextColor="White"
+				            Clicked = "MyEventsClick"
 						/>
 					<Button
 							Grid.Row = "0"
@@ -96,6 +97,7 @@
 				            VerticalOptions="FillAndExpand"
 				            BackgroundColor="#b71a66"
 				            TextColor="White"
+				            Clicked = "FindClick"
 						/>
 
 

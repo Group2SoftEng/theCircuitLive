@@ -73,12 +73,6 @@
     <Compile Include="DataStructure\User.cs" />
     <Compile Include="DataStructure\Organizer.cs" />
     <Compile Include="DataStructure\Participant.cs" />
-    <Compile Include="UnitTests\OrganizerAccountTest.cs" />
-    <Compile Include="UnitTests\ParticipantAccountTest.cs" />
-    <Compile Include="UnitTests\ParticipantViewsEventTest.cs" />
-    <Compile Include="UnitTests\OrganizerCreatesEventTest.cs" />
-    <Compile Include="UnitTests\CreateUserProfileTest.cs" />
-    <Compile Include="UnitTests\CreateUserProfileLocationTest.cs" />
     <Compile Include="Pages\SideNav.xaml.cs">
       <DependentUpon>SideNav.xaml</DependentUpon>
     </Compile>

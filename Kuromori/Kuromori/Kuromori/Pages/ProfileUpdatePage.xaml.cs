@@ -23,9 +23,7 @@ namespace Kuromori
 			AboutMe.Text = ActiveUser.CurrentUser.AboutMe;
 			Phone.Text = ActiveUser.CurrentUser.PhoneNumber;
 			Address.Text = ActiveUser.CurrentUser.Address;
-
-
-
+			ProfileImage.Text = ActiveUser.CurrentUser.ProfilePicture;
         }
 
         void OnProfileEditClick(object sender, EventArgs args)
@@ -39,6 +37,7 @@ namespace Kuromori
 				new KeyValuePair<string, string>("first_name", First.Text),
 				new KeyValuePair<string, string>("last_name", Last.Text),
 				new KeyValuePair<string, string>("address_line", Address.Text),
+				new KeyValuePair<string, string>("profile_img", ProfileImage.Text),
 				new KeyValuePair<string, string>("about_me", AboutMe.Text)
 			}, "http://haydenszymanski.me/softeng05/update_user.php").ResponseSuccess);
 
