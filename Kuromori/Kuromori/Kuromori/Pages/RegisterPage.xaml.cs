@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Kuromori.InfoIO;
 using System.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using System.Text.RegularExpressions;
-using Java.Interop;
+using System.Threading.Tasks;
+
 namespace Kuromori
 {
-    
-    public partial class RegisterPage : ContentPage
+	public partial class RegisterPage : ContentPage
 	{
+
 		public RegisterPage()
 		{
 			InitializeComponent();
@@ -28,15 +31,36 @@ namespace Kuromori
 						if (UserExists())
 						{
 							DisplayAlert("Username already exists",
-							            "",""
+							            "Please retype username","Continue"
 							            );
 						}
 
 						else
 						{
+							Debug.WriteLine("succ");
+							PostRequest post = new PostRequest();
+							post.PostInfo(new List<KeyValuePair<string, string>> {
+								new KeyValuePair<string, string>("username", TryUsername.Text),
+								new KeyValuePair<string, string>("password", TryPassword.Text)}, 
+							              "http://haydenszymanski.me/softeng05/register_user.php");
+							Task.Run(async () =>
+							{
+								ActiveUser.CurrentUser = await EventConnection.GetUserData(new List<KeyValuePair<string, string>> {
+									new KeyValuePair<string, string>("username", TryUsername.Text),
+									new KeyValuePair<string, string>("password", TryPassword.Text)
+								}, "http://haydenszymanski.me/softeng05/get_user.php");
+								Device.BeginInvokeOnMainThread(() =>
+								{
+									Navigation.InsertPageBefore(new ProfileUpdatePage(), Navigation.NavigationStack.First());
+									Navigation.PopToRootAsync();
+								});
+							});
+
+
 						}
 					}
-					else {
+					else 
+					{
 						DisplayAlert("Improper Password", "Passwords must contain at least 8 characters with" +
 						             "at least 1 special character and 1 capital letter", "Continue");
 					}
@@ -49,13 +73,7 @@ namespace Kuromori
 								 "Continue");
 					TryPassword.Text = "";
 				}
-                //Compare password fields
-                //Check password validaty
 
-                //See if username exists
-
-                //Push ProfileUpdatePage on stack. 
-                //Navigation.PushAsync(new ProfileUpdatePage());
             }
 
 			else 
@@ -83,12 +101,11 @@ namespace Kuromori
 		Boolean UserExists()
 		{
 			PostRequest post = new PostRequest();
-			Debug.WriteLine(post.UserExists(TryUsername.Text, TryPassword.Text));
+			Debug.WriteLine("UserExist");
 			//return post.UserExists(TryUsername.Text, TryPassword.Text);
 			return post.PostInfo(new List<KeyValuePair<string, string>>{
-				new KeyValuePair<string, string>("username", TryUsername.Text),
-				new KeyValuePair<string, string>("password", TryPassword.Text)
-			}, "http://haydenszymanski.me/softeng05/validate_user.php").ResponseSuccess;
+				new KeyValuePair<string, string>("username", TryUsername.Text)
+			}, "http://haydenszymanski.me/softeng05/user_exists.php").ResponseInfo.Equals("true");
 		}
 
 		Boolean PasswordsMatch()

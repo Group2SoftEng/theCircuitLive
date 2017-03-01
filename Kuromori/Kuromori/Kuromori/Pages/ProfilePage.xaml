@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.ProfilePage">
     <ContentPage.Content>
+
         <StackLayout Margin="20">
             <Frame Padding="2">
                 <Grid BackgroundColor="White" Padding="10" Margin="0">
@@ -25,21 +26,25 @@
 
                         <StackLayout Spacing="5" x:Name="ProfileLayout" Grid.Column="1">
                             <Label 
+                            	x:Name="Name"
 			                    Text="First Last" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
+								x:Name="Username"
 			                    Text="UserName_21" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
+                            	x:Name="Email"
 			                    Text="email@email.com" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
+                            	x:Name="Phone"
 			                    Text="1(800)-123-4567" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
@@ -47,6 +52,7 @@
                     </Grid>
 
                     <Label 
+                    	x:Name="About"
 			            Text="About Me:" 
 			            HorizontalTextAlignment="Start"
                         FontAttributes="Bold"
@@ -54,16 +60,47 @@
                     </Label>
                     
                     <Label 
-			            Text="UserName_21 PME FPSO M GPOM PD M osidnvos ins podin ds oinsd osd nldsk n" 
+			            Text="" 
 			            HorizontalTextAlignment="Start"
                         Grid.Row="2">
                     </Label>
 
+                </Grid>
+                </Frame>
 
+				<Grid BackgroundColor="White" Padding="10" Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"></ColumnDefinition>
+						<ColumnDefinition Width="1*"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+
+						<Button
+							Grid.Row = "0"
+							Grid.Column = "0"
+				            Text="My Events"
+				            HorizontalOptions="Center"
+				            VerticalOptions="FillAndExpand"
+				            BackgroundColor="#b71a66"
+				            TextColor="White"
+						/>
+					<Button
+							Grid.Row = "0"
+							Grid.Column = "1"
+				            Text="Find Events"
+				            HorizontalOptions="Center"
+				            VerticalOptions="FillAndExpand"
+				            BackgroundColor="#b71a66"
+				            TextColor="White"
+						/>
 
 
                 </Grid>
-            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

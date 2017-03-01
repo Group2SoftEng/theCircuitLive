@@ -66,6 +66,9 @@
     <Compile Include="Pages\SpeakerView.xaml.cs">
       <DependentUpon>SpeakerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserRegisteredEvents.xaml.cs">
+      <DependentUpon>UserRegisteredEvents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructure\User.cs" />
     <Compile Include="DataStructure\Organizer.cs" />
@@ -96,6 +99,7 @@
     </Compile>
     <Compile Include="Delegates.cs" />
     <Compile Include="DataStructure\PostResponseItem.cs" />
+    <Compile Include="CurrentData\ActiveUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
@@ -201,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UserRegisteredEvents.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

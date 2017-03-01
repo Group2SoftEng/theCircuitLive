@@ -27,9 +27,9 @@
 
         <Entry
 			x:Name="Username"
-      StyleId="Username1"
-      AutomationId = "Username1"
-      ClassId ="Username1"
+			StyleId="Username1"
+			AutomationId = "Username1"
+			ClassId ="Username1"
 			Grid.Row="1" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
@@ -59,7 +59,7 @@
 			Grid.Column="1"
 			BackgroundColor="#b71a66"
 			TextColor="White"
-			Clicked="OnRegisterClick"
+			Clicked="SignInClick"
 
 		/>
 
