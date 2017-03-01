@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D259C090-8658-4CBD-94BA-7CAEA9478C72}</ProjectGuid>
+    <ProjectGuid>{BC8C7B45-9C6C-47D7-AFC4-04E5213DCFF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>UITest1</RootNamespace>
     <AssemblyName>UITest1</AssemblyName>
@@ -49,6 +49,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="Xamarin.UITest, Version=1.3.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.UITest.1.3.8\lib\Xamarin.UITest.dll</HintPath>
       <Private>True</Private>
@@ -57,23 +58,18 @@
   <ItemGroup>
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
-    <Compile Include="WhiteBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\theCircuitLive\theCircuitLive\theCircuitLive.csproj">
+      <Project>{502BB35B-E91D-4C23-8C3B-77AC5CCD10FC}</Project>
+      <Name>theCircuitLive</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kuromori\Kuromori.Droid\Kuromori.Droid.csproj">
-      <Project>{3e1e3ea7-47b8-4d31-896a-fca2f9f3b4fe}</Project>
-      <Name>Kuromori.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kuromori\Kuromori\Kuromori.csproj">
-      <Project>{d10ca3b8-43af-4d04-9d58-70c6919f5b85}</Project>
-      <Name>Kuromori</Name>
-    </ProjectReference>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
