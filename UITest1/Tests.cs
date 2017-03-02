@@ -36,10 +36,9 @@ namespace UITest1
 
         [Test]
         public void TestJson()
-        { 
+        {
             //Assert.Ignore(ConnectionManager.Jsonget().Result);
             Task<Event[]> list = EventInfo.LoadEvents();
-            
         }
     }
 }
