@@ -4,7 +4,8 @@ error_reporting(E_ALL);
 require_once "functions.php";
 
 /*
- * given proper post keys, returns whether or not the user combination is correct
+ *
+ *
  **/
 
 $username = $_POST["username"];

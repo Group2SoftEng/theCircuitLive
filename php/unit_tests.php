@@ -1,4 +1,7 @@
 <?php
+/*
+ * part of work being done to implement PhpUnit on webserver
+ **/
 class User {
     protected $name;
 
