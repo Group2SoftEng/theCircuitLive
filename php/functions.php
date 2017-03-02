@@ -1,6 +1,9 @@
 <?php
 error_reporting(E_ALL);
 
+/*
+ * Returns content that will be used in the get_connection function to get a databse connection
+ **/
 function get_content() {
     $info= explode("\n", file_get_contents("/home/hayddqta/softeng05_config/db_config.txt"));
     $res = array(
@@ -30,7 +33,7 @@ function get_connection()
 }
 
 /*
- *
+ * help method given an array determines if it is false.
  *
  **/
 function array_content_is_null($arr) {
@@ -88,6 +91,10 @@ function test ($actual_res, $expect_res) {
     }
 }
 
+/*
+ * retrieve-events : Connection, NatNum --> Json-formatted string
+ * retrieves a json formatted string representing Natnum number of events
+ **/
 function retrieve_events($conn, $event_number) {
 
     $sql = "SELECT * from events_app WHERE event_date > NOW() order by event_date ASC limit $event_number";
@@ -127,6 +134,11 @@ function retrieve_events($conn, $event_number) {
     return json_encode(array("EventSet"=>$events, JSON_NUMERIC_CHECK));
 }
 
+/*
+ * get_user : connection, string, string --> json-formatted-string
+ * given a connection, a valid username and password combination, return a json-formatted-string
+ * with the given user information
+ **/
 function get_user($connection, $username, $password) {
     $sql = "SELECT * FROM participant WHERE user_name = '" . $username . "' AND password ='" . $password . "'" ;
     $user = array();
@@ -157,7 +169,10 @@ function get_user($connection, $username, $password) {
 
 }
 
-//attempt log in with param credentials
+/*
+ * user_login : connection, string, string --> bool
+ * Given a working connection, and proper username, password combination, returns if the user exists or not
+ **/
 function user_login($connection, $username, $password) {
 	$query = "SELECT user_name FROM participant WHERE user_name = '" . $username . "' AND password = '" . $password . "'";
 	$exists = false;
@@ -173,7 +188,10 @@ function user_login($connection, $username, $password) {
 	return $exists;
 }
 
-//attempt log in with param credentials
+/*
+ * validate_user : connection, string, string -->
+ * Given a working connection, and proper username, password combination, returns if the user exists or not
+ **/
 function validate_user($connection,$username, $password) {
 	$query = "SELECT user_name FROM participant WHERE user_name = '" . $username . "' AND password = '" . $password . "'";
 	$exists = false;
@@ -190,6 +208,7 @@ function validate_user($connection,$username, $password) {
 }
 
 /*
+ * username_exists : connection, string --> bool
  * Given a connection ($connection) and a string ($participant_id)
  *
  **/
@@ -208,6 +227,13 @@ function username_exists($connection, $username) {
     }
 }
 
+/*
+ * NOTE: function working, but not used yet in the app.
+ * NOTE: SIDE-EFFECT : alters participant_event_relationship
+ * participant_join_event: connection, string/natnum, string/natnum --> nil
+ * given a string that represents a natnum, or a natnum, and another string that represents a natnum, returns nil
+ * 
+ **/
 function participant_join_event($connection, $participant_id, $event_id) {
 
 	if(!$connection) {

@@ -1,7 +1,10 @@
 <?php
 error_reporting(E_ALL);
-
 require_once "functions.php";
+
+/*
+ * given the correct post keys updates user information with new values
+ **/
 
 $con = get_connection();
 

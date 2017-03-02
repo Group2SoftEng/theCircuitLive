@@ -1,7 +1,14 @@
 <?php
 error_reporting(E_ALL);
 include "functions.php";
-
+/*
+ * NOTE: As-is, this page is not secure, and given the proper info will let any requester
+ * create an event.
+ * given a request with post array containing
+ * a post array with event_date, event_title, event_desc, event_topic, event_img and event_url
+ * creates an event with the given criteria
+ *
+ **/
 $con = get_connection();
 
 if(!$con)
