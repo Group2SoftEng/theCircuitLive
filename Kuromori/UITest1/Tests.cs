@@ -64,11 +64,10 @@ namespace Kuromori.DataStructure
         [Test]
         public void CreateUserAllEmptyPass()
         {
-            
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
             app.TapCoordinates(720, 690);
-            Thread.Sleep(1000);          
+            Thread.Sleep(1000);
             app.EnterText("TestUser1");//Won't enter text
 
             app.Tap(c => c.Marked("Next"));

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <ContentPage 
 
@@ -25,7 +25,7 @@
 
     <Image
 
-    	x:Name="Splash"
+    x:Name="Splash"
 		Grid.Row="0" 
 		Grid.Column="0" 
 		HorizontalOptions="FillAndExpand"
@@ -35,7 +35,7 @@
 
     <Image
 
-    	x:Name="Logo"
+    x:Name="Logo"
 		Grid.Row="1" 
 		Grid.Column="0" 
 		HorizontalOptions="FillAndExpand"

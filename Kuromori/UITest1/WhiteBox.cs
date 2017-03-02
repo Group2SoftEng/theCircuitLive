@@ -82,10 +82,9 @@ namespace Kuromori.DataStructure
         [Test]
         public void WhiteBoxTest_Events_getList()
         {
-            
         }
 
-        //Tests the PostResponseItem 
+        //Tests the PostResponseItem
         [Test]
         public void WhiteBoxTest_PostResponseItem_PostResponseItem()
         {
@@ -127,6 +126,7 @@ namespace Kuromori.DataStructure
             Boolean userStatus = post.UserExists("TestUser123abc", "TestUser1!");
             Assert.False(userStatus);
         }
+
         //Tests the post info
         [Test]
         public void WhiteBoxTest_PostRequest_PostInfo()
@@ -144,7 +144,6 @@ namespace Kuromori.DataStructure
         [Test]
         public void WhiteBoxTest_UserSelectPage_UserSelectPage()
         {
-            
         }
 
     }
