@@ -16,7 +16,13 @@ namespace Kuromori
     public partial class EventPage : ContentPage
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public Events temp { get; set; }
+=======
+        /// <summary>
+        ///   This page is a container for the event cards that will be shown on the screen
+        /// </summary>
+>>>>>>> Stashed changes
 =======
         /// <summary>
         ///   This page is a container for the event cards that will be shown on the screen
