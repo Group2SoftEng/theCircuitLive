@@ -15,36 +15,27 @@ namespace Kuromori
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventPage : ContentPage
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         public Events temp { get; set; }
-=======
         /// <summary>
         ///   This page is a container for the event cards that will be shown on the screen
         /// </summary>
->>>>>>> Stashed changes
-=======
-        /// <summary>
-        ///   This page is a container for the event cards that will be shown on the screen
-        /// </summary>
->>>>>>> Stashed changes
         public EventPage()
         {
-            StackLayout layout = new StackLayout();
+            //StackLayout layout = this.FindByName<StackLayout>("Layout");
             InitializeComponent();
             ScrollView scroll = this.FindByName<ScrollView>("scroll");
             Debug.WriteLine(scroll.ScrollY);
-            this.FindByName<StackLayout>("Layout");
 
             Task.Run(async() =>
             {
                 temp = await EventConnection.GetEventData();
-                EventInformation.CurrentEvents = temp.EventSet;
+
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    foreach (Event ev in EventInformation.CurrentEvents)
+					EventInformation.CurrentEvents = temp.EventSet;
+					foreach (Event ev in EventInformation.CurrentEvents)
                     {
-                       layout.Children.Add(new EventView(ev));
+                       Layout.Children.Add(new EventView(ev));
                     }
                 });
             });
