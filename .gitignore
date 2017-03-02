@@ -10,9 +10,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 *.Droid.csproj
-*.Droid.Apk
 *.Droid.apk
-*.Droid.APK
 
 # Build results
 [Dd]ebug/
