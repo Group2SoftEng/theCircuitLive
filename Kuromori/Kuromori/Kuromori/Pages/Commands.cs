@@ -14,10 +14,6 @@ namespace Kuromori.Pages
         /// <returns></returns>
         public static Command Refresh()
         {
-            return new Command(new Action(() =>
-            {
-               
-            }));
         }
 
 

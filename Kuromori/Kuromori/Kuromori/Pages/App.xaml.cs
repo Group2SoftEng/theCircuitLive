@@ -14,6 +14,10 @@ namespace Kuromori
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
+        /// <summary>
+        /// Main code that starts the project
+        /// </summary>
+
         public App()
         {
             InitializeComponent();
@@ -24,8 +28,6 @@ namespace Kuromori
         {
             // Handle when your app starts
         }
-
-    
 
         protected override void OnSleep()
         {

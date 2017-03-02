@@ -10,9 +10,15 @@ using System.Diagnostics;
 namespace Kuromori
 {
 
+    /// <summary>
+    ///   Page that updates both the remote database and local static current user fields
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfileUpdatePage : ContentPage
     {
+        /// <summary>
+        ///   constructor assigns all the text fields to their respective values for the current user
+        /// </summary>
         public ProfileUpdatePage()
         {
             InitializeComponent();
@@ -26,6 +32,9 @@ namespace Kuromori
 			ProfileImage.Text = ActiveUser.CurrentUser.ProfilePicture;
         }
 
+        /// <summary>
+        ///   when profile edit button is clicked we updated the remote database with the new values
+        /// </summary>
         void OnProfileEditClick(object sender, EventArgs args)
         {
 			Debug.WriteLine(ActiveUser.CurrentUser.Id);
@@ -41,6 +50,11 @@ namespace Kuromori
 				new KeyValuePair<string, string>("about_me", AboutMe.Text)
 			}, "http://haydenszymanski.me/softeng05/update_user.php").ResponseSuccess);
 
+      /// <summary>
+      ///   after we update the database, we then immediately query that database to update our local static current user fields
+      ///   currently there is a bug that likely has to due with the timing of this task. In the future, all we need to do is
+      ///   change the local static fields according to the text we inputted
+      /// </summary>
 			Task.Run(async () =>
 			{
 				ActiveUser.CurrentUser = await EventConnection.GetUserData(new List<KeyValuePair<string, string>> {

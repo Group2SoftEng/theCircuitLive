@@ -15,7 +15,13 @@ namespace Kuromori
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventPage : ContentPage
     {
+<<<<<<< Updated upstream
         public Events temp { get; set; }
+=======
+        /// <summary>
+        ///   This page is a container for the event cards that will be shown on the screen
+        /// </summary>
+>>>>>>> Stashed changes
         public EventPage()
         {
             StackLayout layout = new StackLayout();

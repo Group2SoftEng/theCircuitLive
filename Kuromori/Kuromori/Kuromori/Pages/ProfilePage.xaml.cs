@@ -8,6 +8,9 @@ using Xamarin.Forms;
 
 namespace Kuromori
 {
+    /// <summary>
+    ///   Profile page for a user. on load displays the current values in the current user static fields
+    /// </summary>
     public partial class ProfilePage : ContentPage
     {
         public ProfilePage()
@@ -25,6 +28,7 @@ namespace Kuromori
 			{
 				Navigation.PushAsync(new ProfileUpdatePage());
 			};
+
 			EditButton.Text = "Edit Profile";
 			ToolbarItems.Add(EditButton);
 			try

@@ -18,6 +18,11 @@ namespace Kuromori
 			InitializeComponent();
 		}
 
+    /// <summary>
+    ///   When the next button is clicked, we run all the credentials through to see if the meet our ideal criteria for a properly
+    ///   formed set of credentials.
+    ///   Upon success we update the database with the new user and the local current user static fields
+    /// </summary>
 		void OnNextClick(object sender, EventArgs e)
 		{
 
@@ -86,18 +91,28 @@ namespace Kuromori
 
 		}
 
+    /// <summary>
+    ///   Check to see if the current password is properly formed
+    /// </summary>
 		Boolean IsProperPassword()
 		{
 			Regex PasswordPattern = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$])(?=.{8,})");
 			return PasswordPattern.IsMatch(TryPassword.Text);
 		}
 
+    /// <summary>
+    ///   Check to see if the current username is properly formed
+    /// </summary>
 		Boolean IsProperUsername()
 		{
 			Regex UsernamePattern = new Regex("^[A-Za-z0-9]{6,15}$");
 			return UsernamePattern.IsMatch(TryUsername.Text);
 		}
 
+
+    /// <summary>
+    ///   Check to see if the username already exists in the database
+    /// </summary>
 		Boolean UserExists()
 		{
 			PostRequest post = new PostRequest();
@@ -108,6 +123,9 @@ namespace Kuromori
 			}, "http://haydenszymanski.me/softeng05/user_exists.php").ResponseInfo.Equals("true");
 		}
 
+    /// <summary>
+    ///   Check to see if the passwords match
+    /// </summary>
 		Boolean PasswordsMatch()
 		{
 			return TryPassword.Text.Equals(ReTryPassword.Text);

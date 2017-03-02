@@ -42,7 +42,7 @@ namespace Kuromori
             eventDesc.Text = anEvent.EventDescription;
 
             CultureInfo provider = CultureInfo.InvariantCulture;
-           
+
             // This is the action that is executed when the event image is clicked.
             eventImage.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -54,7 +54,7 @@ namespace Kuromori
                     }
                     catch (FormatException res)
                     {
-						
+
                     }
                 })
             });

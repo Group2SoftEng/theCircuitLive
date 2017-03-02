@@ -39,7 +39,7 @@ namespace Kuromori.Pages
                     }
                     catch (FormatException res)
                     {
-                        
+
                     }
                 })
             });
