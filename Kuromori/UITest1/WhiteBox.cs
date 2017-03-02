@@ -10,7 +10,9 @@ using System.Threading;
 using Kuromori;
 using Kuromori.InfoIO;
 using Kuromori.DataAdapters;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Kuromori.DataStructure
 {
@@ -20,7 +22,7 @@ namespace Kuromori.DataStructure
     {
         IApp app;
         Platform platform;
-
+        
         public WhiteBox(Platform platform)
         {
             this.platform = platform;
@@ -44,7 +46,7 @@ namespace Kuromori.DataStructure
         public async static void WhiteBoxTest_EventAdapter_LoadEvents()
         {
             Event[] events = await EventAdapter.LoadEvents();
-            Console.WriteLine(events[0]);
+            Console.WriteLine(events[0].EventTopic);
         }
 
 
@@ -52,17 +54,18 @@ namespace Kuromori.DataStructure
         [Test]
         public void WhiteBoxTest_EventAdapter_ConvertDate()
         {
-            string Test = EventAdapter.ConvertDate("01-01-2017");
+            string Test = EventAdapter.ConvertDate("");
             Console.WriteLine(Test);
 
         }
 
-        //Gets events from GetEventData() and test an individual event
+        //Gets events from GetEventData() and test an individual event Topic
         [Test]
         public async static void WhiteBoxTest_EventConnection_GetEventData()
         {
+            
             Events events = await EventConnection.GetEventData();
-            Console.WriteLine(events);
+            Assert.True("Topic: To be announced" == events.EventSet[0].EventTopic);
         }
 
         //Tests if Uri is able to be created
@@ -80,17 +83,12 @@ namespace Kuromori.DataStructure
 
         //Tests if you can get the list of events
         [Test]
-        public void WhiteBoxTest_Events_getList()
+        public async void WhiteBoxTest_Events_getList()
         {
+            Event[] events = await EventAdapter.LoadEvents();
         }
 
-        //Tests the PostResponseItem
-        [Test]
-        public void WhiteBoxTest_PostResponseItem_PostResponseItem()
-        {
-            //PostResponseItem.PostResponseItem();
-        }
-
+        //Deprecated
         //Tests the web response from PostRequests userlogin attempt with valid username
         [Test]
         public void WhiteBoxTest_PostRequest_User_Login()
@@ -100,6 +98,7 @@ namespace Kuromori.DataStructure
             Console.WriteLine(webResponse);
         }
 
+        //Deprecated
         //Tests the web response from PostRequests userlogin attempt with invalid username
         [Test]
         public void WhiteBoxTest_PostRequest_User_Login_Invalid()
@@ -109,29 +108,41 @@ namespace Kuromori.DataStructure
             Console.WriteLine(webResponse);
         }
 
+        //Deprecated
         //Tests php for if the user exists
         [Test]
         public void WhiteBoxTest_PostRequest_UserExists()
         {
             PostRequest post = new PostRequest();
-            Boolean userStatus = post.UserExists("TestUser1", "TestUser1!");
-            Assert.True(userStatus);
+            Assert.True(post.UserExists("TestUser1", "TestUser1!"));
         }
 
-        //Tests php for if the user doesn't exist
+        //Deprecated
+        //Tests php for if the user doesn't exist 
         [Test]
         public void WhiteBoxTest_PostRequest_UserExists_Invalid()
         {
             PostRequest post = new PostRequest();
-            Boolean userStatus = post.UserExists("TestUser123abc", "TestUser1!");
-            Assert.False(userStatus);
+            Assert.False(post.UserExists("TestUser123abc", "TestUser1!"));
+        }
+
+        //Tests if we can connect WORK
+        [Test]
+        public void WhiteBoxTest_PostRequest_PostInfo_Connection()
+        {
+            PostRequest post = new PostRequest();
+            //var result = post
         }
 
         //Tests the post info
         [Test]
         public void WhiteBoxTest_PostRequest_PostInfo()
         {
-
+            List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
+            KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser1", "TestUser123");
+            userList.Add(testUsers);
+            PostRequest post = new PostRequest();
+            var result = post.PostInfo(userList, "http://haydenszymanski.me/softeng05/get_events.php");
         }
 
         //Tests that EventPage gets events and sets them in the layout
@@ -144,6 +155,7 @@ namespace Kuromori.DataStructure
         [Test]
         public void WhiteBoxTest_UserSelectPage_UserSelectPage()
         {
+            
         }
 
     }

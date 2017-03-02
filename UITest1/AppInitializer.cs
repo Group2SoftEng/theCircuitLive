@@ -14,7 +14,7 @@ namespace UITest1
             {
                 return ConfigureApp
                     .Android
-                    .ApkFile(@"C:/Users/Daniel/Source/Repos/theCircuitLive/Kuromori/Kuromori/Kuromori.Droid/bin/Debug/Kuromori.Droid.apk")
+                    //.ApkFile(@"C:/Users/Daniel/Source/Repos/theCircuitLive/Kuromori/Kuromori/Kuromori.Droid/bin/Debug/Kuromori.Droid.apk")
                     .StartApp();
             }
 
