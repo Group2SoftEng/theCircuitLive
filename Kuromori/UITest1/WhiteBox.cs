@@ -10,9 +10,11 @@ using System.Threading;
 using Kuromori;
 using Kuromori.InfoIO;
 using Kuromori.DataAdapters;
+using Kuromori.Pages;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Kuromori.DataStructure
 {
@@ -43,19 +45,73 @@ namespace Kuromori.DataStructure
 
         //Gets Event, not fully implemented
         [Test]
-        public async static void WhiteBoxTest_EventAdapter_LoadEvents()
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Topic()
         {
             Event[] events = await EventAdapter.LoadEvents();
-            Console.WriteLine(events[0].EventTopic);
+            Assert.IsTrue("Topic: To be announced" == events[0].EventTopic);
         }
 
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Description()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Assert.IsTrue("The Software Engineering II presentation for Iteration 0" == events[1].EventDescription);
+            //Not guaranteed to have an event description
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Date()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Assert.IsTrue("2017-03-24" == events[0].EventDate);
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Id()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Console.WriteLine(events[0].EventId);
+            //Asert.IsTrue("" == events[0].EvenId);
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Img()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Console.WriteLine(events[0].EventImg);
+            //Asert.IsTrue("" == events[0].EventImg);
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_SignUpUrl()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Console.WriteLine(events[0].EventSignUpUrl);
+            //Asert.IsTrue("" == events[0].EventSignUpUrl);
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Speakers()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Console.WriteLine(events[0].EventSpeakers);
+            //Asert.IsTrue("" == events[0].EventSpeakers);
+        }
+
+        [Test]
+        public async static void WhiteBoxTest_EventAdapter_LoadEvents_Title()
+        {
+            Event[] events = await EventAdapter.LoadEvents();
+            Console.WriteLine(events[0].EventTitle);
+            //Asert.IsTrue("" == events[0].EventTit;e);
+        }
 
         //ConvertDate() is able to convert DateTime correctly
         [Test]
         public void WhiteBoxTest_EventAdapter_ConvertDate()
         {
-            string Test = EventAdapter.ConvertDate("");
-            Console.WriteLine(Test);
+            string Test = EventAdapter.ConvertDate("2017-03-24");
+            Assert.IsTrue(Test == "March 24, 2017");
 
         }
 
@@ -77,7 +133,7 @@ namespace Kuromori.DataStructure
             UriKind expectedAddress = new UriKind();//URI kind for TryCreate
             Uri uriTest;//Result of Uri.TryCreate
 
-            Assert.True(Uri.TryCreate(testAddress, expectedAddress, out uriTest));
+            Assert.IsTrue(Uri.TryCreate(testAddress, expectedAddress, out uriTest));
             // If the address can be created using the testAddress from UrlToHtml
         }
 
@@ -86,6 +142,7 @@ namespace Kuromori.DataStructure
         public async void WhiteBoxTest_Events_getList()
         {
             Event[] events = await EventAdapter.LoadEvents();
+
         }
 
         //Deprecated
@@ -95,7 +152,7 @@ namespace Kuromori.DataStructure
         {
             PostRequest post = new PostRequest();
             string webResponse = post.User_Login("TestUser1", "TestUser1!");
-            Console.WriteLine(webResponse);
+            Assert.IsTrue("Success" == webResponse);
         }
 
         //Deprecated
@@ -105,7 +162,7 @@ namespace Kuromori.DataStructure
         {
             PostRequest post = new PostRequest();
             string webResponse = post.User_Login("TestUser123abc", "TestUser1!");
-            Console.WriteLine(webResponse);
+            Assert.IsTrue("Incorrect username or password" == webResponse);
         }
 
         //Deprecated
@@ -114,7 +171,8 @@ namespace Kuromori.DataStructure
         public void WhiteBoxTest_PostRequest_UserExists()
         {
             PostRequest post = new PostRequest();
-            Assert.True(post.UserExists("TestUser1", "TestUser1!"));
+            Console.WriteLine(post.UserExists("TestUser1", "TestUser1!"));
+            Assert.IsTrue(post.UserExists("TestUser1", "TestUser1!"));
         }
 
         //Deprecated
@@ -123,39 +181,44 @@ namespace Kuromori.DataStructure
         public void WhiteBoxTest_PostRequest_UserExists_Invalid()
         {
             PostRequest post = new PostRequest();
-            Assert.False(post.UserExists("TestUser123abc", "TestUser1!"));
+            Assert.IsFalse(post.UserExists("TestUser123abc", "TestUser1!"));
         }
 
-        //Tests if we can connect WORK
+        //Tests if the URL to get_events.php is working
         [Test]
-        public void WhiteBoxTest_PostRequest_PostInfo_Connection()
-        {
-            PostRequest post = new PostRequest();
-            //var result = post
-        }
-
-        //Tests the post info
-        [Test]
-        public void WhiteBoxTest_PostRequest_PostInfo()
+        public void WhiteBoxTest_PostRequest_PostInfo_Success()
         {
             List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
-            KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser1", "TestUser123");
+            KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
             userList.Add(testUsers);
             PostRequest post = new PostRequest();
             var result = post.PostInfo(userList, "http://haydenszymanski.me/softeng05/get_events.php");
+            Assert.IsTrue(result.ResponseSuccess);
+
         }
 
         //Tests that EventPage gets events and sets them in the layout
         [Test]
-        public void WhiteBoxTest_EventPage_EventPage()
+        public async void WhiteBoxTest_EventPage_EventPage()
         {
-            //EventPage.EventPage();
+            EventPage eventPage = new EventPage();
+
+            Events events = await EventConnection.GetEventData();
+            await Task.Delay(10000);
+            Assert.IsTrue(events.EventSet[0].EventDescription == eventPage.temp.EventSet[0].EventDescription);
+            Assert.IsTrue(events.EventSet[0].EventDate == eventPage.temp.EventSet[0].EventDate);
+            Assert.IsTrue(events.EventSet[0].EventId == eventPage.temp.EventSet[0].EventId);
+            Assert.IsTrue(events.EventSet[0].EventTopic == eventPage.temp.EventSet[0].EventTopic);
+            Assert.IsTrue(events.EventSet[0].EventImg == eventPage.temp.EventSet[0].EventImg);
+            Assert.IsTrue(events.EventSet[0].EventLocation == eventPage.temp.EventSet[0].EventLocation);
+            Assert.IsTrue(events.EventSet[0].EventSignUpUrl == eventPage.temp.EventSet[0].EventSignUpUrl);
         }
 
         [Test]
         public void WhiteBoxTest_UserSelectPage_UserSelectPage()
         {
-            
+            app.Tap("Let's get started");
+          Console.WriteLine(app.Query("SelectLogo")[0]);
         }
 
     }

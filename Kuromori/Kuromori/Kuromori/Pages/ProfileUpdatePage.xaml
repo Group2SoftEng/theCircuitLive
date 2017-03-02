@@ -12,7 +12,8 @@
 
                         <Entry
 					        x:Name="First"
-					        Text=""
+					        AutomationId="First"
+                  Text=""
 					        HorizontalTextAlignment="Center"
 					        HorizontalOptions="FillAndExpand">
                         </Entry>
@@ -24,6 +25,7 @@
 
                         <Entry
 				            x:Name="Last"
+                    AutomationId="Last"
 				            Text=""
 				            HorizontalTextAlignment="Center"
 						>
@@ -37,14 +39,12 @@
 
                         <Entry
 				            x:Name="Email"
+                    AutomationId="EmailId"
 				            Text=""
 				            HorizontalTextAlignment="Center"
 						>
 
                         </Entry>
-
-
-
 
                         <Label
 				            Text="Phone Number"
@@ -53,6 +53,7 @@
 
                         <Entry
 				            x:Name="Phone"
+                    AutomationId="Phone"
 				            Text=""
 				            HorizontalTextAlignment="Center"
 						>
@@ -66,6 +67,7 @@
 
                         <Entry
 				            x:Name="Address"
+                    AutomationId="AddressId"
 				            Text=""
 				            HorizontalTextAlignment="Center"
 						>
@@ -79,6 +81,7 @@
 
                         <Entry
 				            x:Name="ProfileImage"
+                    AutomationId="ProfileImage"
 				            Text=""
 				            HorizontalTextAlignment="Center"
 						>
@@ -92,6 +95,7 @@
 
                         <Entry
 				            x:Name="Zip"
+                    AutomationId="ZipId"
 				            HorizontalTextAlignment="Center"
 						>
 						</Entry>
@@ -104,6 +108,7 @@
 
 	                    <Editor
 				            x:Name="AboutMe"
+                    AutomationId="AboutMe"
 				            Text=""
 		                    VerticalOptions="CenterAndExpand"
 		                    HeightRequest = "100"

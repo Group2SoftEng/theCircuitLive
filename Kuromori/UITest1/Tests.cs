@@ -50,13 +50,11 @@ namespace Kuromori.DataStructure
         [Test]
         public void CreateUserAllEmpty()
         {
-            app.Repl();
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.Invoke("RegisterPage");
             app.Tap(c => c.Marked("Next"));
             var Result = app.Query(c => c.Marked("message").Invoke("getText"));
-            Assert.True("Usernames must be 6 to 15 characters long, with no special characters".Equals(Result[0]));
+            Assert.IsTrue("Usernames must be 6 to 15 characters long, with no special characters".Equals(Result[0]));
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -66,11 +64,14 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1");//Won't enter text
+            app.EnterText("TestUser1");
 
             app.Tap(c => c.Marked("Next"));
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Passwords must contain at least 8 characters withat least 1 special character and 1 capital letter".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -80,17 +81,20 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TUser1!");//Won't enter text
+            app.EnterText("TUse1");
 
-            app.TapCoordinates(720, 1104);
+            app.Tap("PasswordId");
             app.EnterText("TestUser1!");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("ReenterPasswordId");
             app.EnterText("TestUser1!");
 
             app.Tap(c => c.Marked("Next"));
+
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Usernames must be 6 to 15 characters long, with no special characters".Equals(Result[0]));
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -100,17 +104,21 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestingUserLengths1!");//Won't enter text
+            app.EnterText("TestingUserLengths1!");
 
-            app.TapCoordinates(720, 1104);
-            app.EnterText("TestUser1!");
+            app.Tap("PasswordId");
+            app.EnterText("TestUser1");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("ReenterPasswordId");
             app.EnterText("TestUser1!");
 
             app.Tap(c => c.Marked("Next"));
+
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Usernames must be 6 to 15 characters long, with no special characters".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -120,17 +128,21 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1!");//Won't enter text
+            app.EnterText("TestUser1");//Won't enter text
 
-            app.TapCoordinates(720, 1104);
+            app.Tap("PasswordId");
             app.EnterText("T1!");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("ReenterPasswordId");
             app.EnterText("T1!");
 
             app.Tap(c => c.Marked("Next"));
+
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Passwords must contain at least 8 characters withat least 1 special character and 1 capital letter".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -140,17 +152,20 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1!");//Won't enter text
-
-            app.TapCoordinates(720, 1104);
             app.EnterText("TestUser1");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("PasswordId");
+            app.EnterText("TestUser1");
+
+            app.Tap("ReenterPasswordId");
             app.EnterText("TestUser1");
 
             app.Tap(c => c.Marked("Next"));
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Passwords must contain at least 8 characters withat least 1 special character and 1 capital letter".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -160,77 +175,104 @@ namespace Kuromori.DataStructure
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1!");//Won't enter text
+            app.EnterText("TestUser1");
 
-            app.TapCoordinates(720, 1104);
+            app.Tap("PasswordId");
             app.EnterText("testuser1!");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("ReenterPasswordId");
             app.EnterText("testuser1!");
 
             app.Tap(c => c.Marked("Next"));
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Passwords must contain at least 8 characters withat least 1 special character and 1 capital letter".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
         //Creates an account with a username that has already been taken
+        //Fails because it cannot find the DisplayAlert but a DisplayAlert is given in the app
         [Test]
         public void CreateUserTakenUsername()
         {
             app.Tap(c => c.Marked("Let's get started"));
             app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap("UsernameId");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1!");//Won't enter text
+            app.EnterText("TestUser1");
 
-            app.TapCoordinates(720, 1104);
+            app.Tap("PasswordId");
             app.EnterText("TestUser1!");
 
-            app.TapCoordinates(720, 1518);
+            app.Tap("ReenterPasswordId");
             app.EnterText("TestUser1!");
 
             app.Tap(c => c.Marked("Next"));
+            Thread.Sleep(1000);
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Please retype username".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
+
 
         //Attempts to signin as a valid user
         [Test]
         public void UserSigninSuccessful()
         {
             app.Tap(c => c.Marked("Let's get started"));
-            app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap(c => c.Marked("Sign In"));
+            app.Tap("UsernameSignIn");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1");//Won't enter text
-    
-            app.Tap(c => c.Marked("Next"));
-            app.Tap(c => c.Marked("Continue"));
+            app.EnterText("TestUser1");
+
+            app.Tap("PasswordSignIn");
+            app.EnterText("TestUser1!");
+
+            app.Tap(c => c.Marked("Login"));
         }
 
+        //Attempts to sign into the app with an incorrect username
         [Test]
         public void UserSigninIncorrectUsername()
         {
             app.Tap(c => c.Marked("Let's get started"));
-            app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap(c => c.Marked("Sign In"));
+            app.Tap("UsernameSignIn");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1");//Won't enter text
-            app.Repl();
-            app.Tap(c => c.Marked("Next"));
+            app.EnterText("TestingUser1");
+
+            app.Tap("PasswordSignIn");
+            app.EnterText("TestUser1!");
+
+            app.Tap(c => c.Marked("Login"));
+            Thread.Sleep(1000);
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Assert.IsTrue("Please retype username".Equals(Result[0]));
+
             app.Tap(c => c.Marked("Continue"));
         }
 
+        //Attempts to Sign into the app with an incorrect password
         [Test]
         public void UserSigninIncorrectPassword()
         {
             app.Tap(c => c.Marked("Let's get started"));
-            app.Tap(c => c.Marked("Register"));
-            app.TapCoordinates(720, 690);
+            app.Tap(c => c.Marked("Sign In"));
+            app.Tap("UsernameSignIn");
             Thread.Sleep(1000);
-            app.EnterText("TestUser1");//Won't enter text
-            app.Repl();
-            app.Tap(c => c.Marked("Next"));
+            app.EnterText("TestUser1");
+
+            app.Tap("PasswordSignIn");
+            app.EnterText("TU1!");
+
+            app.Tap(c => c.Marked("Login"));
+            Thread.Sleep(1000);
+            var Result = app.Query(c => c.Marked("message").Invoke("getText"));
+            Console.WriteLine(Result[0]);
+
             app.Tap(c => c.Marked("Continue"));
         }
 
@@ -263,32 +305,13 @@ namespace Kuromori.DataStructure
        
         }
 
-        //App goes to Eventbrite
+        //App goes to Eventbrite (Iteration 2)
         [Test]
         public void GuestUserRegistersForEvent()
         {
             app.Tap("Let's get started");
             app.Tap("Guest Access");
             app.Tap("content");
-        }
-
-        //Test account is TestUser; TestUser1!
-        [Test]
-        public void GuestUserReturnsToSignIn()
-        {
-            app.Tap("Let's get started");
-            app.Tap("Guest Access");
-            app.Tap("Events");
-            app.Tap(c => c.Marked("Next"));
-            app.Tap(c => c.Marked("Continue"));
-
-        }
-
-
-        [Test]
-        public void SimpleMethodTest()
-        {
-            
         }
     }
 

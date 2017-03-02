@@ -8,9 +8,11 @@
 			BackgroundColor="White"
 			>
   
-  <ScrollView x:Name="scroll">
+  <ScrollView x:Name="scroll"
+              AutomationId ="ScrollView">
 <Frame>
-  <StackLayout x:Name="Layout" Spacing="28"/>
+  <StackLayout x:Name="Layout" Spacing="28"
+               AutomationId ="LayoutView"/>
 </Frame>
   </ScrollView>
 

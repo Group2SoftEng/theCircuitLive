@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <Label 
-			Text="Username" 
+			Text="Username"
 			Grid.Row="0" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center">
@@ -30,6 +30,7 @@
 
         <Entry
 			x:Name="TryUsername"
+      AutomationId ="UsernameId"
 			Text=""
 			Grid.Row="1" 
 			Grid.Column="1" 
@@ -46,6 +47,7 @@
 
 		<Entry 
 			x:Name="TryPassword"
+      AutomationId ="PasswordId"
 			Text=""
 			Grid.Row="3" 
 			Grid.Column="1" 
@@ -55,7 +57,7 @@
 		</Entry> 
 
 		<Label 
-			Text="Reenter password" 
+			Text="Reenter password"
 			Grid.Row="4" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center">
@@ -63,6 +65,7 @@
 
 		<Entry 
 			x:Name="ReTryPassword"
+      AutomationId ="ReenterPasswordId"
 			Text=""
 			Grid.Row="5" 
 			Grid.Column="1" 

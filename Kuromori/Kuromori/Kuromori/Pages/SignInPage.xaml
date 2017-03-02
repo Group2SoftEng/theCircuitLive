@@ -27,9 +27,7 @@
 
         <Entry
 			x:Name="Username"
-			StyleId="Username1"
-			AutomationId = "Username1"
-			ClassId ="Username1"
+			AutomationId = "UsernameSignIn"
 			Grid.Row="1" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 
@@ -49,6 +47,7 @@
 
 		<Entry 
 			x:Name="Password"
+      AutomationId ="PasswordSignIn"
 			Grid.Row="3" 
 			Grid.Column="1" 
 			HorizontalTextAlignment="Center" 

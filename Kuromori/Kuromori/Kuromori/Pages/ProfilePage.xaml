@@ -19,6 +19,7 @@
 
                         <Image 
 		                     x:Name="ProfileImage"
+                         AutomationId="ProfileImage"
 		                     Grid.Column="0"
                             HeightRequest="70"
                             WidthRequest="70">
@@ -27,24 +28,28 @@
                         <StackLayout Spacing="5" x:Name="ProfileLayout" Grid.Column="1">
                             <Label 
                             	x:Name="Name"
+                               AutomationId="Name"
 			                    Text="First Last" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
 								x:Name="Username"
+                 AutomationId="Username"
 			                    Text="UserName_21" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
                             	x:Name="Email"
+                              AutomationId="Email"
 			                    Text="email@email.com" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
 
                             <Label 
                             	x:Name="Phone"
+                               AutomationId="Phone"
 			                    Text="1(800)-123-4567" 
 			                    HorizontalTextAlignment="Center">
                             </Label>
@@ -60,6 +65,7 @@
                     </Label>
                     
                     <Label 
+                       AutomationId="AboutMe"
 			            Text="" 
 			            HorizontalTextAlignment="Start"
                         Grid.Row="2">

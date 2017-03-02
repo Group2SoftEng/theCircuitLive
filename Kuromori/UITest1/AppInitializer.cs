@@ -15,9 +15,8 @@ namespace Kuromori.DataStructure
                 return ConfigureApp
                    
                     .Android
-                    .ApkFile(@"C:/Users/dharless1/Source/Repos/theCircuitLive/Kuromori/Kuromori/Kuromori.Droid/bin/Debug/Kuromori.Droid.apk")
+                    //.ApkFile(@"C:/Users/Daniel/Source/Repos/theCircuitLive/Kuromori.Droid.apk")
                     .StartApp();
-
             }
 
             return ConfigureApp

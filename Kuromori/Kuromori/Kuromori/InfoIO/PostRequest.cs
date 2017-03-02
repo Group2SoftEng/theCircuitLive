@@ -62,7 +62,7 @@ namespace Kuromori.InfoIO
             {
                 var contents = response.Content.ReadAsStringAsync();
                 Debug.WriteLine(contents.Result);
-                if (contents.Result.Equals("success"))
+                if (contents.Result.Equals("Success"))
                 {
                     res = true;
                 }
