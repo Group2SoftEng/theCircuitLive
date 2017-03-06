@@ -8,7 +8,6 @@ using System.Diagnostics;
 using Kuromori.InfoIO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Linq;
 
 namespace Kuromori
 {

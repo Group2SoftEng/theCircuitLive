@@ -44,12 +44,8 @@
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Commands.cs" />
     <Compile Include="Pages\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EventView.xaml.cs">
-      <DependentUpon>EventView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -63,9 +59,6 @@
     <Compile Include="Pages\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SpeakerView.xaml.cs">
-      <DependentUpon>SpeakerView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UserRegisteredEvents.xaml.cs">
       <DependentUpon>UserRegisteredEvents.xaml</DependentUpon>
     </Compile>
@@ -77,9 +70,6 @@
       <DependentUpon>SideNav.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Pages\CardView.xaml.cs">
-      <DependentUpon>CardView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="InfoIO\PostRequest.cs" />
     <Compile Include="Pages\UserSelectPage.xaml.cs">
       <DependentUpon>UserSelectPage.xaml</DependentUpon>
@@ -94,6 +84,12 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="DataStructure\PostResponseItem.cs" />
     <Compile Include="CurrentData\ActiveUser.cs" />
+    <Compile Include="Views\SpeakerView.xaml.cs">
+      <DependentUpon>SpeakerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventView.xaml.cs">
+      <DependentUpon>EventView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
@@ -107,9 +103,6 @@
     <EmbeddedResource Include="Pages\SideNav.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CardView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\UserSelectPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -118,6 +111,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpeakerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EventView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -174,19 +175,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EventView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\SignInPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\SpeakerView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -208,6 +197,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

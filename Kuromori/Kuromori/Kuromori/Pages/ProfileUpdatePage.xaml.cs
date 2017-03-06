@@ -50,10 +50,13 @@ namespace Kuromori
 				new KeyValuePair<string, string>("about_me", AboutMe.Text)
 			}, "http://haydenszymanski.me/softeng05/update_user.php").ResponseSuccess);
 
+
+
       /// <summary>
       ///   after we update the database, we then immediately query that database to update our local static current user fields
       ///   currently there is a bug that likely has to due with the timing of this task. In the future, all we need to do is
       ///   change the local static fields according to the text we inputted
+	  ///   NOTE: Bug Fixed
       /// </summary>
 			Task.Run(async () =>
 			{
@@ -63,6 +66,13 @@ namespace Kuromori
 				}, "http://haydenszymanski.me/softeng05/get_user.php");
 				Device.BeginInvokeOnMainThread(() =>
 				{
+					ActiveUser.CurrentUser.Zip = Zip.Text;
+					ActiveUser.CurrentUser.PhoneNumber = Phone.Text;
+					ActiveUser.CurrentUser.FirstName = First.Text;
+					ActiveUser.CurrentUser.LastName = Last.Text;
+					ActiveUser.CurrentUser.Address = Address.Text;
+					ActiveUser.CurrentUser.ProfilePicture = ProfileImage.Text;
+					ActiveUser.CurrentUser.AboutMe = AboutMe.Text;
 					Navigation.InsertPageBefore(new ProfilePage(), Navigation.NavigationStack.First());
 					Navigation.PopToRootAsync();
 				});

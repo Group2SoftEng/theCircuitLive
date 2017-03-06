@@ -31,10 +31,6 @@ namespace Kuromori
 		void SignInClick(object sender, EventArgs args)
 		{
 			PostRequest post = new PostRequest();
-			/*post.PostInfo(new List<KeyValuePair<string, string>> {
-				new KeyValuePair<string, string>("username", Username.Text),
-				new KeyValuePair<string, string>("password", Password.Text)
-			}, "http://haydenszymanski.me/softeng05/login_user.php");*/
 
 			if (post.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),

@@ -12,65 +12,12 @@ namespace Kuromori.InfoIO
 	public class PostRequest
 	{
 
-		public string User_Login(string user, string pass)
-		{
-
-			string webResponse = "";
-
-			var client = new HttpClient();
-			var pairs = new List<KeyValuePair<string, string>>
-			{
-				new KeyValuePair<string, string>("username", user),
-				new KeyValuePair<string, string>("password", pass)
-			};
-
-			var content = new FormUrlEncodedContent(pairs);
-
-			var response = client.PostAsync(
-				"http://haydenszymanski.me/softeng05/login_user.php"
-				, content).Result;
-
-			if (response.IsSuccessStatusCode)
-			{
-				var contents = response.Content.ReadAsStringAsync();
-				Debug.WriteLine(contents.Result);
-				webResponse = contents.Result;
-			}
-			client.Dispose();
-			return webResponse;
-		}
-
-        public Boolean UserExists(string user, string pass)
-        {
-
-            Boolean res = false;
-
-            var client = new HttpClient();
-            var pairs = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("username", user),
-                new KeyValuePair<string, string>("password", pass)
-            };
-
-            var content = new FormUrlEncodedContent(pairs);
-
-            var response = client.PostAsync(
-                "http://haydenszymanski.me/softeng05/validate_user.php"
-                , content).Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                var contents = response.Content.ReadAsStringAsync();
-                Debug.WriteLine(contents.Result);
-                if (contents.Result.Equals("Success"))
-                {
-                    res = true;
-                }
-            }
-            client.Dispose();
-            return res;
-        }
-
+    /// <summary>
+    ///   PostResponseItem : List<KeyValuePair<string,string>> (pairs), string (url)
+    ///   Given a list of keyvalue pairs that are strings encode that list as url content
+    ///   Creates a postrequest with encoded url content representing the post array,
+    ///   returns an object representing the request response from the html page and success code
+    /// </summary>
 		public PostResponseItem PostInfo(List<KeyValuePair<string,string>> pairs, string url)
 		{
 			PostResponseItem result = new PostResponseItem();
