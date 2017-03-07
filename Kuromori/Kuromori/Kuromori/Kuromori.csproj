@@ -40,7 +40,7 @@
     <Compile Include="DataStructure\Events.cs" />
     <Compile Include="DataStructure\Speaker.cs" />
     <Compile Include="CurrentData\GlobalData.cs" />
-    <Compile Include="InfoIO\EventConnection.cs" />
+    <Compile Include="InfoIO\JsonRequest.cs" />
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -90,6 +90,10 @@
     <Compile Include="Views\EventView.xaml.cs">
       <DependentUpon>EventView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataStructure\AccountType.cs" />
+    <Compile Include="Views\InputField.xaml.cs">
+      <DependentUpon>InputField.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
@@ -119,6 +123,9 @@
     <EmbeddedResource Include="Views\EventView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InputField.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

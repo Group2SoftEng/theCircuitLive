@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="Kuromori.RegisterPage">
@@ -9,8 +9,8 @@
 	<Frame Padding="2">
 
       <Grid BackgroundColor="White" Padding="0" Margin="0">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="3"></RowDefinition>
+        <Grid.RowDefinitions >
+          <RowDefinition Height="*"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
@@ -30,7 +30,7 @@
 
         <Entry
 			x:Name="TryUsername"
-      AutomationId ="UsernameId"
+			AutomationId ="UsernameId"
 			Text=""
 			Grid.Row="1" 
 			Grid.Column="1" 
@@ -47,7 +47,7 @@
 
 		<Entry 
 			x:Name="TryPassword"
-      AutomationId ="PasswordId"
+			AutomationId ="PasswordId"
 			Text=""
 			Grid.Row="3" 
 			Grid.Column="1" 
@@ -65,7 +65,7 @@
 
 		<Entry 
 			x:Name="ReTryPassword"
-      AutomationId ="ReenterPasswordId"
+			AutomationId ="ReenterPasswordId"
 			Text=""
 			Grid.Row="5" 
 			Grid.Column="1" 

@@ -7,102 +7,123 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Kuromori.DataStructure;
 
 namespace Kuromori
 {
 	public partial class RegisterPage : ContentPage
 	{
+		public User ActiveUser { get; set; } // Initialized on successfull credentials
 
 		public RegisterPage()
 		{
 			InitializeComponent();
 		}
 
-    /// <summary>
-    ///   When the next button is clicked, we run all the credentials through to see if the meet our ideal criteria for a properly
-    ///   formed set of credentials.
-    ///   Upon success we update the database with the new user and the local current user static fields
-    /// </summary>
+		/// <summary>
+		/// Handles all validation of Credentials for sign up
+		/// </summary>
+		/// <returns>The credentials.</returns>
+		public CredentialInformation ValidateCredentials()
+		{
+			CredentialInformation CredInfo = new CredentialInformation();
+			if (!IsProperUsername())
+				CredInfo.Errors.Add("Invalid Username");
+			if (!PasswordsMatch())
+				CredInfo.Errors.Add("Passwords do not match");
+			if (!IsProperPassword())
+				CredInfo.Errors.Add("Password is not proper");
+			if (UserExists())
+				CredInfo.Errors.Add("Username already exists");
+			if (CredInfo.IsValid())
+			{
+				PostRequest post = new PostRequest();
+				string hi = post.PostInfo(new List<KeyValuePair<string, string>> {
+					new KeyValuePair<string, string>("username", TryUsername.Text),
+					new KeyValuePair<string, string>("user_password", TryPassword.Text)
+				}, "http://haydenszymanski.me/softeng05/register_participant.php").ResponseInfo;
+
+
+
+			}
+			return CredInfo;
+		}
+
+		public class CredentialInformation
+		{
+			public List<string> Errors { get; set; }
+
+			public CredentialInformation() 
+			{
+				Errors = new List<string>();
+			}
+
+			public bool IsValid()
+			{
+				return (Errors.Count == 0);
+			}
+
+			public string ErrorsAsString()
+			{
+				string errorString = "";
+				foreach (string error in Errors)
+				{
+					errorString += error + "\n";
+				}
+				return errorString;
+
+			}
+		}
+
+	    /// <summary>
+	    ///   When the next button is clicked, we run all the credentials through to see if the meet our ideal criteria for a properly
+	    ///   formed set of credentials.
+	    ///   Upon success we update the database with the new user and the local current user static fields
+	    /// </summary>
 		void OnNextClick(object sender, EventArgs e)
 		{
-
-			if (IsProperUsername())
+			CredentialInformation CredInfo = ValidateCredentials();
+			if (!CredInfo.IsValid())
 			{
-
-				if (PasswordsMatch())
-				{
-					if (IsProperPassword())
-					{
-						if (UserExists())
-						{
-							DisplayAlert("Username already exists",
-							            "Please retype username","Continue"
-							            );
-						}
-
-						else
-						{
-							Debug.WriteLine("succ");
-							PostRequest post = new PostRequest();
-							post.PostInfo(new List<KeyValuePair<string, string>> {
-								new KeyValuePair<string, string>("username", TryUsername.Text),
-								new KeyValuePair<string, string>("password", TryPassword.Text)}, 
-							              "http://haydenszymanski.me/softeng05/register_user.php");
-							Task.Run(async () =>
-							{
-								ActiveUser.CurrentUser = await EventConnection.GetUserData(new List<KeyValuePair<string, string>> {
-									new KeyValuePair<string, string>("username", TryUsername.Text),
-									new KeyValuePair<string, string>("password", TryPassword.Text)
-								}, "http://haydenszymanski.me/softeng05/get_user.php");
-								Device.BeginInvokeOnMainThread(() =>
-								{
-									Navigation.InsertPageBefore(new ProfileUpdatePage(), Navigation.NavigationStack.First());
-									Navigation.PopToRootAsync();
-								});
-							});
-
-
-						}
-					}
-					else 
-					{
-						DisplayAlert("Improper Password", "Passwords must contain at least 8 characters with" +
-						             "at least 1 special character and 1 capital letter", "Continue");
-					}
-				}
-
-				else
-				{
-					DisplayAlert("Passwords Do Not Match",
-								 "Please make sure passwords match",
-								 "Continue");
-					TryPassword.Text = "";
-				}
-
-            }
-
-			else 
-			{
-				DisplayAlert("Improper Username", 
-				             "Usernames must be 6 to 15 characters long, with no special characters", 
-				             "Continue");
-				TryUsername.Text = "";
+				DisplayAlert("Error",
+							 CredInfo.ErrorsAsString(),
+							 "Continue");
 			}
+			else
+			{
+				Task.Run(async () =>
+				{
+					ActiveUser = await JsonRequest.GetUserData<User>(
+						new List<KeyValuePair<string, string>> {
+						new KeyValuePair<string, string>("username", TryUsername.Text),
+						new KeyValuePair<string, string>("user_password", TryPassword.Text)
+					}, "http://haydenszymanski.me/softeng05/get_user.php");
+					Device.BeginInvokeOnMainThread(() =>
+					{
+						Navigation.InsertPageBefore(new ProfileUpdatePage(ActiveUser),
+													Navigation.NavigationStack.First());
+						Navigation.PopToRootAsync();
+					});
+
+				});
+				
+			}
+
 
 		}
 
-    /// <summary>
-    ///   Check to see if the current password is properly formed
-    /// </summary>
+	    /// <summary>
+	    ///   Check to see if the current password is properly formed
+	    /// </summary>
 		Boolean IsProperPassword()
 		{
 			Regex PasswordPattern = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$])(?=.{8,})");
 			return PasswordPattern.IsMatch(TryPassword.Text);
 		}
 
-    /// <summary>
-    ///   Check to see if the current username is properly formed
-    /// </summary>
+	    /// <summary>
+	    ///   Check to see if the current username is properly formed
+	    /// </summary>
 		Boolean IsProperUsername()
 		{
 			Regex UsernamePattern = new Regex("^[A-Za-z0-9]{6,15}$");
@@ -110,22 +131,22 @@ namespace Kuromori
 		}
 
 
-    /// <summary>
-    ///   Check to see if the username already exists in the database
-    /// </summary>
+	    /// <summary>
+	    ///   Check to see if the username already exists in the database
+	    /// </summary>
 		Boolean UserExists()
 		{
 			PostRequest post = new PostRequest();
 			Debug.WriteLine("UserExist");
 			//return post.UserExists(TryUsername.Text, TryPassword.Text);
-			return post.PostInfo(new List<KeyValuePair<string, string>>{
+			return !(post.PostInfo(new List<KeyValuePair<string, string>>{
 				new KeyValuePair<string, string>("username", TryUsername.Text)
-			}, "http://haydenszymanski.me/softeng05/user_exists.php").ResponseInfo.Equals("true");
+			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo.Equals("none"));
 		}
 
-    /// <summary>
-    ///   Check to see if the passwords match
-    /// </summary>
+	    /// <summary>
+	    ///   Check to see if the passwords match
+	    /// </summary>
 		Boolean PasswordsMatch()
 		{
 			return TryPassword.Text.Equals(ReTryPassword.Text);

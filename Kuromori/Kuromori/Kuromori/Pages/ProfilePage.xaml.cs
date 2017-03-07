@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Kuromori.DataStructure;
 
 using Xamarin.Forms;
 
@@ -13,27 +14,30 @@ namespace Kuromori
     /// </summary>
     public partial class ProfilePage : ContentPage
     {
-        public ProfilePage()
+		public User ActiveUser { get; set; }
+
+		public ProfilePage(User activeUser)
         {
             InitializeComponent();
+			ActiveUser = activeUser;
 			Title = "Profile Page";
-			Debug.WriteLine(ActiveUser.CurrentUser.Id);
-			Name.Text = ActiveUser.CurrentUser.FirstName + " " + ActiveUser.CurrentUser.LastName;
-			Username.Text = ActiveUser.CurrentUser.UserName;
-			Email.Text = ActiveUser.CurrentUser.Email;
-			About.Text = ActiveUser.CurrentUser.AboutMe;
+			Debug.WriteLine(ActiveUser.Id);
+			Name.Text = ActiveUser.FirstName + " " + ActiveUser.LastName;
+			Username.Text = ActiveUser.UserName;
+			Email.Text = ActiveUser.Email;
+			About.Text = ActiveUser.AboutMe;
 
 			ToolbarItem EditButton = new ToolbarItem();
 			EditButton.Clicked += (sender, e) =>
 			{
-				Navigation.PushAsync(new ProfileUpdatePage());
+				Navigation.PushAsync(new ProfileUpdatePage(ActiveUser));
 			};
 
 			EditButton.Text = "Edit Profile";
 			ToolbarItems.Add(EditButton);
 			try
 			{
-				ProfileImage.Source = new Uri(ActiveUser.CurrentUser.ProfilePicture);
+				ProfileImage.Source = new Uri(ActiveUser.ProfilePicture);
 
 			}
 			catch (FormatException res)
