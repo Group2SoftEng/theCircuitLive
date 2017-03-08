@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Kuromori.AdminSignInPage"
+	Title="Admin Sign In"
+>
+
+	<ContentPage.Content>
+		<StackLayout Padding="30">
+			<Entry
+				Placeholder="Username"
+				x:Name="AdminUsername"
+				HorizontalOptions="FillAndExpand"
+			/>
+
+			<Entry
+				Placeholder="Password"
+				x:Name="AdminPassword"
+				HorizontalOptions="FillAndExpand"
+			/>
+
+			<Button
+				Text="Sign In"
+				BackgroundColor="#b71a66"
+				TextColor="White"
+				x:Name="SignInButton"
+			/>
+
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

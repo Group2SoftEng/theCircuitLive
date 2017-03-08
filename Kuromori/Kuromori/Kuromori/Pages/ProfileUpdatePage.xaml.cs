@@ -53,6 +53,7 @@ namespace Kuromori
 				new KeyValuePair<string, string>("user_address", Address.Text),
 				new KeyValuePair<string, string>("user_profile_picture", ProfileImage.Text),
 				new KeyValuePair<string, string>("user_about_me", AboutMe.Text),
+				new KeyValuePair<string, string>("user_email", Email.Text),
 				new KeyValuePair<string, string>("user_state" , "")
 			}, "http://haydenszymanski.me/softeng05/update_user.php").ResponseSuccess);
 
@@ -79,6 +80,8 @@ namespace Kuromori
 					ActiveUser.Address = Address.Text;
 					ActiveUser.ProfilePicture = ProfileImage.Text;
 					ActiveUser.AboutMe = AboutMe.Text;
+					ActiveUser.PhoneNumber = Phone.Text;
+					ActiveUser.Email = Email.Text;
 					Navigation.InsertPageBefore(new ProfilePage(ActiveUser), Navigation.NavigationStack.First());
 					Navigation.PopToRootAsync();
 				});
@@ -86,6 +89,12 @@ namespace Kuromori
 
 
         }
+
+		void OnCancelClick(object sender, EventArgs args)
+		{
+			Navigation.PopAsync();
+
+		}
     }
 }
 

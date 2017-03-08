@@ -23,6 +23,19 @@ namespace Kuromori
         public SignInPage()
         {
             InitializeComponent();
+
+			ToolbarItem AdminLogin = new ToolbarItem();
+			AdminLogin.Clicked += (sender, e) =>
+			{
+				Navigation.PushAsync(new AdminSignInPage());
+
+			};
+			AdminLogin.Text = "Admin";
+			ToolbarItems.Add(AdminLogin);
+
+
+
+				
         }
 
 	    /// <summary>
