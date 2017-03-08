@@ -26,6 +26,8 @@ namespace Kuromori
 			Username.Text = ActiveUser.UserName;
 			Email.Text = ActiveUser.Email;
 			About.Text = ActiveUser.AboutMe;
+			Phone.Text = ActiveUser.PhoneNumber;
+
 
 			ToolbarItem EditButton = new ToolbarItem();
 			EditButton.Clicked += (sender, e) =>
