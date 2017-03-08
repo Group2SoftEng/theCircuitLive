@@ -40,16 +40,12 @@
     <Compile Include="DataStructure\Events.cs" />
     <Compile Include="DataStructure\Speaker.cs" />
     <Compile Include="CurrentData\GlobalData.cs" />
-    <Compile Include="InfoIO\EventConnection.cs" />
+    <Compile Include="InfoIO\JsonRequest.cs" />
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Commands.cs" />
     <Compile Include="Pages\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EventView.xaml.cs">
-      <DependentUpon>EventView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -63,9 +59,6 @@
     <Compile Include="Pages\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SpeakerView.xaml.cs">
-      <DependentUpon>SpeakerView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UserRegisteredEvents.xaml.cs">
       <DependentUpon>UserRegisteredEvents.xaml</DependentUpon>
     </Compile>
@@ -73,19 +66,10 @@
     <Compile Include="DataStructure\User.cs" />
     <Compile Include="DataStructure\Organizer.cs" />
     <Compile Include="DataStructure\Participant.cs" />
-    <Compile Include="UnitTests\OrganizerAccountTest.cs" />
-    <Compile Include="UnitTests\ParticipantAccountTest.cs" />
-    <Compile Include="UnitTests\ParticipantViewsEventTest.cs" />
-    <Compile Include="UnitTests\OrganizerCreatesEventTest.cs" />
-    <Compile Include="UnitTests\CreateUserProfileTest.cs" />
-    <Compile Include="UnitTests\CreateUserProfileLocationTest.cs" />
     <Compile Include="Pages\SideNav.xaml.cs">
       <DependentUpon>SideNav.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Pages\CardView.xaml.cs">
-      <DependentUpon>CardView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="InfoIO\PostRequest.cs" />
     <Compile Include="Pages\UserSelectPage.xaml.cs">
       <DependentUpon>UserSelectPage.xaml</DependentUpon>
@@ -100,6 +84,18 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="DataStructure\PostResponseItem.cs" />
     <Compile Include="CurrentData\ActiveUser.cs" />
+    <Compile Include="Views\SpeakerView.xaml.cs">
+      <DependentUpon>SpeakerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventView.xaml.cs">
+      <DependentUpon>EventView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructure\AccountType.cs" />
+    <Compile Include="Views\InputField.xaml.cs">
+      <DependentUpon>InputField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cells.cs" />
+    <Compile Include="Views\MenuTableView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
@@ -113,9 +109,6 @@
     <EmbeddedResource Include="Pages\SideNav.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CardView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\UserSelectPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -125,8 +118,22 @@
     <EmbeddedResource Include="Pages\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpeakerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EventView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InputField.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -177,19 +184,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EventView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\SignInPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\SpeakerView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -211,6 +206,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

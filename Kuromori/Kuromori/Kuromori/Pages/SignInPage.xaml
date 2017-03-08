@@ -1,55 +1,99 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kuromori.SignInPage"
-             Title="Sign In">
-  
-  <StackLayout Margin="20">
-    <Frame Padding="2">
-      <Grid BackgroundColor="White" Padding="0" Margin="0">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="*"></RowDefinition>
-          <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition></ColumnDefinition>
-          <ColumnDefinition Width="4*"></ColumnDefinition>
-          <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+<ContentPage 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
+		x:Class="Kuromori.SignInPage"
+		Title="Sign In"
+	>
+	<ContentPage.Content>
 
-        <Label 
-			Text="Username" 
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-		</Label>
+  <StackLayout Margin="10">
 
-        <Entry
-			x:Name="Username"
-			StyleId="Username1"
-			AutomationId = "Username1"
-			ClassId ="Username1"
-			Grid.Row="1" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center" 
-			HorizontalOptions="FillAndExpand">
-		</Entry>
+		<Image
+			  x:Name="SelectLogo"
+			  HorizontalOptions = "FillAndExpand"
+			  Source="http://haydenszymanski.me/logo.png"
+			  Aspect="AspectFit"
+			  VerticalOptions="Center"
+			  Scale="2"
+			/>
 
-		<Label 
-			Text="Password" 
-			Grid.Row="2" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-		</Label>        
 
-		<Entry 
-			x:Name="Password"
-			Grid.Row="3" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center" 
-		>
-		</Entry> 
+  <local:MenuTableView 
+			HasUnevenRows="true" 
+			Intent="Data">
+		<local:MenuTableView.Root>
+			<TableSection>
+				<ViewCell>
+					<StackLayout 
+						Orientation="Vertical"
+						Spacing="5"
+						Padding="5"
+					>
+					        <Label 
+								Text="Username" 
+								Grid.Row="0" 
+								Grid.Column="1" 
+								HorizontalTextAlignment="Center">
+							</Label>
+
+					        <Entry
+								x:Name="Username"
+								AutomationId = "UsernameSignIn"
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="CenterAndExpand"
+								HorizontalTextAlignment="Center" 
+							>
+
+							</Entry>
+					</StackLayout>
+				</ViewCell>
+
+				<ViewCell>
+					<StackLayout 
+						Orientation="Vertical"
+						Spacing="5"
+						Padding="5"
+					>
+							<Label 
+								Text="Password" 
+								HorizontalTextAlignment="Center"
+							>
+							</Label>        
+
+							<Entry 
+								x:Name="Password"
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="CenterAndExpand"
+								AutomationId ="PasswordSignIn"
+								IsPassword="true"
+							>
+							</Entry> 
+					</StackLayout>
+				</ViewCell>
+	
+					
+
+			</TableSection>
+		</local:MenuTableView.Root>
+	</local:MenuTableView>
+
+
+	<StackLayout
+		Orientation="Horizontal"
+		HorizontalOptions="CenterAndExpand"
+		Spacing="9"
+	>
+
+		<Button
+			Text="Cancel"
+			HorizontalOptions="Center"
+			VerticalOptions="CenterAndExpand"
+			BackgroundColor="#b71a66"
+			TextColor="White"
+			Clicked = "CancelClick"
+		/>
 
 		<Button
 			Text="Login"
@@ -60,10 +104,11 @@
 			BackgroundColor="#b71a66"
 			TextColor="White"
 			Clicked="SignInClick"
-
 		/>
 
-      </Grid>
-    </Frame>
+		</StackLayout>
+
   </StackLayout>
+
+</ContentPage.Content>
 </ContentPage>

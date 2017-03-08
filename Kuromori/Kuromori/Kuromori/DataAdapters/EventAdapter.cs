@@ -18,7 +18,7 @@ namespace Kuromori.DataAdapters
         /// <returns></returns>
         public static async Task<Event[]> LoadEvents()
         {
-            Events events = await EventConnection.GetEventData();
+			Events events = await JsonRequest.GetEventData();
             return events.EventSet;
         }
 

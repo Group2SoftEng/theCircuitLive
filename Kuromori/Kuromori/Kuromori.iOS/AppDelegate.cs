@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Kuromori.iOS
 {
@@ -24,7 +25,13 @@ namespace Kuromori.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+			Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) =>
+			{
+				if (null != e.View.AutomationId)
+				{
+					e.NativeView.AccessibilityIdentifier = e.View.AutomationId;
+				}
+			};
             return base.FinishedLaunching(app, options);
         }
     }

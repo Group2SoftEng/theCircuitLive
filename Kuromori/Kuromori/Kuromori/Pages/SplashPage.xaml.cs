@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace Kuromori
 {
+  /// <summary>
+  ///   Simple splash page with an image, logo and button
+  /// </summary>
 	public partial class SplashPage : ContentPage
 	{
 		public SplashPage()
@@ -18,6 +21,9 @@ namespace Kuromori
 
 		}
 
+    /// <summary>
+    ///   Push a new page onto navigation stack
+    /// </summary>
 		void OnButtonClick(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new UserSelectPage());

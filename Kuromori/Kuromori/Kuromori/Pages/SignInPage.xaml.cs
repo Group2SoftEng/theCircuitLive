@@ -12,6 +12,11 @@ using System.Diagnostics;
 
 namespace Kuromori
 {
+    /// <summary>
+    ///   Sign a user in given correct criteria
+    ///   Because we are using names with improper forms for quick tests, this page currently doesn't
+    ///   have client-side validation. For registration it does. this is intentional.
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignInPage : ContentPage
     {
@@ -20,35 +25,59 @@ namespace Kuromori
             InitializeComponent();
         }
 
+	    /// <summary>
+	    ///   On sign in click popular current user static fields with remote user info
+		///   
+	    /// </summary>
 		void SignInClick(object sender, EventArgs args)
 		{
 			PostRequest post = new PostRequest();
-			/*post.PostInfo(new List<KeyValuePair<string, string>> {
-				new KeyValuePair<string, string>("username", Username.Text),
-				new KeyValuePair<string, string>("password", Password.Text)
-			}, "http://haydenszymanski.me/softeng05/login_user.php");*/
+
+			String userType = post.PostInfo(new List<KeyValuePair<string, string>> {
+				new KeyValuePair<string, string>("username", Username.Text)
+			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
+
+			/*
+			switch (userType)
+			{
+				case "organizer" :
+					Debug.WriteLine("organizer");
+					break;
+				case "participant" :
+					Debug.WriteLine("participant");
+					break;
+				case "none" :
+					Debug.WriteLine("none");
+					break;
+			}
+			*/
 
 			if (post.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),
-				new KeyValuePair<string, string>("password", Password.Text)
+				new KeyValuePair<string, string>("user_password", Password.Text)
 
 			}, "http://haydenszymanski.me/softeng05/login_user.php").ResponseInfo.Equals("Success"))
 			{
 				Task.Run(async () =>
 				{
-					ActiveUser.CurrentUser = await EventConnection.GetUserData(new List<KeyValuePair<string, string>> {
+					User UserSigningIn = await JsonRequest.GetUserData(new List<KeyValuePair<string, string>> {
 						new KeyValuePair<string, string>("username", Username.Text),
-						new KeyValuePair<string, string>("password", Password.Text)
+						new KeyValuePair<string, string>("user_password", Password.Text)
 					}, "http://haydenszymanski.me/softeng05/get_user.php");
 					Device.BeginInvokeOnMainThread(() =>
 					{
-						Navigation.InsertPageBefore(new ProfilePage(), Navigation.NavigationStack.First());
+						Navigation.InsertPageBefore(new ProfilePage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
 					});
 				});
 
 
-			};
+			}
+		}
+
+		void CancelClick(object sender, EventArgs args)
+		{
+			Navigation.PopAsync();
 		}
     }
 }

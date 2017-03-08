@@ -29,9 +29,10 @@
     <Image
     	Grid.Row = "0"
     	Grid.RowSpan = "2"
-		Grid.Column = "0"
-		x:Name="SelectLogo"
-		HorizontalOptions = "FillAndExpand"
+		  Grid.Column = "0"
+		  x:Name="SelectLogo"
+      AutomationId ="SelectLogo"
+		  HorizontalOptions = "FillAndExpand"
 
 	/>
 

@@ -10,6 +10,9 @@ namespace Kuromori
 {
     public partial class MainPage : MasterDetailPage
     {
+        /// <summary>
+        ///   Masterdetail page. Currently not being tested as it is not required for this iteration
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();

@@ -14,22 +14,28 @@ namespace Kuromori
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventPage : ContentPage
     {
+        public Events temp { get; set; }
+
+        /// <summary>
+        ///   This page is a container for the event cards that will be shown on the screen
+        /// </summary>
         public EventPage()
         {
+            //StackLayout layout = this.FindByName<StackLayout>("Layout");
             InitializeComponent();
             ScrollView scroll = this.FindByName<ScrollView>("scroll");
             Debug.WriteLine(scroll.ScrollY);
-            
-            StackLayout layout = this.FindByName<StackLayout>("Layout");
+
             Task.Run(async() =>
             {
-                Events temp = await EventConnection.GetEventData();
-                EventInformation.CurrentEvents = temp.EventSet;
+				temp = await JsonRequest.GetEventData();
+
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    foreach (Event ev in EventInformation.CurrentEvents)
+					EventInformation.CurrentEvents = temp.EventSet;
+					foreach (Event ev in EventInformation.CurrentEvents)
                     {
-                        layout.Children.Add(new EventView(ev));
+                       Layout.Children.Add(new EventView(ev));
                     }
                 });
             });

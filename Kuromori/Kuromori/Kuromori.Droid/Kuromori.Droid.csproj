@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -119,6 +119,7 @@
     <Compile Include="UnitTests\OrganizerCreatesEventTest.cs" />
     <Compile Include="UnitTests\ParticipantAccountTest.cs" />
     <Compile Include="UnitTests\ParticipantViewsEventTest.cs" />
+    <Compile Include="MenuTableViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

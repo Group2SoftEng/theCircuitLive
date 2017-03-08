@@ -3,13 +3,13 @@ using Kuromori.DataStructure;
 
 namespace Kuromori
 {
-	public class ActiveUser
+	public class ActiveUser<T>
 	{
-		public ActiveUser()
-		{
-		}
+		public AccountType CurrentAccountType { get; set; }
+		public static T CurrentUser;
 
-		public static User CurrentUser { get; set; }
+
+
 
 	}
 }
