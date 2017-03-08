@@ -10,7 +10,7 @@
                         <RowDefinition Height="4*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <StackLayout Spacing="5" x:Name="UserRegEvent">
@@ -50,8 +50,9 @@
                         x:Name="RegEventSpkr"
                         Grid.Row="0"
                         Grid.Column="1"
-                        HeightRequest="70"
-                        WidthRequest="70">
+                        HeightRequest="100"
+                        WidthRequest="80"
+                        VerticalOptions="Start">
                     </Image>
                 </Grid>
             </Frame>

@@ -15,7 +15,7 @@ namespace Kuromori
         public UserRegisteredEvents()
         {
             InitializeComponent();
-            RegEventSpkr.Source = new Uri("http://thecircuitlive.com/wp-content/uploads/2016/10/theCiruit-IG-March_web.jpg");
+            RegEventSpkr.Source = new Uri("http://thecircuitlive.com/wp-content/uploads/2016/09/Candi-Cylar-350x350.jpg");
         }
     }
 }
