@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Kuromori.DataStructure;
+using Kuromori;
 
 namespace Kuromori
 {
@@ -18,6 +19,24 @@ namespace Kuromori
 		public RegisterPage()
 		{
 			InitializeComponent();
+
+
+			/*
+			 * <Button
+			Text="Next"
+			HorizontalOptions="Center"
+			VerticalOptions="CenterAndExpand"
+			Grid.Row="6"
+			Grid.Column="1"
+			BackgroundColor="#b71a66"
+			TextColor="White"
+			Clicked = "OnNextClick"
+
+		/>*/
+
+
+
+
 		}
 
 		/// <summary>
@@ -112,6 +131,11 @@ namespace Kuromori
 
 		}
 
+		void OnCancelClick(object sender, EventArgs e)
+		{
+			Navigation.PopAsync();
+		}
+
 	    /// <summary>
 	    ///   Check to see if the current password is properly formed
 	    /// </summary>
@@ -124,7 +148,7 @@ namespace Kuromori
 	    /// <summary>
 	    ///   Check to see if the current username is properly formed
 	    /// </summary>
-		Boolean IsProperUsername()
+		Boolean IsProperUsername() 
 		{
 			Regex UsernamePattern = new Regex("^[A-Za-z0-9]{6,15}$");
 			return UsernamePattern.IsMatch(TryUsername.Text);

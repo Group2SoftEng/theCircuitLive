@@ -94,6 +94,8 @@
     <Compile Include="Views\InputField.xaml.cs">
       <DependentUpon>InputField.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Cells.cs" />
+    <Compile Include="Views\MenuTableView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
