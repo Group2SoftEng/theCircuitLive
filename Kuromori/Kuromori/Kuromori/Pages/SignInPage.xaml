@@ -11,13 +11,12 @@
   <StackLayout Margin="10">
 
 		<Image
-			  x:Name="SelectLogo"
-			  HorizontalOptions = "FillAndExpand"
-			  Source="http://haydenszymanski.me/logo.png"
-			  Aspect="AspectFit"
-			  VerticalOptions="Center"
-			  Scale="2"
-			/>
+			x:Name="SelectLogo"
+			HorizontalOptions = "FillAndExpand"
+			VerticalOptions = "FillAndExpand"
+			Aspect="AspectFill"
+			Source="http://haydenszymanski.me/logo.png"
+		/>
 
 
   <local:MenuTableView 

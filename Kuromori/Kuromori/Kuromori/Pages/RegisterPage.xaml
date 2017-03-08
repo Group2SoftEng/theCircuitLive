@@ -5,14 +5,15 @@
 		x:Class="Kuromori.RegisterPage"
 	Title="Sign Up">
 	<ContentPage.Content>
-	<StackLayout Margin="10" Spacing="0">
+
+	<StackLayout Margin="10" Padding="0" Spacing="0">
+
 		 <Image
 		  x:Name="SelectLogo"
 		  HorizontalOptions = "FillAndExpand"
+		  VerticalOptions = "FillAndExpand"
+		  Aspect="AspectFill"
 		  Source="http://haydenszymanski.me/logo.png"
-		  Aspect="AspectFit"
-		  VerticalOptions="Center"
-		  Scale="2"
 		/>
 
 	<local:MenuTableView HasUnevenRows="true" Intent="Data" >
@@ -25,7 +26,6 @@
 							Spacing="5"
 							Padding="5"
 						>
-
 							<Label
 								Text="Username"
 								VerticalOptions="Center"
@@ -120,8 +120,6 @@
 			/>
 
 	</StackLayout>
-
-
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
