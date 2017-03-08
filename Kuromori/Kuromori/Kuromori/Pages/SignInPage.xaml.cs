@@ -74,5 +74,10 @@ namespace Kuromori
 
 			}
 		}
+
+		void CancelClick(object sender, EventArgs args)
+		{
+			Navigation.PopAsync();
+		}
     }
 }
