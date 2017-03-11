@@ -15,6 +15,7 @@ namespace Kuromori
     public partial class EventPage : ContentPage
     {
         public Events temp { get; set; }
+
         /// <summary>
         ///   This page is a container for the event cards that will be shown on the screen
         /// </summary>
@@ -27,7 +28,7 @@ namespace Kuromori
 
             Task.Run(async() =>
             {
-                temp = await EventConnection.GetEventData();
+				temp = await JsonRequest.GetEventData();
 
                 Device.BeginInvokeOnMainThread(() =>
                 {

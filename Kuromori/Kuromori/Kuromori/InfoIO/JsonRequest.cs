@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace Kuromori.InfoIO
 {
-	public static class EventConnection
+	public static class JsonRequest
 	{
 
 		/// <summary>
@@ -45,6 +45,20 @@ namespace Kuromori.InfoIO
 			User tempUser = JsonConvert.DeserializeObject<User>(responseContent);
 			return tempUser;
 
+		}
+
+		public static async Task<T> GetUserData<T>(List<KeyValuePair<string, string>> pairs, string url)
+		{
+			string responseContent;
+			using (HttpClient client = new HttpClient())
+			{
+				var content = new FormUrlEncodedContent(pairs);
+				HttpResponseMessage response = await client.PostAsync(url, content);
+				response.EnsureSuccessStatusCode();
+				responseContent = await response.Content.ReadAsStringAsync();
+			}
+			T tempUser = JsonConvert.DeserializeObject<T>(responseContent);
+			return tempUser;
 		}
 
 		struct Speaker

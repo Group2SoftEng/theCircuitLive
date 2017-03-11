@@ -1,97 +1,125 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="Kuromori.RegisterPage">
-
+		xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
+		x:Class="Kuromori.RegisterPage"
+	Title="Sign Up">
 	<ContentPage.Content>
-	<StackLayout Margin="20">
 
-	<Frame Padding="2">
+	<StackLayout Margin="10" Padding="0" Spacing="0">
 
-      <Grid BackgroundColor="White" Padding="0" Margin="0">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="3"></RowDefinition>
-          <RowDefinition Height="*"></RowDefinition>
-          <RowDefinition Height="*"></RowDefinition>
-          <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition></ColumnDefinition>
-          <ColumnDefinition Width="4*"></ColumnDefinition>
-          <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <Label 
-			Text="Username"
-			Grid.Row="0" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-		</Label>
-
-        <Entry
-			x:Name="TryUsername"
-      AutomationId ="UsernameId"
-			Text=""
-			Grid.Row="1" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center" 
-			HorizontalOptions="FillAndExpand">
-		</Entry>
-
-		<Label 
-			Text="Password" 
-			Grid.Row="2" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-		</Label>        
-
-		<Entry 
-			x:Name="TryPassword"
-      AutomationId ="PasswordId"
-			Text=""
-			Grid.Row="3" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center" 
-			IsPassword="true"
-		>
-		</Entry> 
-
-		<Label 
-			Text="Reenter password"
-			Grid.Row="4" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center">
-		</Label>        
-
-		<Entry 
-			x:Name="ReTryPassword"
-      AutomationId ="ReenterPasswordId"
-			Text=""
-			Grid.Row="5" 
-			Grid.Column="1" 
-			HorizontalTextAlignment="Center" 
-			IsPassword="true"
-		>
-		</Entry> 
-
-		<Button
-			Text="Next"
-			HorizontalOptions="Center"
-			VerticalOptions="CenterAndExpand"
-			Grid.Row="6"
-			Grid.Column="1"
-			BackgroundColor="#b71a66"
-			TextColor="White"
-			Clicked = "OnNextClick"
-
+		 <Image
+		  x:Name="SelectLogo"
+		  HorizontalOptions = "FillAndExpand"
+		  VerticalOptions = "FillAndExpand"
+		  Aspect="AspectFill"
+		  Source="http://haydenszymanski.me/logo.png"
 		/>
 
-      </Grid>
-    </Frame>
+	<local:MenuTableView HasUnevenRows="true" Intent="Data" >
+		<local:MenuTableView.Root>
+				<TableSection>
+
+					<ViewCell>
+						<StackLayout
+							Orientation="Vertical"
+							Spacing="5"
+							Padding="5"
+						>
+							<Label
+								Text="Username"
+								VerticalOptions="Center"
+								HorizontalOptions="CenterAndExpand"
+							/>
+
+							<Entry
+								IsPassword="false"
+								Text=""
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="CenterAndExpand"
+								HorizontalTextAlignment="Center"
+								x:Name="TryUsername"
+							/>
+						</StackLayout>
+					</ViewCell>							
+
+					<ViewCell>
+						<StackLayout
+							Orientation="Vertical"
+							Spacing="5"
+						>
+							<Label
+								Text="Enter Password"
+								VerticalOptions="Center"
+								HorizontalOptions="Center"
+							/>
+
+							<Entry
+								IsPassword="true"
+								Text=""
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="Center"
+								HorizontalTextAlignment="Center"
+								x:Name="TryPassword"
+							/>
+						</StackLayout>
+					</ViewCell>							
+
+					<ViewCell>
+						<StackLayout
+							Orientation="Vertical"
+							Spacing="5"
+						>
+
+							<Label
+								Text="Reenter Password"
+								VerticalOptions="Center"
+								HorizontalOptions="CenterAndExpand"
+							/>
+
+							<Entry
+								IsPassword="true"
+								Text=""
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="CenterAndExpand"
+								HorizontalTextAlignment="Center"
+								x:Name="ReTryPassword"
+							/>
+						</StackLayout>
+					</ViewCell>							
 
 
+				</TableSection>
+		</local:MenuTableView.Root>
+	</local:MenuTableView>
+    
 
+    <StackLayout
+				Orientation="Horizontal"
+				HorizontalOptions="CenterAndExpand"
+				Spacing="9">
 
+	    <Button
+				Text="Cancel"
+				HorizontalOptions="Center"
+				VerticalOptions="CenterAndExpand"
+				BackgroundColor="#b71a66"
+				TextColor="White"
+				Clicked = "OnCancelClick"
+
+			/>
+
+	    <Button
+				Text="Next"
+				HorizontalOptions="Center"
+				VerticalOptions="CenterAndExpand"
+				BackgroundColor="#b71a66"
+				TextColor="White"
+				Clicked = "OnNextClick"
+
+			/>
+
+	</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

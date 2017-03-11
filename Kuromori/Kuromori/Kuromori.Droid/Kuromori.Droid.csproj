@@ -119,6 +119,7 @@
     <Compile Include="UnitTests\OrganizerCreatesEventTest.cs" />
     <Compile Include="UnitTests\ParticipantAccountTest.cs" />
     <Compile Include="UnitTests\ParticipantViewsEventTest.cs" />
+    <Compile Include="MenuTableViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

@@ -1,135 +1,111 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Kuromori.ProfileUpdatePage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
+	x:Class="Kuromori.ProfileUpdatePage"
+	Title = "Edit Profile">
   <ContentPage.Content>
-                <Frame Padding="2">
-                <ScrollView>
+            <ScrollView>
+
             <StackLayout Margin="0">
 
-                        <Label
-					        Text="First Name"
-					        HorizontalTextAlignment="Center">
-                        </Label>
+            <local:MenuTableView HasUnevenRows="true" Intent="Data" >
+				<local:MenuTableView.Root>
+					<TableSection>
 
-                        <Entry
-					        x:Name="First"
-					        AutomationId="First"
-                  Text=""
-					        HorizontalTextAlignment="Center"
-					        HorizontalOptions="FillAndExpand">
-                        </Entry>
+							<EntryCell
+								x:Name="First"
+								Label="First Name"
+							/>
 
-                        <Label
-				            Text="Last Name"
-				            HorizontalTextAlignment="Center">
-                        </Label>
+							<EntryCell
+								x:Name="Last"
+								Label="Last Name"
+							/>
 
-                        <Entry
-				            x:Name="Last"
-                    AutomationId="Last"
-				            Text=""
-				            HorizontalTextAlignment="Center"
-						>
+							<EntryCell
+								x:Name="Email"
+								Label="Email"
+							/>
 
-                        </Entry>
+							<EntryCell
+								x:Name="Phone"
+								Label="Phone Number"
+							/>
 
-                        <Label
-				            Text="Email"
-				            HorizontalTextAlignment="Center">
-                        </Label>
+							<EntryCell
+								x:Name="Address"
+								Label="Address"
+							/>
 
-                        <Entry
-				            x:Name="Email"
-                    AutomationId="EmailId"
-				            Text=""
-				            HorizontalTextAlignment="Center"
-						>
+							<EntryCell
+								x:Name="ProfileImage"
+								Label="Profile Image"
+							/>
 
-                        </Entry>
+							<EntryCell
+								x:Name="Zip"
+								Label="Zip"
+							/>
 
-                        <Label
-				            Text="Phone Number"
-				            HorizontalTextAlignment="Center">
-                        </Label>
+							<ViewCell>
+								<StackLayout
+								Orientation="Vertical"
+								Spacing="5"
+								Padding="5"
+								>
 
-                        <Entry
-				            x:Name="Phone"
-                    AutomationId="Phone"
-				            Text=""
-				            HorizontalTextAlignment="Center"
-						>
+										<Label
+										Text="About Me"
+										HorizontalTextAlignment="Center">
+										</Label>
 
-                        </Entry>
-
-                        <Label
-				            Text="Address"
-				            HorizontalTextAlignment="Center">
-                        </Label>
-
-                        <Entry
-				            x:Name="Address"
-                    AutomationId="AddressId"
-				            Text=""
-				            HorizontalTextAlignment="Center"
-						>
-
-                        </Entry>
-
-                        <Label
-				            Text="Profile Image"
-				            HorizontalTextAlignment="Center">
-                        </Label>
-
-                        <Entry
-				            x:Name="ProfileImage"
-                    AutomationId="ProfileImage"
-				            Text=""
-				            HorizontalTextAlignment="Center"
-						>
-
-						</Entry>
-
-						<Label
-				            Text="Zip"
-				            HorizontalTextAlignment="Center">
-                        </Label>
-
-                        <Entry
-				            x:Name="Zip"
-                    AutomationId="ZipId"
-				            HorizontalTextAlignment="Center"
-						>
-						</Entry>
-												
-
-                        <Label
-				            Text="About Me"
-				            HorizontalTextAlignment="Center">
-                        </Label>
-
-	                    <Editor
-				            x:Name="AboutMe"
-                    AutomationId="AboutMe"
-				            Text=""
-		                    VerticalOptions="CenterAndExpand"
-		                    HeightRequest = "100"
-
-						>
-						</Editor>
+										<Editor
+										x:Name="AboutMe"
+										AutomationId="AboutMe"
+										Text=""
+										VerticalOptions="CenterAndExpand"
+										HeightRequest = "100"
+										>
+									</Editor>
+								</StackLayout>
+							</ViewCell>							
 
 
 						
 
-                        <Button
-				            Text="Submit"
-				            HorizontalOptions="Center"
-				            VerticalOptions="FillAndExpand"
-				            BackgroundColor="#b71a66"
-				            TextColor="White"
-				            Clicked = "OnProfileEditClick"
-						/>
+									
+
+
+						</TableSection>
+						</local:MenuTableView.Root>
+					</local:MenuTableView>
+
+					<StackLayout
+					Orientation="Horizontal"
+					HorizontalOptions="CenterAndExpand"
+					Spacing="20">
+
+						<Button
+								Text="Cancel"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+								Clicked = "OnCancelClick"
+							/>
+						<Button
+								Text="Submit"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+								Clicked = "OnProfileEditClick"
+							/>
+					</StackLayout>
 
             </StackLayout>
+
             </ScrollView>
-        </Frame>
     </ContentPage.Content>
 </ContentPage>
