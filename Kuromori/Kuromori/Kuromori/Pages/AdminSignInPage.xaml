@@ -7,27 +7,154 @@
 >
 
 	<ContentPage.Content>
-		<StackLayout Padding="30">
+	<RelativeLayout>
+	<BoxView Color="White" x:Name="Base"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Y,
+				Factor=0,
+				Constant=0}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1,
+				Constant=0}"
+			RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=1,
+				Constant=0}" 
+	/>
+
+	<Image
+		x:Name="SelectLogo"
+		Aspect="AspectFit"
+		Source="http://haydenszymanski.me/logo.png"
+		RelativeLayout.YConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Base,
+			Property=Y,
+			Factor=.25,
+			Constant=0}"
+		RelativeLayout.XConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Base,
+			Property=Width,
+			Factor=.15,
+			Constant=0}"
+		RelativeLayout.WidthConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Base,
+			Property=Width,
+			Factor=.7,
+			Constant=0}"
+		RelativeLayout.HeightConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Base,
+			Property=Height,
+			Factor=.2,
+			Constant=0}"
+		
+	/>
+
 			<Entry
 				Placeholder="Username"
 				x:Name="AdminUsername"
-				HorizontalOptions="FillAndExpand"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=SelectLogo,
+				Property=Y,
+				Factor=1,
+				Constant=160}"
+			RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=.10,
+				Constant=0}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Width,
+				Factor=.8,
+				Constant=0}"
 			/>
 
 			<Entry
 				Placeholder="Password"
 				x:Name="AdminPassword"
 				HorizontalOptions="FillAndExpand"
+				RelativeLayout.YConstraint="{ConstraintExpression
+					Type=RelativeToView,
+					ElementName=AdminUsername,
+					Property=Y,
+					Factor=1,
+					Constant=100}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+					Type=RelativeToView,
+					ElementName=AdminUsername,
+					Property=X,
+					Factor=1,
+					Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+					Type=RelativeToView,
+					ElementName=AdminUsername,
+					Property=Width,
+					Factor=1,
+					Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+					Type=RelativeToView,
+					ElementName=AdminUsername,
+					Property=Height,
+					Factor=1,
+					Constant=0}"
 			/>
+
+			<Button
+				Text="Cancel"
+				x:Name="Cancel"
+				HorizontalOptions="Center"
+				VerticalOptions="CenterAndExpand"
+				BackgroundColor="#b71a66"
+				TextColor="White"
+				Clicked = "CancelClick"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=AdminPassword,
+				Property=Y,
+				Factor=1,
+				Constant=100}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=0,
+				Constant=100}"
+		/>
 
 			<Button
 				Text="Sign In"
 				BackgroundColor="#b71a66"
 				TextColor="White"
 				x:Name="SignInButton"
+				Clicked="OnSignInClick"
+				HorizontalOptions="Center"
+				VerticalOptions="CenterAndExpand"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Cancel,
+				Property=Y,
+				Factor=1,
+				Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1,
+				Constant=-200}"
+
+
 			/>
 
 
-		</StackLayout>
+		</RelativeLayout>
+
 	</ContentPage.Content>
 </ContentPage>
