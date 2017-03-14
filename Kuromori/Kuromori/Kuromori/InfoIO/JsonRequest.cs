@@ -47,6 +47,13 @@ namespace Kuromori.InfoIO
 
 		}
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T">Type of jsonobject returned</typeparam>
+        /// <param name="pairs">Post key-value pairs</param>
+        /// <param name="url">url for the post request</param>
+        /// <returns></returns>
 		public static async Task<T> GetUserData<T>(List<KeyValuePair<string, string>> pairs, string url)
 		{
 			string responseContent;

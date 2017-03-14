@@ -7,25 +7,23 @@
 	<ContentPage.Content>
 		<ScrollView>
 		<RelativeLayout>
-
 			<BoxView Color="White" x:Name="Base"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Y,
-				Factor=0,
-				Constant=0}"
+          Type=RelativeToParent,
+          Property=Y,
+          Factor=0,
+          Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Width,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Height,
-				Factor=1,
-				Constant=0}" 
-			>
-			</BoxView>
+          Type=RelativeToParent,
+          Property=Height,
+          Factor=1,
+          Constant=0}" 
+			/>
 
 			<Image
 				x:Name="SelectLogo"
@@ -34,29 +32,29 @@
 				Aspect="AspectFit"
 				Source="http://haydenszymanski.me/logo.png"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Y,
-				Factor=.25,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Y,
+          Factor=.25,
+          Constant=0}"
 				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Width,
-				Factor=.15,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.15,
+          Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Width,
-				Factor=.7,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.7,
+          Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Height,
-				Factor=.2,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Height,
+          Factor=.2,
+          Constant=0}"
 			/>
 
 			<Entry
@@ -69,22 +67,22 @@
 				PlaceholderColor="#b71a66"
 				x:Name="TryUsername"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=SelectLogo,
-				Property=Y,
-				Factor=1,
-				Constant=160}"
+          Type=RelativeToView,
+          ElementName=SelectLogo,
+          Property=Y,
+          Factor=1,
+          Constant=160}"
 				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Width,
-				Factor=.10,
-				Constant=0}"
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=.10,
+          Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Width,
-				Factor=.8,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.8,
+          Constant=0}"
 			/>
 
 			<Entry
@@ -97,29 +95,29 @@
 				Placeholder="Password"
 				PlaceholderColor="#b71a66"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryUsername,
-				Property=Y,
-				Factor=1,
-				Constant=100}"
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
 				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryUsername,
-				Property=X,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=X,
+          Factor=1,
+          Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryUsername,
-				Property=Width,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryUsername,
-				Property=Height,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Height,
+          Factor=1,
+          Constant=0}"
 			/>
 
 			<Entry
@@ -132,29 +130,29 @@
 				Placeholder="Re-enter Password"
 				PlaceholderColor="#b71a66"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryPassword,
-				Property=Y,
-				Factor=1,
-				Constant=100}"
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
 				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryPassword,
-				Property=X,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=X,
+          Factor=1,
+          Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryPassword,
-				Property=Width,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=TryPassword,
-				Property=Height,
-				Factor=1,
-				Constant=0}"
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Height,
+          Factor=1,
+          Constant=0}"
 			/>
 
 			<Button
@@ -166,16 +164,16 @@
 				TextColor="White"
 				Clicked = "OnCancelClick"
 				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=ReTryPassword,
-				Property=Y,
-				Factor=1,
-				Constant=100}"
+          Type=RelativeToView,
+          ElementName=ReTryPassword,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
 				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Width,
-				Factor=0,
-				Constant=100}"
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=0,
+          Constant=100}"
 			/>
 
 			<Button

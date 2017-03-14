@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DataAdapters\EventAdapter.cs" />
+    <Compile Include="DataStructure\Admin.cs" />
     <Compile Include="DataStructure\Event.cs" />
     <Compile Include="DataStructure\Events.cs" />
     <Compile Include="DataStructure\Speaker.cs" />
@@ -220,9 +221,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
