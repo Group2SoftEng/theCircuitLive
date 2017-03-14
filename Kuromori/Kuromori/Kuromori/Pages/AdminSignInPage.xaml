@@ -83,6 +83,7 @@
 				Placeholder="Password"
 				x:Name="AdminPassword"
 				HorizontalOptions="FillAndExpand"
+                IsPassword="True"
 				RelativeLayout.YConstraint="{ConstraintExpression
 					Type=RelativeToView,
 					ElementName=AdminUsername,
