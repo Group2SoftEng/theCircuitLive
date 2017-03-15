@@ -147,42 +147,42 @@ namespace Kuromori.DataStructure
 
         //Deprecated
         //Tests the web response from PostRequests userlogin attempt with valid username
-        [Test]
-        public void WhiteBoxTest_PostRequest_User_Login()
-        {
-            PostRequest post = new PostRequest();
-            string webResponse = post.User_Login("TestUser1", "TestUser1!");
-            Assert.IsTrue("Success" == webResponse);
-        }
+       // [Test]
+       // public void WhiteBoxTest_PostRequest_User_Login()
+       // {
+       //     PostRequest post = new PostRequest();
+      //      string webResponse = post.User_Login("TestUser1", "TestUser1!");
+      //      Assert.IsTrue("Success" == webResponse);
+     //   }
 
         //Deprecated
         //Tests the web response from PostRequests userlogin attempt with invalid username
-        [Test]
-        public void WhiteBoxTest_PostRequest_User_Login_Invalid()
-        {
-            PostRequest post = new PostRequest();
-            string webResponse = post.User_Login("TestUser123abc", "TestUser1!");
-            Assert.IsTrue("Incorrect username or password" == webResponse);
-        }
+     //   [Test]
+   //     public void WhiteBoxTest_PostRequest_User_Login_Invalid()
+    //    {
+   //         PostRequest post = new PostRequest();
+   //         string webResponse = post.User_Login("TestUser123abc", "TestUser1!");
+   //         Assert.IsTrue("Incorrect username or password" == webResponse);
+   //     }
 
         //Deprecated
         //Tests php for if the user exists
-        [Test]
-        public void WhiteBoxTest_PostRequest_UserExists()
-        {
-            PostRequest post = new PostRequest();
-            Console.WriteLine(post.UserExists("TestUser1", "TestUser1!"));
-            Assert.IsTrue(post.UserExists("TestUser1", "TestUser1!"));
-        }
+      //  [Test]
+      //  public void WhiteBoxTest_PostRequest_UserExists()
+      //  {
+      //      PostRequest post = new PostRequest();
+      //      Console.WriteLine(post.UserExists("TestUser1", "TestUser1!"));
+      //      Assert.IsTrue(post.UserExists("TestUser1", "TestUser1!"));
+      //  }
 
         //Deprecated
         //Tests php for if the user doesn't exist 
-        [Test]
-        public void WhiteBoxTest_PostRequest_UserExists_Invalid()
-        {
-            PostRequest post = new PostRequest();
-            Assert.IsFalse(post.UserExists("TestUser123abc", "TestUser1!"));
-        }
+        //[Test]
+       // public void WhiteBoxTest_PostRequest_UserExists_Invalid()
+       // {
+       //     PostRequest post = new PostRequest();
+       //     Assert.IsFalse(post.UserExists("TestUser123abc", "TestUser1!"));
+       // }
 
         //Tests if the URL to get_events.php is working
         [Test]

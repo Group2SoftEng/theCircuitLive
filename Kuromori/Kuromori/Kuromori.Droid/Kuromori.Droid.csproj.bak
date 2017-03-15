@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -120,6 +120,8 @@
     <Compile Include="UnitTests\ParticipantAccountTest.cs" />
     <Compile Include="UnitTests\ParticipantViewsEventTest.cs" />
     <Compile Include="MenuTableViewRenderer.cs" />
+    <Compile Include="AndroidUserCellRenderer.cs" />
+    <Compile Include="AndroidUserCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -134,6 +136,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\layout\AndroidUserCell.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

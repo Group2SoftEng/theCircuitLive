@@ -313,6 +313,16 @@ namespace Kuromori.DataStructure
             app.Tap("Guest Access");
             app.Tap("content");
         }
+
+        //
+        [Test]
+        public void OrganizerCreateEventSuccess()
+        {
+            app.Tap("Let's get started");
+            app.Tap("Guest Access");
+            app.Tap("content");
+        }
+
     }
 
 }
