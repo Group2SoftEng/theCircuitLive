@@ -7,108 +7,162 @@
 		Title="Sign In"
 	>
 	<ContentPage.Content>
+	<ScrollView>
+	<RelativeLayout >
+	<BoxView Color="White" x:Name="Base"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Y,
+				Factor=0,
+				Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1,
+				Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=1,
+				Constant=0}" 
+	>
+		</BoxView>
 
-  <StackLayout Margin="10">
 
 		<Image
 			x:Name="SelectLogo"
-			HorizontalOptions = "FillAndExpand"
-			VerticalOptions = "FillAndExpand"
-			Aspect="AspectFill"
+			Aspect="AspectFit"
 			Source="http://haydenszymanski.me/logo.png"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Y,
+				Factor=.25,
+				Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Width,
+				Factor=.15,
+				Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Width,
+				Factor=.7,
+				Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Height,
+				Factor=.2,
+				Constant=0}"
+			
 		/>
 
-
-  <local:MenuTableView 
-			HasUnevenRows="true" 
-			Intent="Data">
-		<local:MenuTableView.Root>
-			<TableSection>
-				<ViewCell>
-					<StackLayout 
-						Orientation="Vertical"
-						Spacing="5"
-						Padding="5"
-					>
-					        <Label 
-								Text="Username" 
-								Grid.Row="0" 
-								Grid.Column="1" 
-								HorizontalTextAlignment="Center">
-							</Label>
-
-					        <Entry
-								x:Name="Username"
-								AutomationId = "UsernameSignIn"
-								HorizontalOptions="FillAndExpand"
-								VerticalOptions="CenterAndExpand"
-								HorizontalTextAlignment="Center" 
-							>
-
-							</Entry>
-					</StackLayout>
-				</ViewCell>
-
-				<ViewCell>
-					<StackLayout 
-						Orientation="Vertical"
-						Spacing="5"
-						Padding="5"
-					>
-							<Label 
-								Text="Password" 
-								HorizontalTextAlignment="Center"
-							>
-							</Label>        
-
-							<Entry 
-								x:Name="Password"
-								HorizontalOptions="FillAndExpand"
-								HorizontalTextAlignment="Center"
-								VerticalOptions="CenterAndExpand"
-								AutomationId ="PasswordSignIn"
-								IsPassword="true"
-							>
-							</Entry> 
-					</StackLayout>
-				</ViewCell>
+	    <Entry
+			x:Name="Username"
+			Placeholder="Username"
+			AutomationId = "UsernameSignIn"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=SelectLogo,
+				Property=Y,
+				Factor=1,
+				Constant=160}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=.10,
+				Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Width,
+				Factor=.8,
+				Constant=0}"
 	
-					
+		>
 
-			</TableSection>
-		</local:MenuTableView.Root>
-	</local:MenuTableView>
+		</Entry>
 
+		<Entry 
+			x:Name="Password"
+			Placeholder="Password"
+			AutomationId ="PasswordSignIn"
+			IsPassword="true"
+			RelativeLayout.YConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Username,
+			Property=Y,
+			Factor=1,
+			Constant=100}"
+			RelativeLayout.XConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Username,
+			Property=X,
+			Factor=1,
+			Constant=0}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Username,
+			Property=Width,
+			Factor=1,
+			Constant=0}"
+			RelativeLayout.HeightConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Username,
+			Property=Height,
+			Factor=1,
+			Constant=0}"
+		>
+		</Entry> 
 
-	<StackLayout
-		Orientation="Horizontal"
-		HorizontalOptions="CenterAndExpand"
-		Spacing="9"
-	>
 
 		<Button
 			Text="Cancel"
+			x:Name="Cancel"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
 			BackgroundColor="#b71a66"
 			TextColor="White"
 			Clicked = "CancelClick"
+			RelativeLayout.YConstraint="{ConstraintExpression
+			Type=RelativeToView,
+			ElementName=Password,
+			Property=Y,
+			Factor=1,
+			Constant=100}"
+			RelativeLayout.XConstraint="{ConstraintExpression
+			Type=RelativeToParent,
+			Property=Width,
+			Factor=0,
+			Constant=100}"
+
 		/>
 
 		<Button
 			Text="Login"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
-			Grid.Row="4"
-			Grid.Column="1"
 			BackgroundColor="#b71a66"
 			TextColor="White"
 			Clicked="SignInClick"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Cancel,
+				Property=Y,
+				Factor=1,
+				Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1,
+				Constant=-200}"
 		/>
 
-		</StackLayout>
-
-  </StackLayout>
+		</RelativeLayout>
+		</ScrollView>
 
 </ContentPage.Content>
 </ContentPage>

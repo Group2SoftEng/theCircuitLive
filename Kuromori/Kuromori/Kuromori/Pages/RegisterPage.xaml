@@ -5,121 +5,198 @@
 		x:Class="Kuromori.RegisterPage"
 	Title="Sign Up">
 	<ContentPage.Content>
+		<ScrollView>
+		<RelativeLayout>
+			<BoxView Color="White" x:Name="Base"
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToParent,
+          Property=Y,
+          Factor=0,
+          Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+          Type=RelativeToParent,
+          Property=Height,
+          Factor=1,
+          Constant=0}" 
+			/>
 
-	<StackLayout Margin="10" Padding="0" Spacing="0">
+			<Image
+				x:Name="SelectLogo"
+				HorizontalOptions = "FillAndExpand"
+				VerticalOptions = "FillAndExpand"
+				Aspect="AspectFit"
+				Source="http://haydenszymanski.me/logo.png"
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Y,
+          Factor=.25,
+          Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.15,
+          Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.7,
+          Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Height,
+          Factor=.2,
+          Constant=0}"
+			/>
 
-		 <Image
-		  x:Name="SelectLogo"
-		  HorizontalOptions = "FillAndExpand"
-		  VerticalOptions = "FillAndExpand"
-		  Aspect="AspectFill"
-		  Source="http://haydenszymanski.me/logo.png"
-		/>
+			<Entry
+				IsPassword="false"
+				Text=""
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand"
+				HorizontalTextAlignment="Center"
+				Placeholder="Username"
+				PlaceholderColor="#b71a66"
+				x:Name="TryUsername"
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=SelectLogo,
+          Property=Y,
+          Factor=1,
+          Constant=160}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=.10,
+          Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=Base,
+          Property=Width,
+          Factor=.8,
+          Constant=0}"
+			/>
 
-	<local:MenuTableView HasUnevenRows="true" Intent="Data" >
-		<local:MenuTableView.Root>
-				<TableSection>
+			<Entry
+				IsPassword="true"
+				Text=""
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="Center"
+				HorizontalTextAlignment="Center"
+				x:Name="TryPassword"
+				Placeholder="Password"
+				PlaceholderColor="#b71a66"
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=X,
+          Factor=1,
+          Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryUsername,
+          Property=Height,
+          Factor=1,
+          Constant=0}"
+			/>
 
-					<ViewCell>
-						<StackLayout
-							Orientation="Vertical"
-							Spacing="5"
-							Padding="5"
-						>
-							<Label
-								Text="Username"
-								VerticalOptions="Center"
-								HorizontalOptions="CenterAndExpand"
-							/>
+			<Entry
+				IsPassword="true"
+				Text=""
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand"
+				HorizontalTextAlignment="Center"
+				x:Name="ReTryPassword"
+				Placeholder="Re-enter Password"
+				PlaceholderColor="#b71a66"
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=X,
+          Factor=1,
+          Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Width,
+          Factor=1,
+          Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=TryPassword,
+          Property=Height,
+          Factor=1,
+          Constant=0}"
+			/>
 
-							<Entry
-								IsPassword="false"
-								Text=""
-								HorizontalOptions="FillAndExpand"
-								VerticalOptions="CenterAndExpand"
-								HorizontalTextAlignment="Center"
-								x:Name="TryUsername"
-							/>
-						</StackLayout>
-					</ViewCell>							
-
-					<ViewCell>
-						<StackLayout
-							Orientation="Vertical"
-							Spacing="5"
-						>
-							<Label
-								Text="Enter Password"
-								VerticalOptions="Center"
-								HorizontalOptions="Center"
-							/>
-
-							<Entry
-								IsPassword="true"
-								Text=""
-								HorizontalOptions="FillAndExpand"
-								VerticalOptions="Center"
-								HorizontalTextAlignment="Center"
-								x:Name="TryPassword"
-							/>
-						</StackLayout>
-					</ViewCell>							
-
-					<ViewCell>
-						<StackLayout
-							Orientation="Vertical"
-							Spacing="5"
-						>
-
-							<Label
-								Text="Reenter Password"
-								VerticalOptions="Center"
-								HorizontalOptions="CenterAndExpand"
-							/>
-
-							<Entry
-								IsPassword="true"
-								Text=""
-								HorizontalOptions="FillAndExpand"
-								VerticalOptions="CenterAndExpand"
-								HorizontalTextAlignment="Center"
-								x:Name="ReTryPassword"
-							/>
-						</StackLayout>
-					</ViewCell>							
-
-
-				</TableSection>
-		</local:MenuTableView.Root>
-	</local:MenuTableView>
-    
-
-    <StackLayout
-				Orientation="Horizontal"
-				HorizontalOptions="CenterAndExpand"
-				Spacing="9">
-
-	    <Button
+			<Button
 				Text="Cancel"
+				x:Name="Cancel"
 				HorizontalOptions="Center"
 				VerticalOptions="CenterAndExpand"
 				BackgroundColor="#b71a66"
 				TextColor="White"
 				Clicked = "OnCancelClick"
-
+				RelativeLayout.YConstraint="{ConstraintExpression
+          Type=RelativeToView,
+          ElementName=ReTryPassword,
+          Property=Y,
+          Factor=1,
+          Constant=100}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+          Type=RelativeToParent,
+          Property=Width,
+          Factor=0,
+          Constant=100}"
 			/>
 
-	    <Button
+			<Button
 				Text="Next"
 				HorizontalOptions="Center"
 				VerticalOptions="CenterAndExpand"
 				BackgroundColor="#b71a66"
 				TextColor="White"
 				Clicked = "OnNextClick"
-
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Cancel,
+				Property=Y,
+				Factor=1,
+				Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1,
+				Constant=-200}"
 			/>
 
-	</StackLayout>
-		</StackLayout>
+		</RelativeLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
