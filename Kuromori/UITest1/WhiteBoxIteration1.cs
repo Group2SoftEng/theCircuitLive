@@ -147,72 +147,72 @@ namespace Kuromori.DataStructure
 
         //Deprecated
         //Tests the web response from PostRequests userlogin attempt with valid username
-        [Test]
-        public void WhiteBoxTest_PostRequest_User_Login()
-        {
-            PostRequest post = new PostRequest();
-            string webResponse = post.User_Login("TestUser1", "TestUser1!");
-            Assert.IsTrue("Success" == webResponse);
-        }
+        //[Test]
+        //public void WhiteBoxTest_PostRequest_User_Login()
+        //{
+        //    PostRequest post = new PostRequest();
+        //    string webResponse = post.User_Login("TestUser1", "TestUser1!");
+        //    Assert.IsTrue("Success" == webResponse);
+        //}
 
         //Deprecated
-        //Tests the web response from PostRequests userlogin attempt with invalid username
-        [Test]
-        public void WhiteBoxTest_PostRequest_User_Login_Invalid()
-        {
-            PostRequest post = new PostRequest();
-            string webResponse = post.User_Login("TestUser123abc", "TestUser1!");
-            Assert.IsTrue("Incorrect username or password" == webResponse);
-        }
+        ////Tests the web response from PostRequests userlogin attempt with invalid username
+        //[Test]
+        //public void WhiteBoxTest_PostRequest_User_Login_Invalid()
+        //{
+        //    PostRequest post = new PostRequest();
+        //    string webResponse = post.User_Login("TestUser123abc", "TestUser1!");
+        //    Assert.IsTrue("Incorrect username or password" == webResponse);
+        //}
 
         //Deprecated
         //Tests php for if the user exists
-        [Test]
-        public void WhiteBoxTest_PostRequest_UserExists()
-        {
-            PostRequest post = new PostRequest();
-            Console.WriteLine(post.UserExists("TestUser1", "TestUser1!"));
-            Assert.IsTrue(post.UserExists("TestUser1", "TestUser1!"));
-        }
+        //[Test]
+        //public void WhiteBoxTest_PostRequest_UserExists()
+        //{
+        //    PostRequest post = new PostRequest();
+        //    Console.WriteLine(post.UserExists("TestUser1", "TestUser1!"));
+        //    Assert.IsTrue(post.UserExists("TestUser1", "TestUser1!"));
+        //}
 
         //Deprecated
         //Tests php for if the user doesn't exist 
-        [Test]
-        public void WhiteBoxTest_PostRequest_UserExists_Invalid()
-        {
-            PostRequest post = new PostRequest();
-            Assert.IsFalse(post.UserExists("TestUser123abc", "TestUser1!"));
-        }
+       // [Test]
+        //public void WhiteBoxTest_PostRequest_UserExists_Invalid()
+        //{
+         //   PostRequest post = new PostRequest();
+          //  Assert.IsFalse(post.UserExists("TestUser123abc", "TestUser1!"));
+        //}
 
         //Tests if the URL to get_events.php is working
-        [Test]
-        public void WhiteBoxTest_PostRequest_PostInfo_Success()
-        {
-            List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
-            KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
-            userList.Add(testUsers);
-            PostRequest post = new PostRequest();
-            var result = post.PostInfo(userList, "http://haydenszymanski.me/softeng05/get_events.php");
-            Assert.IsTrue(result.ResponseSuccess);
+//        [Test]
+ //       public void WhiteBoxTest_PostRequest_PostInfo_Success()
+  //      {
+   //         List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
+    ///        KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
+      //      userList.Add(testUsers);
+       //     PostRequest post = new PostRequest();
+        //    var result = post.PostInfo(userList, "http://haydenszymanski.me/softeng05/get_events.php");
+         //   Assert.IsTrue(result.ResponseSuccess);
 
-        }
+        //}
 
         //Tests that EventPage gets events and sets them in the layout
-        [Test]
-        public async void WhiteBoxTest_EventPage_EventPage()
-        {
-            EventPage eventPage = new EventPage();
+        //[Test]
+        //public async void WhiteBoxTest_EventPage_EventPage()
+        //{
+         //   EventPage eventPage = new EventPage();
 
-            Events events = await EventConnection.GetEventData();
-            await Task.Delay(10000);
-            Assert.IsTrue(events.EventSet[0].EventDescription == eventPage.temp.EventSet[0].EventDescription);
-            Assert.IsTrue(events.EventSet[0].EventDate == eventPage.temp.EventSet[0].EventDate);
-            Assert.IsTrue(events.EventSet[0].EventId == eventPage.temp.EventSet[0].EventId);
-            Assert.IsTrue(events.EventSet[0].EventTopic == eventPage.temp.EventSet[0].EventTopic);
-            Assert.IsTrue(events.EventSet[0].EventImg == eventPage.temp.EventSet[0].EventImg);
-            Assert.IsTrue(events.EventSet[0].EventLocation == eventPage.temp.EventSet[0].EventLocation);
-            Assert.IsTrue(events.EventSet[0].EventSignUpUrl == eventPage.temp.EventSet[0].EventSignUpUrl);
-        }
+//            Events events = await EventConnection.GetEventData();
+ //           await Task.Delay(10000);
+  //          Assert.IsTrue(events.EventSet[0].EventDescription == eventPage.temp.EventSet[0].EventDescription);
+   ///         Assert.IsTrue(events.EventSet[0].EventDate == eventPage.temp.EventSet[0].EventDate);
+     //       Assert.IsTrue(events.EventSet[0].EventId == eventPage.temp.EventSet[0].EventId);
+      //      Assert.IsTrue(events.EventSet[0].EventTopic == eventPage.temp.EventSet[0].EventTopic);
+       //     Assert.IsTrue(events.EventSet[0].EventImg == eventPage.temp.EventSet[0].EventImg);
+        //    Assert.IsTrue(events.EventSet[0].EventLocation == eventPage.temp.EventSet[0].EventLocation);
+         //   Assert.IsTrue(events.EventSet[0].EventSignUpUrl == eventPage.temp.EventSet[0].EventSignUpUrl);
+        //}
 
         [Test]
         public void WhiteBoxTest_UserSelectPage_UserSelectPage()

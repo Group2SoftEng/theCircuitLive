@@ -10,7 +10,7 @@ using System.Threading;
 using Kuromori;
 using Kuromori.InfoIO;
 using Kuromori.DataAdapters;
-
+ 
 namespace Kuromori.DataStructure
 {
     [TestFixture(Platform.Android)]

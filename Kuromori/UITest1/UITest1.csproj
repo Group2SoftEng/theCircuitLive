@@ -56,10 +56,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iteration2BlackBox.cs" />
     <Compile Include="UserProfileTests.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
-    <Compile Include="WhiteBox.cs" />
+    <Compile Include="WhiteBoxIteration1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
