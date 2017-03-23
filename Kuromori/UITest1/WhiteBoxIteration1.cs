@@ -116,26 +116,26 @@ namespace Kuromori.DataStructure
         }
 
         //Gets events from GetEventData() and test an individual event Topic
-        [Test]
-        public async static void WhiteBoxTest_EventConnection_GetEventData()
-        {
+       // [Test]
+       // public async static void WhiteBoxTest_EventConnection_GetEventData()
+       // {
             
-            Events events = await EventConnection.GetEventData();
-            Assert.True("Topic: To be announced" == events.EventSet[0].EventTopic);
-        }
+       //     Events events = await EventConnection.GetEventData();
+        //    Assert.True("Topic: To be announced" == events.EventSet[0].EventTopic);
+       // }
 
         //Tests if Uri is able to be created
-        [Test]
-        public async static void WhiteBoxAppTest_EventConnection_UrlToHtml()
-        {
-            Uri address = new Uri("https://www.google.com");//URI to send to method
-            string testAddress = await EventConnection.UrlToHtml(address);//Sending uri to method
-            UriKind expectedAddress = new UriKind();//URI kind for TryCreate
-            Uri uriTest;//Result of Uri.TryCreate
+        //[Test]
+        //public async static void WhiteBoxAppTest_EventConnection_UrlToHtml()
+        //{
+         //   Uri address = new Uri("https://www.google.com");//URI to send to method
+        //    string testAddress = await EventConnection.UrlToHtml(address);//Sending uri to method
+        //    UriKind expectedAddress = new UriKind();//URI kind for TryCreate
+         //   Uri uriTest;//Result of Uri.TryCreate
 
-            Assert.IsTrue(Uri.TryCreate(testAddress, expectedAddress, out uriTest));
+        //    Assert.IsTrue(Uri.TryCreate(testAddress, expectedAddress, out uriTest));
             // If the address can be created using the testAddress from UrlToHtml
-        }
+      //  }
 
         //Tests if you can get the list of events
         [Test]

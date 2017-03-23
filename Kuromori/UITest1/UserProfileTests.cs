@@ -1,4 +1,4 @@
-﻿using System;
+﻿/* using System;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -283,4 +283,4 @@ namespace Kuromori.DataStructure
             app.Tap(c => c.Marked("Continue"));
         }
     }
-}
+} */

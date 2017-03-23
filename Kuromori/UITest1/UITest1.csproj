@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iteration2WhiteBox.cs" />
     <Compile Include="Iteration2BlackBox.cs" />
     <Compile Include="UserProfileTests.cs" />
     <Compile Include="Tests.cs" />
