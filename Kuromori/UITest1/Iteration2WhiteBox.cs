@@ -46,27 +46,48 @@ namespace UITest1
                 app.Screenshot("Main");
             }
 
-            [Test]
-            public void JsonRequest_GetEventData()
+           
+            public String JsonRequest_GetEventData()
             {
                 var temp = JsonRequest.GetEventData();
-                Console.WriteLine(temp.CreationOptions);
-                Console.WriteLine(temp.Exception);
-                Console.WriteLine(temp.IsCanceled);
-                Console.WriteLine(temp.IsCompleted);
-                Console.WriteLine(temp.IsFaulted);
-                Console.WriteLine(temp.Result);
-                Console.WriteLine(temp.Status);
-            }
+                String eventDescription = temp.Result.EventSet[0].EventDescription;
+                return eventDescription;
+             }
+
+
 
             //Compares results of a JSONRequest to layout.children type
             [Test]
             public void EventPage_EventPage()
             {
                 EventPage evnt = new EventPage();
-                
 
+                //Tests JsonRequest and verifies it's displayed in the layout
+                String eventDescription = JsonRequest_GetEventData();
+                app.Tap(c => c.Marked("Let's get started"));
+                app.Tap(c => c.Marked("Guest Access"));
+                app.ScrollTo(eventDescription);//Does the JSON request match what is in the layout for the app
             }
+
+            [Test]
+            public void JsonRequest_GetUserData()
+            {   
+                List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
+                KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
+                userList.Add(testUsers);
+                //var Json = JsonRequest.GetUserData();
+                var result = JsonRequest.GetUserData(userList, "http://haydenszymanski.me/softeng05/get_events.php");
+                Assert.IsTrue(result.Result.Email == "foo@bar.com");
+            }
+
+            [Test]
+            public void AdminSignInPage_OnClickSignIn()
+            {
+                AdminSignInPage admin = new AdminSignInPage();
+                //admin.OnSignInClick();
+            }
+
+            //For Admin class, set username/password, get username/password
         }
     }
 }
