@@ -20,7 +20,7 @@ namespace Kuromori
         {
             InitializeComponent();
 
-            Task.Run(async() =>
+            Task.Run(async () =>
             {
                 temp = await JsonRequest.GetEBEventData();
                 Device.BeginInvokeOnMainThread(() =>
@@ -29,11 +29,14 @@ namespace Kuromori
                 });
 
             });
-
-            
-
+        }
+        public void CreateEventClick(object sender, EventArgs args)
+        {
 
 
         }
+
     }
 }
+
+

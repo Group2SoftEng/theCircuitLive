@@ -4,51 +4,33 @@
              x:Class="Kuromori.CreateEvent">
     <ContentPage.Content>
         <ScrollView>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                    <Label
-				        x:Name="Title"
-                        Text=""
-                        Grid.Row="0"
-				        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
-                    </Label>
-                    <Label
-				        x:Name="Description"
-                        Text=""
-                        Grid.Row="1"
-				        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
-                    </Label>
-                    <Label
-				        x:Name="Date"
-                         Text=""
-                        Grid.Row="2"
-				        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
-                    </Label>
-                <Label
-				        x:Name="URL"
-                        Text=""
-                        Grid.Row="3"
-				        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
-                </Label>
+            <RelativeLayout>
+                <Entry
+			x:Name="Title"
+			Placeholder="Title"
+			AutomationId = "Title"
+				RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=SelectLogo,
+				Property=Y,
+				Factor=1,
+				Constant=160}"
+				RelativeLayout.XConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=.10,
+				Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Base,
+				Property=Width,
+				Factor=.8,
+				Constant=0}"
+	
+		>
+                </Entry>
 
-                <Label
-				        x:Name="ImageURL"
-                        Text=""
-                        Grid.Row="4"
-				        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
-                </Label>
-            </Grid>
+            </RelativeLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
