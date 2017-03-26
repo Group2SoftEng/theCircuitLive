@@ -20,23 +20,6 @@ namespace Kuromori
 		{
 			InitializeComponent();
 
-
-			/*
-			 * <Button
-			Text="Next"
-			HorizontalOptions="Center"
-			VerticalOptions="CenterAndExpand"
-			Grid.Row="6"
-			Grid.Column="1"
-			BackgroundColor="#b71a66"
-			TextColor="White"
-			Clicked = "OnNextClick"
-
-		/>*/
-
-
-
-
 		}
 
 		/// <summary>
@@ -51,23 +34,23 @@ namespace Kuromori
 			if (!PasswordsMatch())
 				CredInfo.Errors.Add("Passwords do not match");
 			if (!IsProperPassword())
-				CredInfo.Errors.Add("Password is not proper");
+				CredInfo.Errors.Add("Password must have 1 uppercase and special character and be 8 letters long");
 			if (UserExists())
 				CredInfo.Errors.Add("Username already exists");
 			if (CredInfo.IsValid())
 			{
-				PostRequest post = new PostRequest();
-				string hi = post.PostInfo(new List<KeyValuePair<string, string>> {
+				string _temp = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 					new KeyValuePair<string, string>("username", TryUsername.Text),
 					new KeyValuePair<string, string>("user_password", TryPassword.Text)
 				}, "http://haydenszymanski.me/softeng05/register_participant.php").ResponseInfo;
-
-
-
 			}
 			return CredInfo;
 		}
 
+		/// <summary>
+		/// Credential information.
+		/// Class that is used 
+		/// </summary>
 		public class CredentialInformation
 		{
 			public List<string> Errors { get; set; }
@@ -112,7 +95,7 @@ namespace Kuromori
 			{
 				Task.Run(async () =>
 				{
-					ActiveUser = await JsonRequest.GetUserData<User>(
+					ActiveUser = await HttpUtils.GetJsonInfo<User>(
 						new List<KeyValuePair<string, string>> {
 						new KeyValuePair<string, string>("username", TryUsername.Text),
 						new KeyValuePair<string, string>("user_password", TryPassword.Text)
@@ -160,10 +143,9 @@ namespace Kuromori
 	    /// </summary>
 		Boolean UserExists()
 		{
-			PostRequest post = new PostRequest();
 			Debug.WriteLine("UserExist");
 			//return post.UserExists(TryUsername.Text, TryPassword.Text);
-			return !(post.PostInfo(new List<KeyValuePair<string, string>>{
+			return !(HttpUtils.PostInfo(new List<KeyValuePair<string, string>>{
 				new KeyValuePair<string, string>("username", TryUsername.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo.Equals("none"));
 		}

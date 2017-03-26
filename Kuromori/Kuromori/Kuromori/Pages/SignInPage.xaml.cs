@@ -44,9 +44,8 @@ namespace Kuromori
 	    /// </summary>
 		void SignInClick(object sender, EventArgs args)
 		{
-			PostRequest post = new PostRequest();
 
-			String userType = post.PostInfo(new List<KeyValuePair<string, string>> {
+			String userType = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
 
@@ -65,7 +64,7 @@ namespace Kuromori
 			}
 			*/
 
-			if (post.PostInfo(new List<KeyValuePair<string, string>> {
+			if (HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),
 				new KeyValuePair<string, string>("user_password", Password.Text)
 
@@ -73,7 +72,7 @@ namespace Kuromori
 			{
 				Task.Run(async () =>
 				{
-					User UserSigningIn = await JsonRequest.GetUserData(new List<KeyValuePair<string, string>> {
+					User UserSigningIn = await HttpUtils.GetJsonInfo<User>(new List<KeyValuePair<string, string>> {
 						new KeyValuePair<string, string>("username", Username.Text),
 						new KeyValuePair<string, string>("user_password", Password.Text)
 					}, "http://haydenszymanski.me/softeng05/get_user.php");
@@ -85,6 +84,10 @@ namespace Kuromori
 				});
 
 
+			}
+			else
+			{
+				DisplayAlert("Error", "Credentials Incorrect", "Continue");
 			}
 		}
 

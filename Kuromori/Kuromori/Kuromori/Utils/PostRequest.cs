@@ -12,12 +12,12 @@ namespace Kuromori.InfoIO
 	public class PostRequest
 	{
 
-    /// <summary>
-    ///   PostResponseItem : List<KeyValuePair<string,string>> (pairs), string (url)
-    ///   Given a list of keyvalue pairs that are strings encode that list as url content
-    ///   Creates a postrequest with encoded url content representing the post array,
-    ///   returns an object representing the request response from the html page and success code
-    /// </summary>
+	    /// <summary>
+	    ///   PostResponseItem : List<KeyValuePair<string,string>> (pairs), string (url)
+	    ///   Given a list of keyvalue pairs that are strings encode that list as url content
+	    ///   Creates a postrequest with encoded url content representing the post array,
+	    ///   returns an object representing the request response from the html page and success code
+	    /// </summary>
 		public PostResponseItem PostInfo(List<KeyValuePair<string,string>> pairs, string url)
 		{
 			PostResponseItem result = new PostResponseItem();
@@ -36,7 +36,5 @@ namespace Kuromori.InfoIO
 
 			return result;
 		}
-
 	}
-
 }

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Threading.Tasks;
 using Kuromori.DataStructure;
 using Kuromori.InfoIO;
+using System.Collections.Generic;
 
 namespace Kuromori.DataAdapters
 {
@@ -12,13 +13,14 @@ namespace Kuromori.DataAdapters
     /// </summary>
     public static class EventAdapter
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public static async Task<Event[]> LoadEvents()
-        {
-			Events events = await JsonRequest.GetEventData();
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public static async Task<Event[]> LoadEvents()
+		{
+			Events events = await HttpUtils.GetJsonInfo<Events>(new List<KeyValuePair<string, string>>{
+				new KeyValuePair<string, string>("", "")}, "http://haydenszymanski.me/softeng05/get_events.php");
             return events.EventSet;
         }
 

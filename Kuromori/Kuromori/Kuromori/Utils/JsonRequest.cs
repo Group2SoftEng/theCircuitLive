@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 
-namespace Kuromori.InfoIO
+namespace Kuromori.Utils
 {
 	public static class JsonRequest
 	{
@@ -32,20 +32,6 @@ namespace Kuromori.InfoIO
 			return tempEvent;
 		}
 
-		public static async Task<User> GetUserData(List<KeyValuePair<string,string>> pairs, string url)
-		{
-			string responseContent;
-			using (HttpClient client = new HttpClient())
-			{
-				var content = new FormUrlEncodedContent(pairs);
-				HttpResponseMessage response = await client.PostAsync(url, content);
-				response.EnsureSuccessStatusCode();
-				responseContent = await response.Content.ReadAsStringAsync();
-			}
-			User tempUser = JsonConvert.DeserializeObject<User>(responseContent);
-			return tempUser;
-
-		}
 
         /// <summary>
         /// 
@@ -54,7 +40,7 @@ namespace Kuromori.InfoIO
         /// <param name="pairs">Post key-value pairs</param>
         /// <param name="url">url for the post request</param>
         /// <returns></returns>
-		public static async Task<T> GetUserData<T>(List<KeyValuePair<string, string>> pairs, string url)
+		public static async Task<T> GetJsonData<T>(List<KeyValuePair<string, string>> pairs, string url)
 		{
 			string responseContent;
 			using (HttpClient client = new HttpClient())
@@ -66,20 +52,6 @@ namespace Kuromori.InfoIO
 			}
 			T tempUser = JsonConvert.DeserializeObject<T>(responseContent);
 			return tempUser;
-		}
-
-		struct Speaker
-		{
-			public string Name { get; set; }
-			public string Desc { get; set; }
-			public string Pict { get; set; }
-
-			public Speaker(string _n, string _d, string _p)
-			{
-				Name = _n;
-				Desc = _d;
-				Pict = _p;
-			}
 		}
 
 		public static async Task<string> UrlToHtml(Uri url)

@@ -11,6 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace Kuromori
 {
+	/// <summary>
+	/// Wrapper for events
+	/// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventPage : ContentPage
     {
@@ -21,21 +24,18 @@ namespace Kuromori
         /// </summary>
         public EventPage()
         {
-            //StackLayout layout = this.FindByName<StackLayout>("Layout");
             InitializeComponent();
-            ScrollView scroll = this.FindByName<ScrollView>("scroll");
-            Debug.WriteLine(scroll.ScrollY);
 
-            Task.Run(async() =>
+            Task.Run(async() => // body runs asynchronously 
             {
-				temp = await JsonRequest.GetEventData();
-
-                Device.BeginInvokeOnMainThread(() =>
+				temp = await HttpUtils.GetJsonInfo<Events>(new List<KeyValuePair<string, string>>{  // get events and set them to temp
+				new KeyValuePair<string, string>("", "")}, "http://haydenszymanski.me/softeng05/get_events.php");
+                Device.BeginInvokeOnMainThread(() => // runs body after await operator
                 {
-					EventInformation.CurrentEvents = temp.EventSet;
+					EventInformation.CurrentEvents = temp.EventSet; // set displayed event list to the eventset of temp
 					foreach (Event ev in EventInformation.CurrentEvents)
                     {
-                       Layout.Children.Add(new EventView(ev));
+                       Layout.Children.Add(new EventView(ev)); // for each event add a new eventview for that event to the layout
                     }
                 });
             });

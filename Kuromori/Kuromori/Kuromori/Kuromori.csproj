@@ -41,7 +41,6 @@
     <Compile Include="DataStructure\Events.cs" />
     <Compile Include="DataStructure\Speaker.cs" />
     <Compile Include="CurrentData\GlobalData.cs" />
-    <Compile Include="InfoIO\JsonRequest.cs" />
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -71,7 +70,6 @@
       <DependentUpon>SideNav.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="InfoIO\PostRequest.cs" />
     <Compile Include="Pages\UserSelectPage.xaml.cs">
       <DependentUpon>UserSelectPage.xaml</DependentUpon>
     </Compile>
@@ -104,6 +102,7 @@
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserCell.cs" />
+    <Compile Include="Utils\HttpUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
