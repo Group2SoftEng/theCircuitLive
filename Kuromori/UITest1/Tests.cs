@@ -1,4 +1,4 @@
-﻿using System;
+﻿/* using System;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -325,5 +325,5 @@ namespace Kuromori.DataStructure
 
     }
 
-}
+} */
 

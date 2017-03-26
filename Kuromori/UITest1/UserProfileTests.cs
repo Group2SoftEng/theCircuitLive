@@ -1,4 +1,4 @@
-﻿using System;
+﻿/* using System;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -10,7 +10,7 @@ using System.Threading;
 using Kuromori;
 using Kuromori.InfoIO;
 using Kuromori.DataAdapters;
-
+ 
 namespace Kuromori.DataStructure
 {
     [TestFixture(Platform.Android)]
@@ -283,4 +283,4 @@ namespace Kuromori.DataStructure
             app.Tap(c => c.Marked("Continue"));
         }
     }
-}
+} */
