@@ -31,6 +31,25 @@ namespace Kuromori.InfoIO
 			Events tempEvent = JsonConvert.DeserializeObject<Events>(responseContent);
 			return tempEvent;
 		}
+        /// <summary>
+        /// Retrieves a specific Event Brite event information based on a specific event ID
+        /// </summary>
+        /// <param name="ID">ID of event</param>
+        /// <returns></returns>
+        public static async Task<EBEvent> GetEBEventData(/*string eventId*/)
+        {
+            string responseContent;
+            string eventId = "33114905574";
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync("https://www.eventbriteapi.com/v3/events/" + eventId + "/?token=XVYY3RQCP54ZJKZ2UF2L");
+                response.EnsureSuccessStatusCode();
+                responseContent = await response.Content.ReadAsStringAsync();
+            }
+            EBEvent tempEBEvent = JsonConvert.DeserializeObject<EBEvent>(responseContent);
+            return tempEBEvent;
+
+        }
 
 		public static async Task<User> GetUserData(List<KeyValuePair<string,string>> pairs, string url)
 		{

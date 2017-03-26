@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="DataAdapters\EventAdapter.cs" />
     <Compile Include="DataStructure\Admin.cs" />
+    <Compile Include="DataStructure\EBEvent.cs" />
     <Compile Include="DataStructure\Event.cs" />
     <Compile Include="DataStructure\Events.cs" />
     <Compile Include="DataStructure\Speaker.cs" />
@@ -44,6 +45,9 @@
     <Compile Include="InfoIO\JsonRequest.cs" />
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateEvent.xaml.cs">
+      <DependentUpon>CreateEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
@@ -221,7 +225,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CreateEvent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
