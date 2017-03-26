@@ -43,8 +43,7 @@ namespace Kuromori
         void OnProfileEditClick(object sender, EventArgs args)
         {
 			Debug.WriteLine(ActiveUser.Id);
-			PostRequest post = new PostRequest();
-			Debug.WriteLine(post.PostInfo(new List<KeyValuePair<string, string>> {
+			Debug.WriteLine(HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("user_id", ActiveUser.Id),
 				new KeyValuePair<string, string>("user_zip", Zip.Text),
 				new KeyValuePair<string, string>("user_phone", Phone.Text),
@@ -67,7 +66,7 @@ namespace Kuromori
 			/// </summary>
 			Task.Run(async () =>
 			{
-				ActiveUser = await JsonRequest.GetUserData<User>(new List<KeyValuePair<string, string>> {
+				ActiveUser = await HttpUtils.GetJsonInfo<User>(new List<KeyValuePair<string, string>> {
 					new KeyValuePair<string, string>("username", ActiveUser.UserName),
 					new KeyValuePair<string, string>("user_password", ActiveUser.Password)
 				}, "http://haydenszymanski.me/softeng05/get_user.php");

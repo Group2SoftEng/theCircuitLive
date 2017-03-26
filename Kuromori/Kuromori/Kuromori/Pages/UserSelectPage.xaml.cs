@@ -14,7 +14,7 @@ namespace Kuromori
 		public UserSelectPage()
 		{
 			InitializeComponent();
-			SelectLogo.Source = new Uri("http://haydenszymanski.me/logo.png");
+			SelectLogo.Source = new Uri("http://haydenszymanski.me/logo.png"); // set the image to the logo at this url
 
 		}
 
@@ -23,7 +23,7 @@ namespace Kuromori
     /// </summary>
 		void OnSignInClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new SignInPage());
+			Navigation.PushAsync(new SignInPage()); 
 
 		}
 
