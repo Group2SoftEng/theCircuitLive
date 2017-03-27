@@ -40,15 +40,35 @@ namespace Kuromori.InfoIO
 
 			return result;
 		}
+        /// <summary>
+        /// Retrieves a specific Event Brite event information based on a specific event ID
+        /// </summary>
+        /// <param name="ID">ID of event</param>
+        /// <returns></returns>
+        public static async Task<EBEvent> GetEBEventData(/*string eventId*/)
+        {
+            string responseContent;
+            string eventId = "33114905574";
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync("https://www.eventbriteapi.com/v3/events/" + eventId + "/?token=XVYY3RQCP54ZJKZ2UF2L");
+                response.EnsureSuccessStatusCode();
+                responseContent = await response.Content.ReadAsStringAsync();
+            }
+            EBEvent tempEBEvent = JsonConvert.DeserializeObject<EBEvent>(responseContent);
+            return tempEBEvent;
 
-		/// <summary>
-		/// Gets the json info.
-		/// </summary>
-		/// <returns>The json info.</returns>
-		/// <param name="pairs">Pairs.</param>
-		/// <param name="url">URL.</param>
-		/// <typeparam name="T">List<KeyValuePair<string,string>> : This will be post keyval pairs for the post http request</typeparam>
-		public static async Task<T> GetJsonInfo<T>(List<KeyValuePair<string, string>> pairs, string url)
+        }
+
+
+        /// <summary>
+        /// Gets the json info.
+        /// </summary>
+        /// <returns>The json info.</returns>
+        /// <param name="pairs">Pairs.</param>
+        /// <param name="url">URL.</param>
+        /// <typeparam name="T">List<KeyValuePair<string,string>> : This will be post keyval pairs for the post http request</typeparam>
+        public static async Task<T> GetJsonInfo<T>(List<KeyValuePair<string, string>> pairs, string url)
 		{
 			string responseContent;
 			using (HttpClient client = new HttpClient())

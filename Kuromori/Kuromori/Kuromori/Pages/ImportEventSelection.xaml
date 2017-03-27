@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kuromori.Pages.ImportEventSelection">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0">
+                <EntryCell
+						x:Name="EventID"
+						Label="Event ID"
+					/>
+                <StackLayout
+					Orientation="Horizontal"
+					HorizontalOptions="CenterAndExpand"
+					Spacing="20">
+
+                    <Button
+								Text="Cancel"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+								Clicked = ""
+							/>
+                    <Button
+								Text="Import"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+								Clicked = ""
+							/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
