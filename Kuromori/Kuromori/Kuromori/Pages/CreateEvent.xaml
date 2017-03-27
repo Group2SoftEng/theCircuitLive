@@ -1,36 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
              x:Class="Kuromori.CreateEvent">
     <ContentPage.Content>
         <ScrollView>
-            <RelativeLayout>
-                <Entry
-			x:Name="Title"
-			Placeholder="Title"
-			AutomationId = "Title"
-				RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=SelectLogo,
-				Property=Y,
-				Factor=1,
-				Constant=160}"
-				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Width,
-				Factor=.10,
-				Constant=0}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Base,
-				Property=Width,
-				Factor=.8,
-				Constant=0}"
-	
-		>
-                </Entry>
+            <StackLayout Margin="0">
+            <local:MenuTableView HasUnevenRows="true" Intent="Data" >
+                <local:MenuTableView.Root>
+                    <TableSection>
+                        <EntryCell
+				            x:Name="Title"
+				            Label="Event Title"
+			            />
 
-            </RelativeLayout>
+			            <ViewCell>
+								<StackLayout
+								Orientation="Vertical"
+								Spacing="5"
+								Padding="5"
+								>
+
+								<Label
+								Text="Event Description"
+								HorizontalTextAlignment="Center">
+								</Label>
+
+								<Editor
+									x:Name="Description"
+									AutomationId="Description"
+									Text=""
+									VerticalOptions="CenterAndExpand"
+									HeightRequest = "100"
+									>
+								</Editor>
+								</StackLayout>
+							</ViewCell>	
+
+			<EntryCell
+				x:Name="RegisterURL"
+				Label="Registration URL"
+			/>
+
+			<EntryCell
+				x:Name="Date"
+				Label="Event Date"
+			/>
+
+            <EntryCell
+				x:Name="EBImage"
+				Label="Event Image"
+			/>
+            <EntryCell
+		    	x:Name="Topic"
+				Label="Event Topic"
+			/>
+                        </TableSection>
+            </local:MenuTableView.Root>
+            </local:MenuTableView>
+
+                <StackLayout
+					Orientation="Horizontal"
+					HorizontalOptions="CenterAndExpand"
+					Spacing="20">
+
+                    <Button
+								Text="Cancel"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+							/>
+                    <Button
+								Text="Submit"
+								HorizontalOptions="Center"
+								VerticalOptions="CenterAndExpand"
+								BackgroundColor="#b71a66"
+								TextColor="White"
+							/>
+                </StackLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

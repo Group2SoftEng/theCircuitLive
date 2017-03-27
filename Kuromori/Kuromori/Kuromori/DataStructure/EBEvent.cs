@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kuromori.DataStructure
+namespace Kuromori
 {
     public class EBEvent
     {
