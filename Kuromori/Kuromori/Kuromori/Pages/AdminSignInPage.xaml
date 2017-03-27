@@ -59,6 +59,7 @@
 
 			<Entry
 				Placeholder="Username"
+                AutomationId="AdminUsername"
 				x:Name="AdminUsername"
 			RelativeLayout.YConstraint="{ConstraintExpression
 				Type=RelativeToView,
@@ -81,6 +82,7 @@
 
 			<Entry
 				Placeholder="Password"
+                AutomationId="AdminPassword"
 				x:Name="AdminPassword"
 				HorizontalOptions="FillAndExpand"
                 IsPassword="True"
