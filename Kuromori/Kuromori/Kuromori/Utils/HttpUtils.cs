@@ -45,10 +45,10 @@ namespace Kuromori.InfoIO
         /// </summary>
         /// <param name="ID">ID of event</param>
         /// <returns></returns>
-        public static async Task<EBEvent> GetEBEventData(/*string eventId*/)
+        public static async Task<EBEvent> GetEBEventData(string eventId)
         {
             string responseContent;
-            string eventId = "33114905574";
+            //string eventId = "33114905574";
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://www.eventbriteapi.com/v3/events/" + eventId + "/?token=XVYY3RQCP54ZJKZ2UF2L");

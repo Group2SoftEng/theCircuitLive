@@ -51,6 +51,9 @@
     <Compile Include="Pages\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FileUpload.xaml.cs">
+      <DependentUpon>FileUpload.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ImportEventSelection.xaml.cs">
       <DependentUpon>ImportEventSelection.xaml</DependentUpon>
     </Compile>
@@ -235,6 +238,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ImportEventSelection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\FileUpload.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -13,8 +13,12 @@
 				            x:Name="Title"
 				            Label="Event Title"
 			            />
+                            <EntryCell
+		    	            x:Name="Topic"
+				            Label="Event Topic"
+			                />
 
-			            <ViewCell>
+                            <ViewCell>
 								<StackLayout
 								Orientation="Vertical"
 								Spacing="5"
@@ -51,10 +55,19 @@
 				x:Name="EBImage"
 				Label="Event Image"
 			/>
-            <EntryCell
-		    	x:Name="Topic"
-				Label="Event Topic"
+                        <EntryCell
+				x:Name="SpeakerName"
+				Label="Speaker Name"
 			/>
+                            <EntryCell
+				x:Name="SpeakerDesc"
+				Label="Speaker Description"
+			/>
+                            <EntryCell
+				x:Name="SpeakerImg"
+				Label="Speaker Image"
+			/>
+
                         </TableSection>
             </local:MenuTableView.Root>
             </local:MenuTableView>

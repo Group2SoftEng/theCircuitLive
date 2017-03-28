@@ -38,13 +38,14 @@ namespace Kuromori
                 new KeyValuePair<string, string>("event_date", Date.Text),
                 new KeyValuePair<string, string>("event_img", EBImage.Text),
                 new KeyValuePair<string, string>("event_topic", Topic.Text)
-            }, "http://haydenszymanski.me/softeng05/create_event.php").ResponseSuccess);
+            }, "http://haydenszymanski.me/softeng05/update_event.php").ResponseSuccess);
            
             /*Task.Run(async () =>
            {
                temp = await HttpUtils.GetEBEventData();
                Device.BeginInvokeOnMainThread(() =>
                {
+                  
 
                });
 
