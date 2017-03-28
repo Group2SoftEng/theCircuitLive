@@ -26,7 +26,7 @@ namespace Kuromori.Pages
         {
             Task.Run(async () => // body runs asynchronously 
             {
-                temp = await HttpUtils.GetEBEventData<EBEvent>(EventID.Text);
+                temp = await HttpUtils.GetEBEventData(EventID.Text);
                 Device.BeginInvokeOnMainThread(() => // runs body after await operator
                 {
                     

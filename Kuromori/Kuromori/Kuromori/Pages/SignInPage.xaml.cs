@@ -32,10 +32,6 @@ namespace Kuromori
 			};
 			AdminLogin.Text = "Admin";
 			ToolbarItems.Add(AdminLogin);
-
-
-
-				
         }
 
 	    /// <summary>
