@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kuromori.UserRegisteredEvents"
 		>
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Frame Padding="2">
-                <Grid BackgroundColor="White" Padding="10" Margin="0">
+                <Grid BackgroundColor="White" Padding="10" Margin="0" x:Name="Layout">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="4*"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -16,25 +16,26 @@
                     </Grid.ColumnDefinitions>
                     <StackLayout Spacing="5" x:Name="UserRegEvent">
                         <Label
-                            Text="Event A Name Here"
+                            Text=""
                             HorizontalTextAlignment="Start"
                             FontAttributes="Bold"
+                            x:Name="EventName"
                             Grid.Row="0"
                             Grid.Column="0">
                         </Label>
                         <Label
-                            Text="ovidmsaoivmd oivmd moifdm  ifdmsoifm mfoidsm
-                             fdsoimbdoifmbodi mbdoifm bimoifd fd iomdfoi mb smf
-                             sdofmboidf mboidmbf oidmb diobfm di mfoidmfb idmbim"
+                            Text=""
+		                     x:Name="EventDescription"
                             HorizontalTextAlignment="Start"
                             Grid.Row="0"
                             Grid.Column="0">
                         </Label>
 
                         <Label
-                            Text="January, 24th 2017"
+                            Text=""
                             HorizontalTextAlignment="Start"
                             FontAttributes="Bold"
+                            x:Name="EventDate"
                             Grid.Row="0"
                             Grid.Column="0">
                         </Label>
@@ -45,10 +46,11 @@
                             Grid.Column="0"
                             BackgroundColor="#b71a66"
                             TextColor="White"
+                            Clicked="EventDetails"
                             />
                     </StackLayout>
                     <Image
-                        x:Name="RegEventSpkr"
+                        x:Name="SpeakerImage"
                         Grid.Row="0"
                         Grid.Column="1"
                         HeightRequest="100"
@@ -59,4 +61,4 @@
             </Frame>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentView>

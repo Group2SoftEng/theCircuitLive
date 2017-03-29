@@ -17,12 +17,12 @@ namespace Kuromori
 			InitializeComponent();
 
 			var SideNavItems = new List<SideNavItem>();
-			SideNavItems.Add(new SideNavItem
+			/*SideNavItems.Add(new SideNavItem
 			{
 				Title = "Profile",
 				IconSource = "",
 				TargetType = typeof(EventPage)
-			});
+			});*/
 
 			listView.ItemsSource = SideNavItems;
 		}

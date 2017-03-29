@@ -29,7 +29,7 @@ namespace Kuromori.Pages
                 temp = await HttpUtils.GetEBEventData(EventID.Text);
                 Device.BeginInvokeOnMainThread(() => // runs body after await operator
                 {
-                    
+
                 });
             });
 

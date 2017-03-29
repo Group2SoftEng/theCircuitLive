@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
+using Kuromori.DataStructure;
 
 namespace Kuromori
 {
@@ -15,33 +16,37 @@ namespace Kuromori
 		{
 			InitializeComponent();
 			SelectLogo.Source = new Uri("http://haydenszymanski.me/logo.png"); // set the image to the logo at this url
-
 		}
 
-    /// <summary>
-    ///   Push signinpage onto navigation stack
-    /// </summary>
+	    /// <summary>
+	    ///   Push signinpage onto navigation stack
+	    /// </summary>
 		void OnSignInClick(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new SignInPage()); 
 
 		}
 
-    /// <summary>
-    ///   Push RegisterPage onto navigation stack
-    /// </summary>
+	    /// <summary>
+	    ///   Push RegisterPage onto navigation stack
+	    /// </summary>
 		void OnRegisterClick(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new RegisterPage());
 		}
 
-    /// <summary>
-    ///   Push EventPage onto navigation stack
-    /// </summary>
+	    /// <summary>
+	    ///   Push EventPage onto navigation stack
+	    /// </summary>
 		void OnGuestClick(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new EventPage());
 
+		}
+
+		void Test(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new LandingPage(new User { UserName = "jfoley21", Id = "66" }));
 		}
 
 	}

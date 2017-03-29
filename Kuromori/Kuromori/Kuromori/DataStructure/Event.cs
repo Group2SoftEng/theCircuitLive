@@ -51,6 +51,8 @@ namespace Kuromori.DataStructure
         /// </summary>
         public string EventLocation { get; set; }
 
+		public string OrganizerId { get; set; }
+
         /// <summary>
         /// EventSpeakers : This will be an array of all the speakers attending or performing at the event.
         /// </summary>
