@@ -1,4 +1,4 @@
-﻿/* using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -53,12 +53,13 @@ namespace Kuromori.DataStructure
             app.Tap(c => c.Marked("Sign In"));
             app.Tap("UsernameSignIn");
 
-            app.EnterText("TestUser1");
+            app.EnterText("TestUser");
 
             app.Tap("PasswordSignIn");
             app.EnterText("TestUser1!");
 
             app.Tap(c => c.Marked("Login"));
+            
         }
 
         //Generic Test to get to EditProfilePage
@@ -66,8 +67,11 @@ namespace Kuromori.DataStructure
         public void EditProfilePage()
         {
             showProfile();
-            
+            app.ScrollTo("Edit Profile");
             app.Tap("NoResourceEntry-0");
+            app.Tap("Cancel");
+            app.ScrollTo("Edit Profile");
+            app.Repl();
         }
 
         [Test]
@@ -283,4 +287,4 @@ namespace Kuromori.DataStructure
             app.Tap(c => c.Marked("Continue"));
         }
     }
-} */
+}

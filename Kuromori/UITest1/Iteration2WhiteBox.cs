@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-
 namespace UITest1
 {
     class Iteration2WhiteBox
@@ -46,14 +45,32 @@ namespace UITest1
                 app.Screenshot("Main");
             }
 
-           
-        //    public String JsonRequest_GetEventData()
-          //  {
-//                var temp = JsonRequest.GetEventData();
-               // String eventDescription = temp.Result.EventSet[0].EventDescription;
-                //return eventDescription;
-           //  }
+            [Test]
+            public void HttpUtils_PostInfo()
+            {
+                List<KeyValuePair<string, string>> userList = new List<KeyValuePair<string, string>>();
+                KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
+                userList.Add(testUsers);
 
+                var temp = HttpUtils.PostInfo(userList, "http://haydenszymanski.me/softeng05/get_events.php");
+
+                //A success from the get_events call
+                Assert.IsTrue(temp.ResponseSuccess);
+
+                //Get some info from the response
+                Assert.IsNotEmpty(temp.ResponseInfo[0].ToString());
+            }
+
+            [Test]
+            public void HttpUtils_GetEBEventData()
+            {
+                app.Tap("Let's get started");
+                app.Tap("Guest Access");
+               // var eventData = await HttpUtils.GetEBEventData();
+               // Console.WriteLine(eventData.ToString());
+                //var ebEvent = Kuromori.EBEvent;
+                //Assert.IsInstanceOf(eventData.GetType(), Kuromori.EBEvent());
+            }
 
 
             //Compares results of a JSONRequest to layout.children type
@@ -63,68 +80,159 @@ namespace UITest1
                 EventPage evnt = new EventPage();
 
                 //Tests JsonRequest and verifies it's displayed in the layout
-               // String eventDescription = JsonRequest_GetEventData();
+                // String eventDescription = JsonRequest_GetEventData();
                 app.Tap(c => c.Marked("Let's get started"));
                 app.Tap(c => c.Marked("Guest Access"));
-               // app.ScrollTo(eventDescription);//Does the JSON request match what is in the layout for the app
+                // app.ScrollTo(eventDescription);//Does the JSON request match what is in the layout for the app
             }
 
-            [Test]
-            public void JsonRequest_GetUserData()
-            {   
-                List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
-                KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
-                userList.Add(testUsers);
-                //var Json = JsonRequest.GetUserData();
-               // var result = JsonRequest.GetUserData(userList, "http://haydenszymanski.me/softeng05/get_events.php");
-                Console.WriteLine("Before Data");
-                //Assert.IsTrue(result.Result.Email == "foo@bar.com");
-                Console.WriteLine("After Data");
-            }
+            /*   [Test]
+               public void JsonRequest_GetUserData()
+               {   
+                   List<KeyValuePair<string,string>> userList = new List<KeyValuePair<string, string>>();
+                   KeyValuePair<string, string> testUsers = new KeyValuePair<string, string>("TestUser", "TestUser1!");
+                   userList.Add(testUsers);
+                   //var Json = JsonRequest.GetUserData();
+                  // var result = JsonRequest.GetUserData(userList, "http://haydenszymanski.me/softeng05/get_events.php");
+                   Console.WriteLine("Before Data");
+                   //Assert.IsTrue(result.Result.Email == "foo@bar.com");
+                   Console.WriteLine("After Data");
+               } */
 
             //Tests if the new page is pushed titled "Admin Panel"
             [Test]
             public void AdminSignInPage_OnClickSignIn()
             {
-               // AdminSignInPage admin = new AdminSignInPage();
+                // AdminSignInPage admin = new AdminSignInPage();
                 app.Tap(c => c.Marked("Let's get started"));
                 app.Tap(c => c.Marked("Sign In"));
                 app.Tap("Admin");
                 app.EnterText("Username", "admin");
                 app.EnterText("Password", "1234r0987y");
+                app.Tap("Sign In");
                 app.ScrollTo("Admin Panel");
-                //admin.OnSignInClick(sender, args);
                 //(app.Tap("Admin"));
+            }
+
+            [Test]
+            public void AdminSignInPage_OnClickSignInCancel()
+            {
+                // AdminSignInPage admin = new AdminSignInPage();
+                app.Tap(c => c.Marked("Let's get started"));
+                app.Tap(c => c.Marked("Sign In"));
+                app.Tap("Admin");
+                app.Tap("Cancel");
+                app.ScrollTo("Admin");
+                //(app.Tap("Admin"));
+            }
+
+            //Testing Admin Promotion/Demotion
+            [Test]
+            public void AdminPage_OnParticipantClick()
+            {
+                AdminSignInPage_OnClickSignIn();//SignIn as admin
+
+                //Promote/Demote TestUser then ensure testuser reappears
+                app.Tap("Username : TestUser");
+                app.Tap("Yes");
+                app.ScrollTo("Username : TestUser");
+            }
+
+            //Testing Admin Promotion/Demotion
+            [Test]
+            public void AdminPage_ParticipantClick()
+            {
+                AdminSignInPage_OnClickSignIn();//SignIn as admin
+
+                //Promote/Demote TestUser then ensure testuser reappears
+                app.Tap("Username : TestUser");
+                app.Tap("No");
+                app.ScrollTo("Username : TestUser");
             }
 
             [Test]
             public void SpeakerView_SpeakerView()
             {
-                app.Repl();
-                Console.WriteLine("Tappity tap");
                 app.Tap("Let's get started");
-                Console.WriteLine("Moar tap");
                 app.Tap("Guest Access");
-                Console.WriteLine("Making new speaker");
-                Speaker speaker = new Speaker();
-                Console.WriteLine("Setting ID");
-                speaker.SpeakerId = 12;
-                Console.WriteLine("Setting image");
-                speaker.SpeakerImg = "https://s-media-cache-ak0.pinimg.com/736x/a3/20/92/a3209236d95082357583a9a53089da0d.jpg";
-                speaker.SpeakerName = "Testy McTestface";
-                speaker.SpeakerUrl = "https://www.google.com";
-                speaker.SpeakerDescription = "I am a speaker!";
-                Console.WriteLine("Done setting stuff; make it so");
-                SpeakerView spView = new SpeakerView(speaker);
-                Console.WriteLine("Made it so");
-                // Check that the SpeakerView was made correctly
-                app.ScrollTo("Testy McTestface");
-                //speaker.set
-                Console.WriteLine("The speaker description is: " + speaker.SpeakerDescription);
-
+                app.ScrollTo("TIFFANY NUNNALLY");
             }
 
-            //For Admin class, set username/password, get username/password
+            [Test]
+            public void EventView_EventView()
+            {
+                SpeakerView_SpeakerView();
+                app.ScrollTo("Speakers");
+            }
+
+            [Test]
+            public void UserSelectPage_SignIn()
+            {
+                app.Tap("Let's get started");
+                app.Tap("Sign In");
+                app.ScrollTo("Login");
+            }
+
+            [Test]
+            public void UserSelectPage_Register()
+            {
+                app.Tap("Let's get started");
+                app.Tap("Register");
+                app.ScrollTo("Next");
+            }
+
+            [Test]
+            public void UserSelectPage_GuestAccess()
+            {
+                SpeakerView_SpeakerView();
+            }
+
+            [Test]
+            public void ProfilePage_GIFImage()
+            {
+                showProfile();
+                app.Tap("Edit Profile");
+                app.EnterText("Profile Image", "https://i.redd.it/3vg8aoyip5ny.gif");
+                app.ScrollTo("Submit");
+                app.Tap("Submit");
+                app.WaitForElement("ProfileImage");
+               
+            }
+
+            [Test]
+            public void ProfilePage_NoImage()
+            {
+                showProfile();
+                app.Tap("Edit Profile");
+                app.ClearText("Profile Image");
+                app.ScrollTo("Submit");
+                app.Tap("Submit");
+                app.WaitForElement("ProfileImage");
+            }
+
+            [Test]
+            public void ProfilePage_ClickEvents()
+            {
+                showProfile();
+                app.Tap("Find Events");
+                app.ScrollTo("Events");
+            }
+
+            //Generic Method to get to the profile page
+            public void showProfile()
+            {
+                app.Tap(c => c.Marked("Let's get started"));
+                app.Tap(c => c.Marked("Sign In"));
+                app.Tap("UsernameSignIn");
+
+                app.EnterText("TestUser");
+
+                app.Tap("PasswordSignIn");
+                app.EnterText("TestUser1!");
+
+                app.Tap(c => c.Marked("Login"));
+
+            }
         }
     }
 }
