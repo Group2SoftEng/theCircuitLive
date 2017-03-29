@@ -62,6 +62,16 @@
 				HeightRequest="50"
 				WidthRequest="150"
 			/>
+			<Button 
+				x:Name="Testing"
+				Text="Testing"
+				TextColor="White"
+				BackgroundColor="#b71a66"
+				HorizontalOptions="Center"
+				Clicked = "Test"
+				HeightRequest="50"
+				WidthRequest="150"
+			/>
 		</StackLayout>
 
 	</AbsoluteLayout>		
