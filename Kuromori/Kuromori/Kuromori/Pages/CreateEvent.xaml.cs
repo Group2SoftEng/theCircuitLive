@@ -16,11 +16,10 @@ namespace Kuromori
     {
         public EBEvent temp { get; set; }
 
-        public CreateEvent(EBEvent tempEvent)
+        public CreateEvent(User user)
         {
             InitializeComponent();
             
-            temp = tempEvent;
            // Title.Text = temp.NameText;
            // Description.Text = temp.DescriptionText;
 
@@ -37,8 +36,11 @@ namespace Kuromori
                 new KeyValuePair<string, string>("event_url", RegisterURL.Text),
                 new KeyValuePair<string, string>("event_date", Date.Text),
                 new KeyValuePair<string, string>("event_img", EBImage.Text),
-                new KeyValuePair<string, string>("event_topic", Topic.Text)
-            }, "http://haydenszymanski.me/softeng05/update_event.php").ResponseSuccess);
+                new KeyValuePair<string, string>("event_topic", Topic.Text),
+                new KeyValuePair<string, string>("speaker_name", SpeakerName.Text),
+                new KeyValuePair<string, string>("speaker_desc", SpeakerDesc.Text),
+                new KeyValuePair<string, string>("speaker_img", SpeakerImg.Text)
+            }, "http://haydenszymanski.me/softeng05/create_event.php").ResponseSuccess);
            
             /*Task.Run(async () =>
            {
