@@ -72,9 +72,10 @@ namespace Kuromori
 						new KeyValuePair<string, string>("username", Username.Text),
 						new KeyValuePair<string, string>("user_password", Password.Text)
 					}, "http://haydenszymanski.me/softeng05/get_user.php");
+
 					Device.BeginInvokeOnMainThread(() =>
 					{
-						Navigation.InsertPageBefore(new ProfilePage(UserSigningIn), Navigation.NavigationStack.First());
+						Navigation.InsertPageBefore(new LandingPage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
 					});
 				});

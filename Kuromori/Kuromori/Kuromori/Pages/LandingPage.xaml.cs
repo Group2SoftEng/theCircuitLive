@@ -40,20 +40,37 @@ namespace Kuromori
 			EditButton.Text = "Edit Profile";
 			ToolbarItems.Add(EditButton);
 
-			String userType = "organizer";
-
-			if (userType.Equals("organizer"))
+			Task.Run(async () =>
 			{
-				ToolbarItem CreateEventButton = new ToolbarItem();
-				CreateEventButton.Clicked += (sender, e) =>
+				PostResponseItem userResponse = await HttpUtils.AsyncPostInfo(new List<KeyValuePair<string, string>>
 				{
-					// Navigation.PushAsync(new createEvent(User))
-				};
-				EditButton.Text = "Create Event";
-				ToolbarItems.Add(EditButton);
-			}
+					new KeyValuePair<string, string>("id", user.Id)
+				}, "http://haydenszymanski.me/softeng05/user_by_id.php");
 
+				Device.BeginInvokeOnMainThread(() =>
+				{
+					string userType = userResponse.ResponseInfo;
 
+					if (userType.Equals("organizer"))
+					{
+						ToolbarItem CreateEventButton = new ToolbarItem();
+						CreateEventButton.Clicked += (sender, e) =>
+						{
+							// Navigation.PushAsync(new createEvent(User))
+						};
+						CreateEventButton.Text = "Create Event";
+						ToolbarItems.Add(CreateEventButton);
+					}
+
+					else
+					{
+						
+
+					}
+				});
+			});
+
+			
 		}
 	}
 }

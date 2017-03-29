@@ -40,6 +40,26 @@ namespace Kuromori.InfoIO
 
 			return result;
 		}
+
+		public static async Task<PostResponseItem> AsyncPostInfo(List<KeyValuePair<string, string>> pairs, string url)
+		{
+			PostResponseItem result = new PostResponseItem();
+			var client = new HttpClient();
+			var content = new FormUrlEncodedContent(pairs);
+
+			var response = await client.PostAsync(url, content);
+			if (response.IsSuccessStatusCode)
+			{
+				var contents = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(contents);
+				result.ResponseSuccess = response.IsSuccessStatusCode;
+				result.ResponseInfo = contents;
+			}
+			client.Dispose();
+
+			return result;
+		}
+
         /// <summary>
         /// Retrieves a specific Event Brite event information based on a specific event ID
         /// </summary>
