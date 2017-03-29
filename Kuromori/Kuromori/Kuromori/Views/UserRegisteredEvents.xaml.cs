@@ -37,7 +37,7 @@ namespace Kuromori
 				SpeakerImage.Source = new Uri(ev.EventSpeakers.First().SpeakerImg);
 
 			}
-			catch (FormatException res)
+			catch (Exception res)
 			{
 				SpeakerImage.Source = ImageSource.FromFile(("noimage.png"));
 			}
