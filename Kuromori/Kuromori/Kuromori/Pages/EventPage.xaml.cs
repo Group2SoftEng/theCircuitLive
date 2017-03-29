@@ -25,6 +25,7 @@ namespace Kuromori
         public EventPage()
         {
             InitializeComponent();
+            Title = "Event Details";
 
             Task.Run(async() => // body runs asynchronously 
             {
