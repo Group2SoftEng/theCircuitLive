@@ -40,7 +40,7 @@ namespace Kuromori
 	    /// </summary>
 		void OnGuestClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new EventPage());
+            Navigation.PushAsync(new LandingPageNoLogin());
 
 		}
 
