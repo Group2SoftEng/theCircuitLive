@@ -90,6 +90,7 @@
 								VerticalOptions="CenterAndExpand"
 								BackgroundColor="#b71a66"
 								TextColor="White"
+                                Clicked ="CreateEventClick"
 							/>
                 </StackLayout>
             </StackLayout>
