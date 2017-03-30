@@ -56,7 +56,7 @@ namespace Kuromori
 						ToolbarItem CreateEventButton = new ToolbarItem();
 						CreateEventButton.Clicked += (sender, e) =>
 						{
-							Navigation.PushAsync(new EventTypeSelection(user));
+							// Navigation.PushAsync(new createEvent(User))
 						};
 						CreateEventButton.Text = "Create Event";
 						ToolbarItems.Add(CreateEventButton);

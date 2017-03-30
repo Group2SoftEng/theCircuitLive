@@ -15,12 +15,10 @@ namespace Kuromori
     public partial class CreateEvent : ContentPage
     {
         public EBEvent temp { get; set; }
-		User User;
 
         public CreateEvent(User user)
         {
             InitializeComponent();
-			User = user;
             
            // Title.Text = temp.NameText;
            // Description.Text = temp.DescriptionText;
@@ -34,7 +32,6 @@ namespace Kuromori
             Debug.WriteLine(HttpUtils.PostInfo(new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("event_title", Title.Text),
-				new KeyValuePair<string, string>("organizer_id", User.Id),
                 new KeyValuePair<string, string>("event_desc", Description.Text),
                 new KeyValuePair<string, string>("event_url", RegisterURL.Text),
                 new KeyValuePair<string, string>("event_date", Date.Text),
