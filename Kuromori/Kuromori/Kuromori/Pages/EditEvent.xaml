@@ -55,7 +55,7 @@
 				x:Name="EBImage"
 				Label="Event Image"
 			/>
-                        <EntryCell
+                        <!--EntryCell
 				x:Name="SpeakerName"
 				Label="Speaker Name"
 			/>
@@ -66,7 +66,7 @@
                         <EntryCell
 				x:Name="SpeakerImg"
 				Label="Speaker Image"
-			/>
+			/-->
 
                     </TableSection>
                 </local:MenuTableView.Root>
@@ -90,6 +90,7 @@
 								VerticalOptions="CenterAndExpand"
 								BackgroundColor="#b71a66"
 								TextColor="White"
+                    Clicked="OnSubmitClick"
 							/>
             </StackLayout>
         </StackLayout>

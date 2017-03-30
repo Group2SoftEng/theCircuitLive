@@ -27,6 +27,7 @@ namespace Kuromori
 					foreach (Event ev in EventInformation.CurrentEvents)
 					{
 						Layout.Children.Add(new UserRegisteredEvents(ev, user.Id)); // for each event add a new eventview for that event to the layout
+
 					}
 				});
 			});
@@ -56,10 +57,11 @@ namespace Kuromori
 						ToolbarItem CreateEventButton = new ToolbarItem();
 						CreateEventButton.Clicked += (sender, e) =>
 						{
-							// Navigation.PushAsync(new createEvent(User))
+							Navigation.PushAsync(new CreateEvent(user)/*new EventTypeSelection(user)*/);
 						};
 						CreateEventButton.Text = "Create Event";
 						ToolbarItems.Add(CreateEventButton);
+
 					}
 
 					else

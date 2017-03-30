@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kuromori.DataStructure;
+using Kuromori.Pages;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -48,7 +49,7 @@ namespace Kuromori
 		{
 			if (OrganizerId.Equals(Ev.OrganizerId))
 			{
-
+                Navigation.PushAsync(new EditEvent(Ev));
 			}
 
 			else

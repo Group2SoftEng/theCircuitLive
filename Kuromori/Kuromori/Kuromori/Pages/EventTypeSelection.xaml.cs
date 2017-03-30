@@ -11,5 +11,9 @@ namespace Kuromori
 		{
 			InitializeComponent();
 		}
-	}
+        void EventBriteHandler(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateEBEvent());
+        }
+    }
 }

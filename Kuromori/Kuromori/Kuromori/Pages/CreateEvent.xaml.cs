@@ -41,7 +41,7 @@ namespace Kuromori
                 new KeyValuePair<string, string>("speaker_desc", SpeakerDesc.Text),
                 new KeyValuePair<string, string>("speaker_img", SpeakerImg.Text)
             }, "http://haydenszymanski.me/softeng05/create_event.php").ResponseSuccess);
-           
+            Navigation.PopToRootAsync();
             /*Task.Run(async () =>
            {
                temp = await HttpUtils.GetEBEventData();

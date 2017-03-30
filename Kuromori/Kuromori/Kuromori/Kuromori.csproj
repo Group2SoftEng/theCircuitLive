@@ -45,6 +45,9 @@
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateEBEvent.xaml.cs">
+      <DependentUpon>CreateEBEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateEvent.xaml.cs">
       <DependentUpon>CreateEvent.xaml</DependentUpon>
     </Compile>
@@ -59,9 +62,6 @@
     </Compile>
     <Compile Include="Pages\ImportEventSelection.xaml.cs">
       <DependentUpon>ImportEventSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\LandingPageNoLogin.xaml.cs">
-      <DependentUpon>LandingPageNoLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -275,7 +275,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\LandingPageNoLogin.xaml">
+    <EmbeddedResource Include="Pages\CreateEBEvent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

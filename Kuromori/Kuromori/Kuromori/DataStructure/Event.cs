@@ -14,7 +14,7 @@ namespace Kuromori.DataStructure
         /// <summary>
         /// EventId, referencing the event_id column
         /// </summary>
-        public int EventId { get; set; }
+        public string EventId { get; set; }
 
         /// <summary>
         /// EventTitle, referencing the event_title column
