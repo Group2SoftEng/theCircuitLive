@@ -1,14 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
-             x:Class="Kuromori.CreateEvent">
+             x:Class="Kuromori.CreateEvent"
+	Title="Create Event">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="0">
+
             <local:MenuTableView HasUnevenRows="true" Intent="Data" >
                 <local:MenuTableView.Root>
                     <TableSection>
+                    <ViewCell>
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Date"></Label>
+						<DatePicker VerticalOptions="CenterAndExpand" x:Name="Date">
+						<DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+						</DatePicker>
+					</StackLayout>
+					</ViewCell>
+
                         <EntryCell
 				            x:Name="Title"
 				            Label="Event Title"
@@ -18,55 +29,41 @@
 				            Label="Event Topic"
 			                />
 
-                            <ViewCell>
-								<StackLayout
-								Orientation="Vertical"
-								Spacing="5"
-								Padding="5"
-								>
-
-								<Label
-								Text="Event Description"
-								HorizontalTextAlignment="Center">
-								</Label>
-
-								<Editor
-									x:Name="Description"
-									AutomationId="Description"
-									Text=""
-									VerticalOptions="CenterAndExpand"
-									HeightRequest = "100"
-									>
-								</Editor>
-								</StackLayout>
-							</ViewCell>	
+                            
 
 			<EntryCell
 				x:Name="RegisterURL"
 				Label="Registration URL"
 			/>
 
-			<EntryCell
-				x:Name="Date"
-				Label="Event Date"
-			/>
 
             <EntryCell
 				x:Name="EBImage"
 				Label="Event Image"
 			/>
-                        <EntryCell
-				x:Name="SpeakerName"
-				Label="Speaker Name"
-			/>
-                            <EntryCell
-				x:Name="SpeakerDesc"
-				Label="Speaker Description"
-			/>
-                            <EntryCell
-				x:Name="SpeakerImg"
-				Label="Speaker Image"
-			/>
+			<ViewCell>
+				<StackLayout
+				Orientation="Vertical"
+				Spacing="5"
+				Padding="5"
+				>
+
+				<Label
+				Text="Event Description"
+				HorizontalTextAlignment="Center">
+				</Label>
+
+				<Editor
+				x:Name="Description"
+				AutomationId="Description"
+				Text=""
+				VerticalOptions="CenterAndExpand"
+				HeightRequest = "100"
+				>
+				</Editor>
+				</StackLayout>
+				</ViewCell>	
+
 
                         </TableSection>
             </local:MenuTableView.Root>

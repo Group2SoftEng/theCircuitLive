@@ -142,6 +142,12 @@
     <Compile Include="Pages\NonOwnedEventPage.xaml.cs">
       <DependentUpon>NonOwnedEventPage.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Pages\OrganizerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="Pages\OrganizerPage.xaml.cs">
+      <DependentUpon>OrganizerPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
