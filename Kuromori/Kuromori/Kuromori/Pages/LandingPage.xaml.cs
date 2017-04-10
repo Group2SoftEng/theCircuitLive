@@ -26,7 +26,7 @@ namespace Kuromori
 					EventInformation.CurrentEvents = temp.EventSet; // set displayed event list to the eventset of temp
 					foreach (Event ev in EventInformation.CurrentEvents)
 					{
-						Layout.Children.Add(new UserRegisteredEvents(ev, user.Id)); // for each event add a new eventview for that event to the layout
+						Layout.Children.Add(new UserRegisteredEvents(ev, user)); // for each event add a new eventview for that event to the layout
 
 					}
 				});
@@ -61,12 +61,10 @@ namespace Kuromori
 						};
 						CreateEventButton.Text = "Create Event";
 						ToolbarItems.Add(CreateEventButton);
-
 					}
 
 					else
 					{
-						
 
 					}
 				});

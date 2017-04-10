@@ -148,6 +148,12 @@
     <Compile Include="Pages\OrganizerPage.xaml.cs">
       <DependentUpon>OrganizerPage.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Pages\AddSpeakerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="Pages\AddSpeakerPage.xaml.cs">
+      <DependentUpon>AddSpeakerPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">

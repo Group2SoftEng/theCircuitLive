@@ -22,6 +22,15 @@ namespace Kuromori
             User = user;
             
         }
+
+		/// <summary>
+		/// Creates the event click.
+		/// When the submit button is clicked we post all the fields from the text fields as a post array to
+		/// the create_event.php url. Currently there is NO client side validation, meaning this is going to be
+		/// vulnerable to injection
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="args">Arguments.</param>
         public async void CreateEventClick(object sender, EventArgs args)
         {
            String n = (HttpUtils.PostInfo(new List<KeyValuePair<string, string>>
@@ -40,12 +49,13 @@ namespace Kuromori
 
 			if (await DisplayAlert("Add Organizer", "Add Organizer?", "Yes", "No"))
 			{
-
-				Debug.WriteLine("hui");
+				await Navigation.PushAsync(new AddSpeakerPage());
 			}
 			else
 			{
-	            await Navigation.PopToRootAsync();
+				Navigation.InsertPageBefore(new LandingPage(User), Navigation.NavigationStack.First());
+				await Navigation.PopToRootAsync();
+	            //await Navigation.PopToRootAsync();
 			}
             /*Task.Run(async () =>
            {

@@ -19,14 +19,14 @@ namespace Kuromori
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserRegisteredEvents : ContentView
     {
-		string OrganizerId;
 		Event Ev;
+		User OwnerUser;
 
-        public UserRegisteredEvents(Event ev, string organizerId)
+        public UserRegisteredEvents(Event ev, User ownerUser)
         {
             InitializeComponent();
 
-			OrganizerId = organizerId;
+			OwnerUser = ownerUser;
 			Ev = ev;
 
 			EventDescription.Text = ev.EventDescription;
@@ -47,9 +47,9 @@ namespace Kuromori
         }
 		void EventDetails(object sender, EventArgs e)
 		{
-			if (OrganizerId.Equals(Ev.OrganizerId))
+			if (OwnerUser.Id.Equals(Ev.OrganizerId))
 			{
-                Navigation.PushAsync(new EditEvent(Ev));
+				Navigation.PushAsync(new EditEvent(Ev, OwnerUser));
 			}
 
 			else
