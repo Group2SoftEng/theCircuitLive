@@ -15,12 +15,29 @@ namespace Kuromori
     public partial class CreateEvent : ContentPage
     {
         User User;
+        UriImageSource ImgSrc;
+        string SrcString;
+
 
         public CreateEvent(User user)
         {
             InitializeComponent();
             User = user;
-            
+
+            img1.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg");
+
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img1.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img1.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+
         }
 
 		/// <summary>
@@ -40,7 +57,7 @@ namespace Kuromori
                 new KeyValuePair<string, string>("event_desc", Description.Text),
                 new KeyValuePair<string, string>("event_url", RegisterURL.Text),
 				new KeyValuePair<string, string>("event_date", Date.Date.ToString("yyyy-MM-dd")),
-                new KeyValuePair<string, string>("event_img", EBImage.Text),
+                new KeyValuePair<string, string>("event_img", SrcString),
                 new KeyValuePair<string, string>("event_topic", Topic.Text)
                 //new KeyValuePair<string, string>("speaker_name", SpeakerName.Text),
                 //new KeyValuePair<string, string>("speaker_desc", SpeakerDesc.Text),

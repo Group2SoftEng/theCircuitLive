@@ -38,10 +38,10 @@
 								Label="Address"
 							/>
 
-							<EntryCell
+							<!--EntryCell
 								x:Name="ProfileImage"
 								Label="Profile Image"
-							/>
+							/-->
 
 							<EntryCell
 								x:Name="Zip"
@@ -69,15 +69,107 @@
 										>
 									</Editor>
 								</StackLayout>
-							</ViewCell>							
+							</ViewCell>
+
+                            <ViewCell>
+                                <StackLayout
+								Orientation="Vertical"
+								Spacing="5"
+								Padding="3"
+								>
+                                    <ScrollView Orientation ="Horizontal">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image
+                                            x:Name="img1"   
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img2"
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img3"
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img4"
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img5"
+                                            Grid.Row="0"
+                                            Grid.Column="4"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img6"
+                                            Grid.Row="0"
+                                            Grid.Column="5"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+
+                                            <Image
+                                            x:Name="img7"
+                                            Grid.Row="0"
+                                            Grid.Column="6"
+                                            WidthRequest="100"
+                                            HeightRequest="75"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            </Image>
+                                        </Grid>
+                                    </ScrollView>
+                                </StackLayout>
+                            </ViewCell>
 
 
-						
-
-									
 
 
-						</TableSection>
+
+                        </TableSection>
 						</local:MenuTableView.Root>
 					</local:MenuTableView>
 

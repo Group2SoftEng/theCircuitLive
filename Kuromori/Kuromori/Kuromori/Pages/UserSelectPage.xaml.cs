@@ -46,7 +46,8 @@ namespace Kuromori
 
 		void Test(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new LandingPage(new User { UserName = "jfoley21", Id = "1" }));
+            //Navigation.PushAsync(new ProfileImageGallerey());
+            //Navigation.PushAsync(new LandingPage(new User { UserName = "jfoley21", Id = "1" }));
 		}
 
 	}
