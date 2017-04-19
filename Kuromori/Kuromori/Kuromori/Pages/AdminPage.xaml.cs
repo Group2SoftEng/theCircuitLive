@@ -164,7 +164,6 @@ namespace Kuromori
                 Organizer.ItemsSource = organizerCells; // set the list in gui to the temp list
             });
         }
-
 	}
 
 }

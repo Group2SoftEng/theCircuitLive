@@ -143,6 +143,7 @@
 
 		<Button
 			Text="Login"
+			x:Name="Login"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
 			BackgroundColor="#b71a66"

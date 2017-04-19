@@ -45,6 +45,7 @@ namespace Kuromori
             img6.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg");
             img7.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg");
 
+
             ///<summary>
             ///if user selects img1 update profile image to img1
             /// </summary>

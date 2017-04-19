@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Kuromori.DataAdapters;
 using Kuromori.DataStructure;
 using Kuromori.InfoIO;
+using System.Linq;
 
 
 using Xamarin.Forms;
@@ -71,6 +72,12 @@ namespace Kuromori
 			});
 
 			
+		}
+		protected override bool OnBackButtonPressed()
+		{
+			Navigation.InsertPageBefore(new UserSelectPage(), Navigation.NavigationStack.First());
+			Navigation.PopToRootAsync();
+			return true;
 		}
 	}
 }

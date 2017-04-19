@@ -38,27 +38,13 @@ namespace Kuromori
 	    ///   On sign in click popular current user static fields with remote user info
 		///   
 	    /// </summary>
-		void SignInClick(object sender, EventArgs args)
+		async void SignInClick(object sender, EventArgs args)
 		{
-
+			Login.IsEnabled = false;
+			Cancel.IsEnabled = false;
 			String userType = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
-
-			/*
-			switch (userType)
-			{
-				case "organizer" :
-					Debug.WriteLine("organizer");
-					break;
-				case "participant" :
-					Debug.WriteLine("participant");
-					break;
-				case "none" :
-					Debug.WriteLine("none");
-					break;
-			}
-			*/
 
 			if (HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),
@@ -66,7 +52,7 @@ namespace Kuromori
 
 			}, "http://haydenszymanski.me/softeng05/login_user.php").ResponseInfo.Equals("Success"))
 			{
-				Task.Run(async () =>
+				await Task.Run(async () =>
 				{
 					User UserSigningIn = await HttpUtils.GetJsonInfo<User>(new List<KeyValuePair<string, string>> {
 						new KeyValuePair<string, string>("username", Username.Text),
@@ -77,14 +63,19 @@ namespace Kuromori
 					{
 						Navigation.InsertPageBefore(new LandingPage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
+						Login.IsEnabled = true;
+						Login.IsEnabled = true;
 					});
 				});
+
 
 
 			}
 			else
 			{
-				DisplayAlert("Error", "Credentials Incorrect", "Continue");
+				await DisplayAlert("Error", "Credentials Incorrect", "Continue");
+				Login.IsEnabled = true;
+				Cancel.IsEnabled = true;
 			}
 		}
 
@@ -92,5 +83,6 @@ namespace Kuromori
 		{
 			Navigation.PopAsync();
 		}
+
     }
 }
