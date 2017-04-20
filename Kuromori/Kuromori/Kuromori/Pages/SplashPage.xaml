@@ -11,46 +11,29 @@
 
 <ContentPage.Content>
 
-<Grid BackgroundColor="White" Padding="0" Margin="0">
-
-    <Grid.RowDefinitions>
-      <RowDefinition Height="5*"></RowDefinition>
-      <RowDefinition Height="1*"></RowDefinition>
-      <RowDefinition Height="1*"></RowDefinition>
-    </Grid.RowDefinitions>
-
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="111*"></ColumnDefinition>
-    </Grid.ColumnDefinitions>
+        <StackLayout BackgroundColor="White" Spacing="30">
 
     <Image
 
     x:Name="Splash"
-		Grid.Row="0" 
-		Grid.Column="0" 
-		HorizontalOptions="FillAndExpand"
-		VerticalOptions="FillAndExpand">
+		HorizontalOptions="FillAndExpand">
 
 	</Image>
 
     <Image
 
     x:Name="Logo"
-		Grid.Row="1" 
-		Grid.Column="0" 
-		HorizontalOptions="FillAndExpand"
-		VerticalOptions="FillAndExpand">
-
+	HorizontalOptions="FillAndExpand"
+        >
 	</Image>
 
-	<Button 
+	
+      <Button 
 
 		x:Name="Start"
 		TextColor="White"
 		Text="Let's get started"
 		BackgroundColor="#b71a66"
-		Grid.Row="2"
-		Grid.Column="0"
 		HorizontalOptions="Center"
 		WidthRequest = "200"
 		HeightRequest = "50"
@@ -59,7 +42,7 @@
 	/>
 
 
-</Grid>
+</StackLayout>
 
 </ContentPage.Content>
 
