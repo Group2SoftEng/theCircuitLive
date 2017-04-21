@@ -41,7 +41,8 @@ namespace Kuromori
 		async void SignInClick(object sender, EventArgs args)
 		{
 			Login.IsEnabled = false;
-			Cancel.IsEnabled = false;
+            //actInd.IsRunning = true;
+			//Cancel.IsEnabled = false;
 			String userType = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
@@ -63,7 +64,9 @@ namespace Kuromori
 					{
 						Navigation.InsertPageBefore(new LandingPage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
-						Login.IsEnabled = true;
+                        Login.BackgroundColor = Color.FromHex("#b71a66");
+
+                        Login.IsEnabled = true;
 						Login.IsEnabled = true;
 					});
 				});
@@ -73,9 +76,10 @@ namespace Kuromori
 			}
 			else
 			{
-				await DisplayAlert("Error", "Credentials Incorrect", "Continue");
-				Login.IsEnabled = true;
-				Cancel.IsEnabled = true;
+				await DisplayAlert("Error", "Incorrect Username or Password", "Continue");
+                Login.BackgroundColor = Color.FromHex("#b71a66");
+                Login.IsEnabled = true;
+				//Cancel.IsEnabled = true;
 			}
 		}
 
