@@ -76,7 +76,7 @@ namespace Kuromori
 			}
 			else
 			{
-				await DisplayAlert("Error", "Incorrect Username or Password", "Continue");
+				await DisplayAlert("Error", "Incorrect Username or Password", "Try Again");
                 Login.BackgroundColor = Color.FromHex("#b71a66");
                 Login.IsEnabled = true;
 				//Cancel.IsEnabled = true;

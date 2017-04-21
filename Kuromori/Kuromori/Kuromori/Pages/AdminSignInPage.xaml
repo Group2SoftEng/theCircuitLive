@@ -89,7 +89,7 @@
 					ElementName=AdminUsername,
 					Property=Y,
 					Factor=1,
-					Constant=100}"
+					Constant=50}"
 				RelativeLayout.XConstraint="{ConstraintExpression
 					Type=RelativeToView,
 					ElementName=AdminUsername,
@@ -110,7 +110,7 @@
 					Constant=0}"
 			/>
 
-			<Button
+			<!--<Button
 				Text="Cancel"
 				x:Name="Cancel"
 				HorizontalOptions="Center"
@@ -129,7 +129,7 @@
 				Property=Width,
 				Factor=0,
 				Constant=100}"
-		/>
+		/>-->
 
 			<Button
 				Text="Sign In"
@@ -137,25 +137,43 @@
 				TextColor="White"
 				x:Name="SignInButton"
 				Clicked="OnSignInClick"
-				HorizontalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="50"
+				HorizontalOptions="CenterAndExpand"
 				VerticalOptions="CenterAndExpand"
 				RelativeLayout.YConstraint="{ConstraintExpression
 				Type=RelativeToView,
-				ElementName=Cancel,
+				ElementName=AdminPassword,
 				Property=Y,
 				Factor=1,
-				Constant=0}"
+				Constant=75}"
 				RelativeLayout.XConstraint="{ConstraintExpression
 				Type=RelativeToParent,
 				Property=Width,
 				Factor=1,
-				Constant=-200}"
+				Constant=-358}"
 
 
 			/>
+            <Label
+              x:Name ="ForgotPW"
+              Text ="Forgot Password?"
+              FontSize="16"
+              RelativeLayout.YConstraint="{ConstraintExpression
+				        Type=RelativeToView,
+				        ElementName=SignInButton,
+				        Property=Y,
+				        Factor=1,
+				        Constant=150}"
+				        RelativeLayout.XConstraint="{ConstraintExpression
+				        Type=RelativeToParent,
+				        Property=Width,
+				        Factor=1,
+				        Constant=-265}"
+                />
 
 
-		</RelativeLayout>
+        </RelativeLayout>
 
 	</ContentPage.Content>
 </ContentPage>

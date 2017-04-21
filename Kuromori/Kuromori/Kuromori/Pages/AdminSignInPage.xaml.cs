@@ -34,7 +34,7 @@ namespace Kuromori
 			}
 			else // on failure display an alert.
 			{
-				DisplayAlert("Error", "Credentials Incorrect", "Continue");
+				DisplayAlert("Error", "Incorrect Username or Password. If you're not an admin, please return to the previous screen.", "Try Again");
 			}
 		}
 
