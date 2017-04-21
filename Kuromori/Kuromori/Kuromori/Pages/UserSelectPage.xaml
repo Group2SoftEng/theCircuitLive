@@ -58,7 +58,9 @@
 				    HeightRequest="50"
 				    WidthRequest="150"
 			        />
-
+                    <Label Text="Use Guest Access to browse without an account" Margin="20">
+                        
+                    </Label>
                     <Button 
 				    x:Name="Guest"
 				    Text="Guest Access"
