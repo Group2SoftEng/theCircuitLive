@@ -10,6 +10,8 @@ using Kuromori.DataStructure;
 using Kuromori;
 using Kuromori.InfoIO;
 using System.Diagnostics;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Kuromori.Pages
 {
@@ -21,35 +23,23 @@ namespace Kuromori.Pages
             InitializeComponent();
             List<ImageCell> ChatParticipants = new List<ImageCell>();
 
-            List<User> UserList;
-                Debug.WriteLine("Test");
+            String UsersString = "";
 
-                UserList = HttpUtils.GetJsonInfo<List<User>>(new List<KeyValuePair<string, string>>
+            UsersString = HttpUtils.PostInfo(new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("username", current.UserName),
                 new KeyValuePair<string, string>("password", current.Password)
             }, "http://haydenszymanski.me/softeng05/get_chatted.php"
-           ).Result;
-                Debug.WriteLine("AHHHHHHHHHHHHHHHHHHHHHHH");
-                
+           ).ResponseInfo;
 
-                foreach (User user in UserList)
-                {
-                    Debug.WriteLine(user.UserName);
-                    ImageCell temp = new ImageCell // for each participant in the list create a new cell.
-                    {
-                        ImageSource = user.ProfilePicture,
-                        Detail = user.UserName,
-                        
-                    };
-                    ChatParticipants.Add(temp);
-                }
-                listView.ItemsSource = ChatParticipants;
-                listView.ItemTapped += ChatPage;
+            User[] UserArray = JsonConvert.DeserializeObject<User[]>(UsersString);
 
-            Debug.WriteLine("end");
+            foreach (User user in UserArray)
+            {
+                Debug.WriteLine(user.Id);
+            }
 
-           
+
         }
             
           

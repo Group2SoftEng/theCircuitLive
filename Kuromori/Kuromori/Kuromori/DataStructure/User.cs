@@ -35,7 +35,6 @@ namespace Kuromori.DataStructure
 
 		public string City { get; set; }
 
-		public Event[] EventsAttending { get; set; }
 
 	}
 }

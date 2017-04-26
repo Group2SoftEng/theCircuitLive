@@ -47,7 +47,7 @@ namespace Kuromori
 
 		void Test(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new Chat(new User { UserName = "jfoley21", Id = "1" }));
+			Navigation.PushAsync(new Chat(new User { UserName = "jfoley21", Password = "Hello0123!", Id ="66"}));
 		}
 
 	}
