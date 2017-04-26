@@ -22,7 +22,7 @@ namespace Kuromori.Pages
             List<ImageCell> ChatParticipants = new List<ImageCell>();
 
             List<User> UserList;
-                Debug.WriteLine("DICKS");
+                Debug.WriteLine("Test");
 
                 UserList = HttpUtils.GetJsonInfo<List<User>>(new List<KeyValuePair<string, string>>
             {
