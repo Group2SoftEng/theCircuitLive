@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Kuromori.DataStructure;
 
 namespace Kuromori.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IndividualChat : ContentPage
     {
-        public IndividualChat(object sender, ItemTappedEventArgs e)
+        public IndividualChat(User currentUser,string chattingUsername)
         {
             InitializeComponent();
 

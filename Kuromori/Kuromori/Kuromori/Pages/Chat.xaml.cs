@@ -11,15 +11,16 @@ using Kuromori;
 using Kuromori.InfoIO;
 using System.Diagnostics;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace Kuromori.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Chat : ContentPage
     {
+        User currentUser;
         public Chat(User current)
         {
+            currentUser = current;
             InitializeComponent();
             List<ImageCell> ChatParticipants = new List<ImageCell>();
 
@@ -36,10 +37,24 @@ namespace Kuromori.Pages
 
             foreach (User user in UserArray)
             {
-                Debug.WriteLine(user.Id);
+                 ImageCell tempCell = new ImageCell
+                {
+                     ImageSource = user.ProfilePicture,
+                     Text = user.UserName,
+                     Detail = "lol"
+                };
+                ChatParticipants.Add(tempCell);
             }
 
+            listView.ItemsSource = ChatParticipants;
 
+
+        }
+
+        async void OnConversationClick(object sender, ItemTappedEventArgs e)
+        {
+            var cell = e.Item as ImageCell;
+            await Navigation.PushAsync(new IndividualChat(currentUser, cell.Text));
         }
             
           
