@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Kuromori.DataStructure;
+using Kuromori.Pages;
 
 namespace Kuromori
 {
@@ -46,7 +47,7 @@ namespace Kuromori
 
 		void Test(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new LandingPage(new User { UserName = "jfoley21", Id = "1" }));
+			Navigation.PushAsync(new Chat(new User { UserName = "jfoley21", Id = "1" }));
 		}
 
 	}
