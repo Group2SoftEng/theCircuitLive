@@ -45,6 +45,9 @@
     <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateEBEvent.xaml.cs">
       <DependentUpon>CreateEBEvent.xaml</DependentUpon>
     </Compile>
@@ -62,6 +65,9 @@
     </Compile>
     <Compile Include="Pages\ImportEventSelection.xaml.cs">
       <DependentUpon>ImportEventSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IndividualChat.xaml.cs">
+      <DependentUpon>IndividualChat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -289,6 +295,16 @@
   <ItemGroup>
     <EmbeddedResource Include="Pages\CreateEBEvent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Chat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IndividualChat.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
