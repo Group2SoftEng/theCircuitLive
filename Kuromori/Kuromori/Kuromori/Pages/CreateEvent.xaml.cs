@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using Kuromori.InfoIO;
 using System.Diagnostics;
 using Kuromori.DataStructure;
+using Kuromori.Views;
 
 namespace Kuromori
 {
@@ -22,95 +23,22 @@ namespace Kuromori
         {
             InitializeComponent();
             User = user;
-
-            img1.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg");
-            img2.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_chihuahua.jpeg");
-            img3.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_duckling.jpeg");
-            img4.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_horses.jpg");
-            img5.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_giraffe.jpg");
-            img6.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg");
-            img7.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg");
-
-            ///<summary>
-            ///if user selects img1 create event with image to img1
-            /// </summary>
-            img1.GestureRecognizers.Add(new TapGestureRecognizer
+            List<Uri> list = new List<Uri>() {
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_chihuahua.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_duckling.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_horses.jpg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_giraffe.jpg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg")
+            };
+            
+            foreach(Uri uri in list)
             {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img1.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-
-            ///<summary>
-            ///if user selects img2 update create event with image to img2
-            /// </summary>
-            img2.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img2.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-            ///<summary>
-            ///if user selects img3 create event with image to img3
-            /// </summary>
-            img3.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img3.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-            ///<summary>
-            ///if user selects img4 create event with image to img4
-            /// </summary>
-            img4.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img4.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-            ///<summary>
-            ///if user selects img5 create event with image to img5
-            /// </summary>
-            img5.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img5.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-            ///<summary>
-            ///if user selects img6 create event with image to img6
-            /// </summary>
-            img6.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img6.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-            ///<summary>
-            ///if user selects img7 create event with image to img7
-            /// </summary>
-            img7.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    ImgSrc = (Xamarin.Forms.UriImageSource)img7.Source;
-                    SrcString = ImgSrc.Uri.ToString();
-                })
-            });
-
+                Layout.Children.Add(new ImageView(uri));
+            }
         }
+        
 
 		/// <summary>
 		/// Creates the event click.

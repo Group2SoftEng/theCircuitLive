@@ -106,6 +106,9 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="DataStructure\PostResponseItem.cs" />
     <Compile Include="CurrentData\ActiveUser.cs" />
+    <Compile Include="Views\ImageView.xaml.cs">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SpeakerView.xaml.cs">
       <DependentUpon>SpeakerView.xaml</DependentUpon>
     </Compile>
@@ -305,6 +308,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\IndividualChat.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ImageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
