@@ -4,16 +4,20 @@
              x:Class="Kuromori.Pages.Chat"
              Title="Conversations">
     <ContentPage.Content>
-        <ListView  
-            x:Name="listView"
-            ItemTapped="OnConversationClick">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell ImageSource="{Binding ImageSource}"
-                           Detail="{Binding Detail}"
-                           Text="{Binding Text}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <SearchBar Placeholder="Search Users"> 
+            </SearchBar>
+            <ListView  
+                x:Name="listView"
+                ItemTapped="OnConversationClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding ImageSource}"
+                               Detail="{Binding Detail}"
+                               Text="{Binding Text}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
