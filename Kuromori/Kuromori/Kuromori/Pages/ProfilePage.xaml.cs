@@ -40,7 +40,6 @@ namespace Kuromori
 			try
 			{
 				ProfileImage.Source = new Uri(ActiveUser.ProfilePicture);
-
 			}
 
 			catch (Exception res)

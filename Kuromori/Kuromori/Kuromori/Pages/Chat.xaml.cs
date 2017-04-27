@@ -33,7 +33,12 @@ namespace Kuromori.Pages
             }, "http://haydenszymanski.me/softeng05/get_chatted.php"
            ).ResponseInfo;
 
+            
             User[] UserArray = JsonConvert.DeserializeObject<User[]>(UsersString);
+            foreach (User user in UserArray)
+            {
+                
+            }
 
             foreach (User user in UserArray)
             {
@@ -41,7 +46,13 @@ namespace Kuromori.Pages
                 {
                      ImageSource = user.ProfilePicture,
                      Text = user.UserName,
-                     Detail = "lol"
+                     Detail = HttpUtils.PostInfo(
+                     new List<KeyValuePair<string, string>>
+                     {
+                         new KeyValuePair<string, string>("username", currentUser.UserName),
+                         new KeyValuePair<string, string>("password", currentUser.Password),
+                         new KeyValuePair<string, string>("recipient", user.UserName),
+                     }, "http://haydenszymanski.me/softeng05/get_last_chat.php").ResponseInfo
                 };
                 ChatParticipants.Add(tempCell);
             }
@@ -55,6 +66,11 @@ namespace Kuromori.Pages
         {
             var cell = e.Item as ImageCell;
             await Navigation.PushAsync(new IndividualChat(currentUser, cell.Text));
+        }
+
+        async void OnSearchPressed()
+        {
+            await Navigation.PushAsync(new UserSearchResultPage(currentUser, Search.Text));
         }
             
           

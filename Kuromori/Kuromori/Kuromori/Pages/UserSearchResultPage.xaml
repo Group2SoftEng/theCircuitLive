@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kuromori.Pages.Chat"
-             Title="Conversations">
-    <ContentPage.Content>
-        <StackLayout>
-            <SearchBar x:Name="Search"
-                       Placeholder="Search Users"
-                       SearchButtonPressed="OnSearchPressed"> 
-            </SearchBar>
+             x:Class="Kuromori.Pages.UserSearchResultPage"
+             Title="Search Results"
+>
+<StackLayout>
+            <SearchBar x:Name="Search" 
+                        SearchButtonPressed="OnSearchPressed"
+                        Placeholder="Search Users"></SearchBar>
             <ListView  
                 x:Name="listView"
-                ItemTapped="OnConversationClick">
+                ItemTapped="OnUserClick"
+                >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell 
@@ -22,6 +22,5 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+</StackLayout>
 </ContentPage>
