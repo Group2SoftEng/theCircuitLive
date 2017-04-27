@@ -3,16 +3,12 @@ error_reporting(E_ALL);
 
 require_once "functions.php";
 
-/*
- * given proper post keys, returns whether or not the user combination is correct
- **/
-
 $username = $_POST["username"];
-$password = $_POST["password"];
+$password = $_POST["user_password"];
 
 $con = get_connection();
 
-if (user_login($con, $username, $password) == 1) {
+if (user_login1($con, $username, $password) == 1) {
     echo "Success";
 }
 

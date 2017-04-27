@@ -19,7 +19,7 @@ else
     $username = $_POST["username"];
     $pass = $_POST["password"];
     $sql =
-        "INSERT INTO participant (participant_id,
+        "INSERT INTO participants (participant_id,
         user_name,
         password)
         VALUES (NULL,

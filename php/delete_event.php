@@ -3,6 +3,12 @@ error_reporting(E_ALL);
 require_once "functions.php";
 
 $con = get_connection();
-echo retrieve_events($con, 8);
+
+$event_id = $_POST["event_id"];
+delete_event($con, $event_id);
+
 mysqli_close($con);
+
+
+
 ?>
