@@ -22,27 +22,31 @@ namespace Kuromori
 	    /// <summary>
 	    ///   Push signinpage onto navigation stack
 	    /// </summary>
-		void OnSignInClick(object sender, EventArgs e)
+		async void OnSignInClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new SignInPage()); 
-
+            SignIn.IsEnabled = false;
+			await Navigation.PushAsync(new SignInPage());
+            SignIn.IsEnabled = true;
 		}
 
 	    /// <summary>
 	    ///   Push RegisterPage onto navigation stack
 	    /// </summary>
-		void OnRegisterClick(object sender, EventArgs e)
+		async void OnRegisterClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new RegisterPage());
+            Register.IsEnabled = false;
+			await Navigation.PushAsync(new RegisterPage());
+            Register.IsEnabled = true;
 		}
 
 	    /// <summary>
 	    ///   Push EventPage onto navigation stack
 	    /// </summary>
-		void OnGuestClick(object sender, EventArgs e)
+		async void OnGuestClick(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new EventPage());
-
+            Guest.IsEnabled = false;
+			await Navigation.PushAsync(new EventPage());
+            Guest.IsEnabled = true;
 		}
 
 	}
