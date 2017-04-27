@@ -38,14 +38,14 @@ namespace Kuromori
 	    ///   On sign in click popular current user static fields with remote user info
 		///   
 	    /// </summary>
-		async void SignInClick(object sender, EventArgs args)
+		void SignInClick(object sender, EventArgs args)
 		{
-			Login.IsEnabled = false;
-            //actInd.IsRunning = true;
-			//Cancel.IsEnabled = false;
+            SignInButton.IsEnabled = false;
+
 			String userType = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
+
 
 			if (HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),
@@ -53,7 +53,7 @@ namespace Kuromori
 
 			}, "http://haydenszymanski.me/softeng05/login_user.php").ResponseInfo.Equals("Success"))
 			{
-				await Task.Run(async () =>
+				Task.Run(async () =>
 				{
 					User UserSigningIn = await HttpUtils.GetJsonInfo<User>(new List<KeyValuePair<string, string>> {
 						new KeyValuePair<string, string>("username", Username.Text),
@@ -62,24 +62,16 @@ namespace Kuromori
 
 					Device.BeginInvokeOnMainThread(() =>
 					{
+                        SignInButton.IsEnabled = true;
 						Navigation.InsertPageBefore(new LandingPage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
-                        Login.BackgroundColor = Color.FromHex("#b71a66");
-
-                        Login.IsEnabled = true;
-						Login.IsEnabled = true;
 					});
 				});
-
-
-
 			}
 			else
 			{
-				await DisplayAlert("Error", "Incorrect Username or Password", "Try Again");
-                Login.BackgroundColor = Color.FromHex("#b71a66");
-                Login.IsEnabled = true;
-				//Cancel.IsEnabled = true;
+                SignInButton.IsEnabled = true;
+                DisplayAlert("Error", "Credentials Incorrect", "Continue");
 			}
 		}
 
@@ -87,6 +79,5 @@ namespace Kuromori
 		{
 			Navigation.PopAsync();
 		}
-
     }
 }

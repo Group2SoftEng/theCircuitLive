@@ -88,12 +88,12 @@
 						<Button
 							Grid.Row = "0"
 							Grid.Column = "0"
-				            Text="My Events"
+				            Text="Chat"
 				            HorizontalOptions="Center"
 				            VerticalOptions="FillAndExpand"
 				            BackgroundColor="#b71a66"
 				            TextColor="White"
-				            Clicked = "MyEventsClick"
+				            Clicked = "ChatClick"
 						/>
 					<Button
 							Grid.Row = "0"

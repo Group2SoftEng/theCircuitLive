@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kuromori.Pages.IndividualChat"
+            xmlns:local="clr-namespace:Kuromori;assembly=Kuromori"
+             >
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Entry 
+                x:Name="ChatBox"
+                Completed="EntryCompleted"
+                BackgroundColor="Gray"
+                AbsoluteLayout.LayoutBounds=".5,1,1,.1"
+                AbsoluteLayout.LayoutFlags="All">
+            </Entry>
+            <StackLayout
+                x:Name="StackLay"
+                BackgroundColor="White"
+                AbsoluteLayout.LayoutBounds=".5,0,1,.7"
+                AbsoluteLayout.LayoutFlags="All"
+                >
+
+
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>             

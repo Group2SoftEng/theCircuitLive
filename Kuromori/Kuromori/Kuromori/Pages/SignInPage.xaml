@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -96,7 +96,7 @@
 			ElementName=Username,
 			Property=Y,
 			Factor=1,
-			Constant=50}"
+			Constant=100}"
 			RelativeLayout.XConstraint="{ConstraintExpression
 			Type=RelativeToView,
 			ElementName=Username,
@@ -119,7 +119,7 @@
 		</Entry> 
 
 
-	<!--	<Button
+		<Button
 			Text="Cancel"
 			x:Name="Cancel"
 			HorizontalOptions="Center"
@@ -139,53 +139,28 @@
 			Factor=0,
 			Constant=100}"
 
-		/>-->
-    <ActivityIndicator 
-      x:Name="actInd" 
-      Color="Red" 
-      IsRunning="false" />
-    
-    
+		/>
+
 		<Button
-			Text="Sign in"
-			x:Name="Login"
-      WidthRequest = "300"
-      HeightRequest = "50"
-			HorizontalOptions="CenterAndExpand"
+    x:Name="SignInButton"
+			Text="Login"
+			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"
 			BackgroundColor="#b71a66"
 			TextColor="White"
 			Clicked="SignInClick"
 				RelativeLayout.YConstraint="{ConstraintExpression
 				Type=RelativeToView,
-				ElementName=Password,
+				ElementName=Cancel,
 				Property=Y,
 				Factor=1,
-				Constant=75}"
+				Constant=0}"
 				RelativeLayout.XConstraint="{ConstraintExpression
 				Type=RelativeToParent,
 				Property=Width,
 				Factor=1,
-				Constant=-358}"
+				Constant=-200}"
 		/>
-
-    <Label
-      x:Name ="ForgotPW"
-      Text ="Forgot Password?"
-      FontSize="16"
-      RelativeLayout.YConstraint="{ConstraintExpression
-				Type=RelativeToView,
-				ElementName=Login,
-				Property=Y,
-				Factor=1,
-				Constant=150}"
-				RelativeLayout.XConstraint="{ConstraintExpression
-				Type=RelativeToParent,
-				Property=Width,
-				Factor=1,
-				Constant=-265}"
-        />
-      
 
 		</RelativeLayout>
 		</ScrollView>

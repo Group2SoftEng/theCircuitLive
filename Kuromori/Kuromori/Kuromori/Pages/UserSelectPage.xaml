@@ -5,7 +5,7 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="Kuromori.UserSelectPage"
-		Title="The Circuit Live"
+		Title="The Circuit"
 	>
 
 <ContentPage.Content>
@@ -16,7 +16,6 @@
 			HorizontalOptions = "CenterAndExpand"
 			AbsoluteLayout.LayoutFlags="PositionProportional"
 			AbsoluteLayout.LayoutBounds=".5,.03"
-            Spacing="55"
 		>
 
 			<Image
@@ -31,58 +30,49 @@
 				VerticalOptions="FillAndExpand"
 			/>
 
-                <StackLayout 
-			    HorizontalOptions = "CenterAndExpand"
-			    AbsoluteLayout.LayoutFlags="PositionProportional"
-			    AbsoluteLayout.LayoutBounds=".5,.03"
-                Spacing="10"
-		         >
-                    <Button 
-				    x:Name="SignIn"
-				    TextColor="White"
-				    Text="Sign In"
-				    BackgroundColor="#b71a66"
-				    HorizontalOptions="Center"
-				    HeightRequest="50"
-				    WidthRequest="150"
-				    Clicked = "OnSignInClick"
-			        />
+			<Button 
+				x:Name="SignIn"
+				TextColor="White"
+				Text="Sign In"
+				BackgroundColor="#b71a66"
+				HorizontalOptions="Center"
+				HeightRequest="50"
+				WidthRequest="150"
+				Clicked = "OnSignInClick"
+			/>
 
-                    <Button 
-				    x:Name="Register"
-				    Text="Create Account"
-				    TextColor="White"
-				    BackgroundColor="#b71a66"
-				    HorizontalOptions="Center"
-				    Clicked = "OnRegisterClick"
-				    HeightRequest="50"
-				    WidthRequest="150"
-			        />
-                    <Label Text="Use Guest Access to browse without an account" Margin="20">
-                        
-                    </Label>
-                    <Button 
-				    x:Name="Guest"
-				    Text="Guest Access"
-				    TextColor="White"
-				    BackgroundColor="#b71a66"
-				    HorizontalOptions="Center"
-				    Clicked = "OnGuestClick"
-				    HeightRequest="50"
-				    WidthRequest="150"
-			         />
-                   <!--<Button 
-				    x:Name="Testing"
-				    Text="Testing"
-				    TextColor="White"
-				    BackgroundColor="#b71a66"
-				    HorizontalOptions="Center"
-				    Clicked = "Test"
-				    HeightRequest="50"
-				    WidthRequest="150"
-			        />-->
-                </StackLayout>
-            </StackLayout>
+			<Button 
+				x:Name="Register"
+				Text="Register"
+				TextColor="White"
+				BackgroundColor="#b71a66"
+				HorizontalOptions="Center"
+				Clicked = "OnRegisterClick"
+				HeightRequest="50"
+				WidthRequest="150"
+			/>
+
+			<Button 
+				x:Name="Guest"
+				Text="Guest Access"
+				TextColor="White"
+				BackgroundColor="#b71a66"
+				HorizontalOptions="Center"
+				Clicked = "OnGuestClick"
+				HeightRequest="50"
+				WidthRequest="150"
+			/>
+			<!--Button 
+				x:Name="Testing"
+				Text="Testing"
+				TextColor="White"
+				BackgroundColor="#b71a66"
+				HorizontalOptions="Center"
+				Clicked = "Test"
+				HeightRequest="50"
+				WidthRequest="150"
+			/-->
+		</StackLayout>
 
 	</AbsoluteLayout>		
 

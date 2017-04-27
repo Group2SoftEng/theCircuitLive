@@ -35,12 +35,21 @@
 				x:Name="RegisterURL"
 				Label="Registration URL"
 			/>
+                        
 
+                            <EntryCell
+				x:Name="SpeakerName"
+				Label="Speaker Name"
+			/>
+                            <EntryCell
+				x:Name="SpeakerDesc"
+				Label="Speaker Description"
+			/>
 
-            <EntryCell
+                            <!--EntryCell
 				x:Name="EBImage"
 				Label="Event Image"
-			/>
+			/-->
 			<ViewCell>
 				<StackLayout
 				Orientation="Vertical"
@@ -64,23 +73,37 @@
 				</StackLayout>
 				</ViewCell>
 
-                            <ViewCell>
+                            <!--ViewCell>
                                 <StackLayout
 								Orientation="Vertical"
 								Spacing="5"
 								Padding="2"
 								>
                                     <ScrollView Orientation ="Horizontal">
+                                        <StackLayout  x:Name="Layout" Spacing="28" 
+                                            Orientation="Horizontal">
+                                            
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </-->
+                            <ViewCell>
+                                <StackLayout
+								Orientation="Vertical"
+								Spacing="5"
+								Padding="3"
+								>
+                                    <ScrollView Orientation ="Horizontal">
                                         <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="2*" />
+                                                <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
@@ -157,6 +180,7 @@
                                     </ScrollView>
                                 </StackLayout>
                             </ViewCell>
+
 
 
                         </TableSection>

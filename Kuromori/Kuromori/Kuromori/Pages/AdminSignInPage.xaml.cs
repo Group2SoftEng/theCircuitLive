@@ -20,6 +20,7 @@ namespace Kuromori
 		void OnSignInClick(object sender, EventArgs e) // Activates when sign in button is clicked
 		{
 
+            SignInButton.IsEnabled = false;
 			if (HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {  // if admin credentials are valid
 				new KeyValuePair<string, string>("admin_username", AdminUsername.Text),
 				new KeyValuePair<string, string>("admin_password", AdminPassword.Text)},
@@ -31,10 +32,12 @@ namespace Kuromori
                         Title = "Admin Panel"
                     }
 				);
+                SignInButton.IsEnabled = true;
 			}
 			else // on failure display an alert.
 			{
-				DisplayAlert("Error", "Incorrect Username or Password. If you're not an admin, please return to the previous screen.", "Try Again");
+                SignInButton.IsEnabled = true;
+				DisplayAlert("Error", "Credentials Incorrect", "Continue");
 			}
 		}
 

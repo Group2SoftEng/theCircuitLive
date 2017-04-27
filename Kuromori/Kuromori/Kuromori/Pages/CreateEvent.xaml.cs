@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using Kuromori.InfoIO;
 using System.Diagnostics;
 using Kuromori.DataStructure;
+using Kuromori.Views;
 
 namespace Kuromori
 {
@@ -22,17 +23,30 @@ namespace Kuromori
         {
             InitializeComponent();
             User = user;
-
-            img1.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg");
-            img2.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_chihuahua.jpeg");
-            img3.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_duckling.jpeg");
-            img4.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_horses.jpg");
-            img5.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_giraffe.jpg");
-            img6.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg");
-            img7.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg");
+            /*List<Uri> list = new List<Uri>() {
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_chihuahua.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_duckling.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_horses.jpg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_giraffe.jpg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg"),
+            new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg")
+            };
+            
+            foreach(Uri uri in list)
+            {
+                Layout.Children.Add(new ImageView(uri));
+            }*/
+            img1.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/apple-iphone-books-desk.jpg");
+            img2.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/black-and-white-city-man-people.jpg");
+            img3.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/lights-party-dancing-music.jpg");
+            img4.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/people-apple-iphone-writing.jpg");
+            img5.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/startup-photos.jpg");
+            img6.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/pexels-photo.jpeg");
+            img7.Source = new Uri("http://haydenszymanski.me/softeng05/images/EventPhotos/pexels-photo.jpg");
 
             ///<summary>
-            ///if user selects img1 create event with image to img1
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img1.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -42,9 +56,8 @@ namespace Kuromori
                     SrcString = ImgSrc.Uri.ToString();
                 })
             });
-
             ///<summary>
-            ///if user selects img2 update create event with image to img2
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img2.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -55,7 +68,7 @@ namespace Kuromori
                 })
             });
             ///<summary>
-            ///if user selects img3 create event with image to img3
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img3.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -66,7 +79,7 @@ namespace Kuromori
                 })
             });
             ///<summary>
-            ///if user selects img4 create event with image to img4
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img4.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -77,7 +90,7 @@ namespace Kuromori
                 })
             });
             ///<summary>
-            ///if user selects img5 create event with image to img5
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img5.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -88,7 +101,7 @@ namespace Kuromori
                 })
             });
             ///<summary>
-            ///if user selects img6 create event with image to img6
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img6.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -99,7 +112,7 @@ namespace Kuromori
                 })
             });
             ///<summary>
-            ///if user selects img7 create event with image to img7
+            ///if user selects img1 update profile image to img1
             /// </summary>
             img7.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -109,8 +122,8 @@ namespace Kuromori
                     SrcString = ImgSrc.Uri.ToString();
                 })
             });
-
         }
+        
 
 		/// <summary>
 		/// Creates the event click.

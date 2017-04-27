@@ -52,7 +52,7 @@ namespace Kuromori
                     new KeyValuePair<string, string>("admin_username", Admin.AdminUsername),
                     new KeyValuePair<string, string>("admin_password", Admin.AdminPassword),
                     new KeyValuePair<string, string>("user_id", cell.Detail.Substring(5))},
-                      "http://haydenszymanski.me/softeng05/admin_promote.php").ResponseInfo);
+                "http://haydenszymanski.me/softeng05/admin_promote.php").ResponseInfo);
 
                 await UpdateParticipants(); // Update the participant list to reflect any changes
                 await UpdateOrganizers(); // Update the organizer list to reflect any changes

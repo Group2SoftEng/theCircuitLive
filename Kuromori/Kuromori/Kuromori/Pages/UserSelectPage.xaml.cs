@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Kuromori.DataStructure;
+using Kuromori.Pages;
 
 namespace Kuromori
 {
@@ -11,6 +12,7 @@ namespace Kuromori
   /// </summary>
 	public partial class UserSelectPage : ContentPage
 	{
+
 		public UserSelectPage()
 		{
 			InitializeComponent();
@@ -22,10 +24,9 @@ namespace Kuromori
 	    /// </summary>
 		async void OnSignInClick(object sender, EventArgs e)
 		{
-			SignIn.IsEnabled = false;
+            SignIn.IsEnabled = false;
 			await Navigation.PushAsync(new SignInPage());
-			SignIn.IsEnabled = true;
-
+            SignIn.IsEnabled = true;
 		}
 
 	    /// <summary>
@@ -33,9 +34,9 @@ namespace Kuromori
 	    /// </summary>
 		async void OnRegisterClick(object sender, EventArgs e)
 		{
-			Register.IsEnabled = false;
+            Register.IsEnabled = false;
 			await Navigation.PushAsync(new RegisterPage());
-			Register.IsEnabled = true;
+            Register.IsEnabled = true;
 		}
 
 	    /// <summary>
@@ -43,15 +44,16 @@ namespace Kuromori
 	    /// </summary>
 		async void OnGuestClick(object sender, EventArgs e)
 		{
-			Guest.IsEnabled = false;
+            Guest.IsEnabled = false;
 			await Navigation.PushAsync(new EventPage());
-			Guest.IsEnabled = true;
+            Guest.IsEnabled = true;
 		}
 
-		void Test(object sender, EventArgs e)
-		{
-			Navigation.PushAsync(new LandingPage(new User { UserName = "jfoley21", Id = "1" }));
-		}
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.InsertPageBefore(new SplashPage(), this);
+            return base.OnBackButtonPressed();
+        }
 
-	}
+    }
 }

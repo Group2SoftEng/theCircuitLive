@@ -28,5 +28,10 @@ namespace Kuromori
 		{
 			Navigation.PushAsync(new UserSelectPage());
 		}
-	}
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+    }
 }
