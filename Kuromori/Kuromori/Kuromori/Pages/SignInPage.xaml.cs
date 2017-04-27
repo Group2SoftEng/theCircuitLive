@@ -40,12 +40,25 @@ namespace Kuromori
 	    /// </summary>
 		void SignInClick(object sender, EventArgs args)
 		{
-            SignInButton.IsEnabled = false;
 
 			String userType = HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text)
 			}, "http://haydenszymanski.me/softeng05/get_user_type.php").ResponseInfo;
 
+			/*
+			switch (userType)
+			{
+				case "organizer" :
+					Debug.WriteLine("organizer");
+					break;
+				case "participant" :
+					Debug.WriteLine("participant");
+					break;
+				case "none" :
+					Debug.WriteLine("none");
+					break;
+			}
+			*/
 
 			if (HttpUtils.PostInfo(new List<KeyValuePair<string, string>> {
 				new KeyValuePair<string, string>("username", Username.Text),
@@ -62,16 +75,16 @@ namespace Kuromori
 
 					Device.BeginInvokeOnMainThread(() =>
 					{
-                        SignInButton.IsEnabled = true;
 						Navigation.InsertPageBefore(new LandingPage(UserSigningIn), Navigation.NavigationStack.First());
 						Navigation.PopToRootAsync();
 					});
 				});
+
+
 			}
 			else
 			{
-                SignInButton.IsEnabled = true;
-                DisplayAlert("Error", "Credentials Incorrect", "Continue");
+				DisplayAlert("Error", "Credentials Incorrect", "Continue");
 			}
 		}
 
