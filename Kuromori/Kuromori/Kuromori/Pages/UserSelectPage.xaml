@@ -62,7 +62,7 @@
 				HeightRequest="50"
 				WidthRequest="150"
 			/>
-			<Button 
+			<!--Button 
 				x:Name="Testing"
 				Text="Testing"
 				TextColor="White"
@@ -71,7 +71,7 @@
 				Clicked = "Test"
 				HeightRequest="50"
 				WidthRequest="150"
-			/>
+			/-->
 		</StackLayout>
 
 	</AbsoluteLayout>		

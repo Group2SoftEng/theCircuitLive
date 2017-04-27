@@ -62,9 +62,7 @@
 				Text=""
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="CenterAndExpand"
-				HorizontalTextAlignment="Center"
 				Placeholder="Username"
-				PlaceholderColor="#b71a66"
 				x:Name="TryUsername"
 				RelativeLayout.YConstraint="{ConstraintExpression
           Type=RelativeToView,
@@ -90,10 +88,8 @@
 				Text=""
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="Center"
-				HorizontalTextAlignment="Center"
 				x:Name="TryPassword"
 				Placeholder="Password"
-				PlaceholderColor="#b71a66"
 				RelativeLayout.YConstraint="{ConstraintExpression
           Type=RelativeToView,
           ElementName=TryUsername,
@@ -125,10 +121,8 @@
 				Text=""
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="CenterAndExpand"
-				HorizontalTextAlignment="Center"
 				x:Name="ReTryPassword"
 				Placeholder="Re-enter Password"
-				PlaceholderColor="#b71a66"
 				RelativeLayout.YConstraint="{ConstraintExpression
           Type=RelativeToView,
           ElementName=TryPassword,
