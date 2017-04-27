@@ -36,11 +36,19 @@
 				Label="Registration URL"
 			/>
 
+                            <EntryCell
+				x:Name="SpeakerName"
+				Label="Speaker Name"
+			/>
+                            <EntryCell
+				x:Name="SpeakerDesc"
+				Label="Speaker Description"
+			/>
 
-            <EntryCell
+                            <!--EntryCell
 				x:Name="EBImage"
 				Label="Event Image"
-			/>
+			/-->
 			<ViewCell>
 				<StackLayout
 				Orientation="Vertical"

@@ -10,7 +10,16 @@
             <local:MenuTableView HasUnevenRows="true" Intent="Data" >
                 <local:MenuTableView.Root>
                     <TableSection>
-                        <EntryCell
+                            <ViewCell>
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Date"></Label>
+                                    <DatePicker VerticalOptions="CenterAndExpand" x:Name="Date">
+                                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                                    </DatePicker>
+                                </StackLayout>
+                            </ViewCell>
+                        
+                            <EntryCell
 				            x:Name="Title"
 				            Label="Event Title"
 			            />
@@ -46,11 +55,12 @@
 				x:Name="RegisterURL"
 				Label="Registration URL"
 			/>
+                            
 
-                        <EntryCell
+                            <!--EntryCell
 				x:Name="Date"
 				Label="Event Date"
-			/>
+			/-->
 
                         <EntryCell
 				x:Name="EBImage"

@@ -38,7 +38,7 @@ namespace Kuromori
 				Navigation.PushAsync(new ProfilePage(user));
 			};
 
-			EditButton.Text = "Edit Profile";
+			EditButton.Text = "View Profile";
 			ToolbarItems.Add(EditButton);
 
 			Task.Run(async () =>
