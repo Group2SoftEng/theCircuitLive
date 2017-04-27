@@ -27,7 +27,6 @@ namespace Kuromori
 					foreach (Event ev in EventInformation.CurrentEvents)
 					{
 						Layout.Children.Add(new UserRegisteredEvents(ev, user)); // for each event add a new eventview for that event to the layout
-
 					}
 				});
 			});
@@ -72,5 +71,11 @@ namespace Kuromori
 
 			
 		}
-	}
+
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.InsertPageBefore(new UserSelectPage(), this);
+            return base.OnBackButtonPressed();
+        }
+    }
 }

@@ -142,6 +142,7 @@
 		/>
 
 		<Button
+    x:Name="SignInButton"
 			Text="Login"
 			HorizontalOptions="Center"
 			VerticalOptions="CenterAndExpand"

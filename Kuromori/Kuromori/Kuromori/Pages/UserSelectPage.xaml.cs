@@ -49,5 +49,11 @@ namespace Kuromori
             Guest.IsEnabled = true;
 		}
 
-	}
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.InsertPageBefore(new SplashPage(), this);
+            return base.OnBackButtonPressed();
+        }
+
+    }
 }
