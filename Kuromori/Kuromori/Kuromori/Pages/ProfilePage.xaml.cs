@@ -3,6 +3,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Kuromori.DataStructure;
+using Kuromori.Pages;
 
 using Xamarin.Forms;
 
@@ -34,9 +35,9 @@ namespace Kuromori
 			{
 				Navigation.PushAsync(new ProfileUpdatePage(ActiveUser));
 			};
-
+            ToolbarItems.Add(EditButton);
 			EditButton.Text = "Edit Profile";
-			ToolbarItems.Add(EditButton);
+
 			try
 			{
 				ProfileImage.Source = new Uri(ActiveUser.ProfilePicture);
@@ -53,9 +54,9 @@ namespace Kuromori
 			Navigation.PushAsync(new EventPage());
 		}
 
-		void MyEventsClick(object sender, EventArgs args)
+		void ChatClick(object sender, EventArgs args)
 		{
-
-		}
+            Navigation.PushAsync(new Chat(ActiveUser));
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace Kuromori.Pages
     {
         Event Ev;
 		User User;
+        UriImageSource ImgSrc;
+        string SrcString;
         public EditEvent(Event ev, User user)
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace Kuromori.Pages
             Description.Text = ev.EventDescription;
             RegisterURL.Text = ev.EventSignUpUrl;
             //Date.Date = ev.EventDate;
-            EBImage.Text = ev.EventImg;
+            //EBImage.Text = ev.EventImg;
 
             ToolbarItem DeleteEventButton = new ToolbarItem();
             DeleteEventButton.Clicked += (sender, e) =>
@@ -37,6 +39,92 @@ namespace Kuromori.Pages
 
             DeleteEventButton.Text = "Cancel Event";
             ToolbarItems.Add(DeleteEventButton);
+
+            /*img1.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_antelope.jpeg");
+            img2.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_chihuahua.jpeg");
+            img3.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_duckling.jpeg");
+            img4.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_horses.jpg");
+            img5.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_giraffe.jpg");
+            img6.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_hedgehog.jpeg");
+            img7.Source = new Uri("http://haydenszymanski.me/softeng05/images/ProfileImages/usr_bunny.jpeg");
+
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img1.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img1.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img2.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img2.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img3.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img3.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img4.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img4.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img5.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img5.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img6.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img6.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });
+            ///<summary>
+            ///if user selects img1 update profile image to img1
+            /// </summary>
+            img7.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    ImgSrc = (Xamarin.Forms.UriImageSource)img7.Source;
+                    SrcString = ImgSrc.Uri.ToString();
+                })
+            });*/
         }
    
 
@@ -50,7 +138,7 @@ namespace Kuromori.Pages
 				new KeyValuePair<string, string>("event_desc", Description.Text),
 				new KeyValuePair<string, string>("event_url", RegisterURL.Text),
 				new KeyValuePair<string, string>("event_date", Date.Date.ToString("yyyy-MM-dd")),
-				new KeyValuePair<string, string>("event_img", EBImage.Text),
+				//new KeyValuePair<string, string>("event_img", EBImage.Text),
 			}, "http://haydenszymanski.me/softeng05/update_event.php").ResponseInfo);
 			Navigation.InsertPageBefore(new LandingPage(User), Navigation.NavigationStack.First());
             await Navigation.PopToRootAsync();
