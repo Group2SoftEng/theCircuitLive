@@ -18,7 +18,6 @@ namespace Kuromori
 			Splash.Source = new Uri("http://haydenszymanski.me/splash-image.png");
 			Splash.Aspect = Aspect.Fill;
 			Logo.Source = new Uri("http://haydenszymanski.me/logo.png");
-
 		}
 
     /// <summary>

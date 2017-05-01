@@ -3,17 +3,12 @@ error_reporting(E_ALL);
 
 require_once "functions.php";
 
-/*
- *
- *
- **/
-
-$username = $_POST["username"];
-$password = $_POST["password"];
+$username = $_POST["admin_username"];
+$password = $_POST["admin_password"];
 
 $con = get_connection();
 
-if (user_login($con, $username, $password) == 1) {
+if (admin_login($con, $username, $password) == 1) {
     echo "Success";
 }
 

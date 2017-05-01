@@ -1,20 +1,16 @@
 <?php
-/*
- * part of work being done to implement PhpUnit on webserver
- **/
-class User {
-    protected $name;
+error_reporting(E_ALL);
+include "functions.php";
 
-    public function getName() {
-        return $this->name;
-    }
+use PHPUnit\Framework\TestCase;
 
-    public function setName($name) {
-        $this->name = $name;
-    }
-
-    public function talk() {
-        return "Hello world!";
-    }
+class StackTest extends Testcase
+{
+    public function testCase()
+        {
+            echo 'Hello World';
+            $stack = [];
+            $this->assertEquals(1, count($stack));
+        }
 }
 ?>

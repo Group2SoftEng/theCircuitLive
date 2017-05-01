@@ -1,8 +1,11 @@
 <?php
 error_reporting(E_ALL);
-require_once "functions.php";
+include "functions.php";
 
 $con = get_connection();
-echo retrieve_events($con, 8);
+$users = get_organizers($con);
+
+echo $users;
+
 mysqli_close($con);
 ?>

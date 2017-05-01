@@ -1,11 +1,6 @@
 <?php
 error_reporting(E_ALL);
 require_once "functions.php";
-
-/*
- * given the correct post keys returns whetehr or not a user exists
- */
-
 $con = get_connection();
 $username = $_POST["username"];
 
